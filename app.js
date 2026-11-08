@@ -56,6 +56,8 @@ const FILTRI = [
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+// i file dati dei singoli distretti possono introdurre distretti nuovi: si aggiungono qui in automatico
+(window.ESERCIZI || []).forEach((e) => [e.primario].concat(e.secondari || []).forEach((d) => { if (d && !FILTRI[0].valori.includes(d)) FILTRI[0].valori.push(d); }));
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
