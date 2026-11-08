@@ -56,6 +56,11 @@ const FILTRI = [
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+/* valori presenti nei file dati dei distretti ma non elencati sopra (es. "Toracica", "Resistenza"): aggiunti in coda */
+FILTRI.forEach((f) => {
+  const campi = f.key === "distretto" ? ["primario", "secondari"] : [f.key];
+  (window.ESERCIZI || []).forEach((e) => campi.forEach((c) => [].concat(e[c] || []).forEach((v) => { if (v && !f.valori.includes(v)) f.valori.push(v); })));
+});
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
