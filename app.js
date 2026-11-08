@@ -83,6 +83,7 @@ let cerca = "";
 let tab = "esercizi";
 const FOTO = {}; // id -> [dataURL, dataURL]
 let LOGO = null;
+let installEvt = null;
 
 function nuovaScheda() {
   return { id: uid(), paziente: "", data: oggi(), titolo: "", note: "", esercizi: [] };
@@ -196,6 +197,7 @@ function dettaglio(id) {
       ${lst("Errori frequenti", e.errori, "err")}
       ${lst("Progressioni", e.progressioni, "", nomeRif)}
       ${lst("Regressioni", e.regressioni, "", nomeRif)}
+      ${lst("Metriche e test di riferimento", e.metriche)}
       ${e.rif && e.rif.length ? `<div class="sec ref"><h4>Letteratura</h4><ul>${e.rif.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>` : ""}
     </div>
     <div class="dlg-f">
@@ -361,6 +363,14 @@ function viewImpostazioni() {
       <div class="row"><label class="field"><span>Progressione predefinita</span><select id="set-per" data-set="periodo"><option ${settings.periodo === "Settimane" ? "selected" : ""}>Settimane</option><option ${settings.periodo === "Mesi" ? "selected" : ""}>Mesi</option></select></label>
       <label class="field"><span>Colonne predefinite</span><input type="number" id="set-n" min="1" max="12" data-set="n" value="${settings.n}"></label></div>
     </div>
+    <div class="panel"><h3>Installa FISIOEXERCISE</h3>
+      ${installEvt ? `<div class="row"><button class="btn primary" data-act="installa">Installa app su questo dispositivo</button></div>` : ""}
+      <p class="note" style="margin:0"><b>Android / tablet (Chrome):</b> menu ⋮ › <i>Installa app</i> oppure <i>Aggiungi a schermata Home</i>.<br>
+      <b>iPhone / iPad (Safari):</b> pulsante Condividi › <i>Aggiungi alla schermata Home</i>.<br>
+      <b>Computer (Chrome o Edge):</b> icona di installazione a destra nella barra degli indirizzi.<br>
+      Una volta installata si apre come un'app e funziona anche senza internet (le foto vengono salvate al primo avvio).</p>
+      <p class="note" style="margin:0"><b>Pacchetto da scaricare:</b> github.com/centocentofisio-cmd/FISIOEXERCISE/archive/refs/heads/main.zip. Scompatta e apri <code>index.html</code> nel browser. Le schede salvate restano separate da quelle della versione online: spostale con Esporta/Importa backup.</p>
+    </div>
     <div class="panel"><h3>Fonti</h3><p class="note" style="margin:0">Foto: <b>free-exercise-db</b> (github.com/yuhonas/free-exercise-db), licenza Unlicense, pubblico dominio. Gli esercizi senza foto mostrano un segnaposto: puoi caricare le tue foto dal dettaglio di ogni esercizio. Testi scritti per ${esc(settings.studio)}.</p></div>`;
 }
 
@@ -488,6 +498,9 @@ document.addEventListener("click", async (ev) => {
     case "chiudi-anteprima": document.body.classList.remove("preview"); break;
     case "stampa": stampa(); break;
     case "esporta": esporta(); break;
+    case "installa":
+      if (!installEvt) { toast("Usa il menu del browser: Installa app / Aggiungi a schermata Home"); break; }
+      installEvt.prompt(); installEvt.userChoice.finally(() => { installEvt = null; $("#installa").hidden = true; render(); }); break;
     case "togli-logo": LOGO = null; await idb.del("logo"); render(); break;
   }
 });
@@ -521,6 +534,18 @@ document.addEventListener("change", async (ev) => {
 
 document.addEventListener("submit", (ev) => { if (ev.target.id === "form-ed") { ev.preventDefault(); salvaEditor(ev.target); } });
 document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && document.body.classList.contains("preview")) document.body.classList.remove("preview"); });
+
+/* ---------- app installabile (PWA) ---------- */
+window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); installEvt = e; const b = $("#installa"); if (b) b.hidden = false; });
+window.addEventListener("appinstalled", () => { installEvt = null; const b = $("#installa"); if (b) b.hidden = true; toast("FISIOEXERCISE installata"); });
+if ("serviceWorker" in navigator && !inFrame && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then((reg) => {
+      const urls = []; window.ESERCIZI.forEach((e) => { if (e.img) urls.push("img/" + e.img + "/0.jpg", "img/" + e.img + "/1.jpg"); });
+      if (reg.active) reg.active.postMessage({ tipo: "precache", urls });
+    }).catch(() => {});
+  });
+}
 
 /* ---------- avvio ---------- */
 (async function init() {
