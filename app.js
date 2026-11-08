@@ -56,6 +56,8 @@ const FILTRI = [
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+// distretti aggiunti dai file dati separati (es. esercizi-toracico.js)
+(window.ESERCIZI || []).forEach((e) => [e.primario].concat(e.secondari || []).forEach((d) => { if (d && !FILTRI[0].valori.includes(d)) FILTRI[0].valori.push(d); }));
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
