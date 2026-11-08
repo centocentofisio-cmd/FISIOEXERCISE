@@ -45,17 +45,22 @@ function toast(msg) {
 
 /* ---------- tassonomia filtri ---------- */
 const FILTRI = [
-  { key: "distretto", label: "Distretto", valori: ["Anca", "Adduttori", "Ischiocrurali", "Ginocchio", "Lombare", "Core", "Caviglia"] },
-  { key: "pattern", label: "Pattern di movimento", valori: ["Squat", "Hinge", "Affondo", "Spinta", "Trazione", "Carry", "Rotazione/anti-rotazione", "Salto/atterraggio", "Analitico", "Mobilità"], arr: true },
+  { key: "distretto", label: "Distretto", valori: ["Cervicale", "Toracico", "Lombare", "Core", "Spalla", "Gomito", "Polso e mano", "Anca", "Adduttori", "Ischiocrurali", "Ginocchio", "Piede e caviglia"] },
+  { key: "pattern", label: "Pattern di movimento", valori: ["Squat", "Hinge", "Affondo", "Spinta", "Trazione", "Carry", "Rotazione/anti-rotazione", "Anti-estensione", "Salto/atterraggio", "Analitico", "Mobilità"], arr: true },
   { key: "catena", label: "Catena cinetica", valori: ["Aperta", "Chiusa"] },
   { key: "carico", label: "Carico", valori: ["In carico", "In scarico"] },
   { key: "lateralita", label: "Lateralità", valori: ["Bilaterale", "Unilaterale", "Split stance"] },
-  { key: "attrezzatura", label: "Attrezzatura", valori: ["Corpo libero", "Manubri", "Kettlebell", "Bilanciere", "Landmine", "Elastico", "Cavo", "Smith", "Leg extension", "Leg curl"], arr: true },
+  { key: "attrezzatura", label: "Attrezzatura", valori: ["Corpo libero", "Manubri", "Kettlebell", "Bilanciere", "Landmine", "Elastico", "Cavo", "Smith", "Leg extension", "Leg curl", "Piccoli attrezzi"], arr: true },
   { key: "regime", label: "Regime di contrazione", valori: ["Isometrico", "Concentrico", "Eccentrico", "Pliometrico"], arr: true },
-  { key: "obiettivo", label: "Obiettivo", valori: ["Mobilità", "Controllo motorio", "Forza", "Ipertrofia", "Potenza", "RFD"], arr: true },
+  { key: "obiettivo", label: "Obiettivo", valori: ["Mobilità", "Controllo motorio", "Forza", "Ipertrofia", "Potenza", "RFD", "Resistenza"], arr: true },
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+// Un valore nuovo presente nei file dati (esercizi-*.js) ma non elencato sopra compare comunque in coda al filtro.
+(window.ESERCIZI || []).forEach((e) => FILTRI.forEach((f) => {
+  const v = f.key === "distretto" ? [e.primario].concat(e.secondari || []) : [].concat(e[f.key] || []);
+  v.forEach((x) => { if (x && !f.valori.includes(x)) f.valori.push(x); });
+}));
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
