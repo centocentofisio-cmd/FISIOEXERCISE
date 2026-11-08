@@ -268,6 +268,63 @@ function aggiungi(id) {
   salvaBozza(); toast(`Aggiunto alla scheda (${scheda.esercizi.length})`);
 }
 
+/* ---------- obiettivo del lavoro (calcolato dalla prescrizione) ----------
+   Soglie dal continuum delle ripetizioni: Haff & Triplett, NSCA Essentials 4ª ed. 2016;
+   ACSM Position Stand, Med Sci Sports Exerc 2009;41:687-708; Schoenfeld BJ, Grgic J et al., Sports 2021;9(2):32.
+   Pliometria: ciclo stiramento-accorciamento (SSC), Komi PV, J Biomech 2000;33:1197-206. */
+const OBIETTIVI = {
+  forza: { label: "Forza", cls: "o-forza" },
+  potenza: { label: "Potenza", cls: "o-potenza" },
+  ipertrofia: { label: "Ipertrofia", cls: "o-ipertrofia" },
+  capacita: { label: "Capacità di carico", cls: "o-capacita" },
+  plio: { label: "Pliometria (SSC)", cls: "o-plio" },
+  prop: { label: "Propedeutica pliometria", cls: "o-prop" },
+  mob: { label: "Mobilità", cls: "o-mob" },
+};
+function leggiPrescrizione(x, c) {
+  const cel = (k) => String(((x.celle[k] || [])[c]) || "");
+  const serie = cel("serie"), carico = cel("carico"), rpeT = cel("rpe"), tempo = cel("tempo"), note = cel("note") + " " + (x.nota || "");
+  const out = { serie, testo: [serie, carico, rpeT, tempo, note].join(" ").toLowerCase() };
+  const m = serie.match(/(\d+)\s*[x×*]\s*(\d+)(?:\s*[-–]\s*(\d+))?\s*(s\b|sec|"|min|')?/i);
+  if (m) { out.reps = m[3] ? (+m[2] + +m[3]) / 2 : +m[2]; if (m[4]) { out.durata = /min|'/.test(m[4]) ? out.reps * 60 : out.reps; out.reps = null; } }
+  else { const d = serie.match(/(\d+)\s*(s\b|sec|"|min|')/i); if (d) out.durata = /min|'/.test(d[2]) ? +d[1] * 60 : +d[1]; else { const r = serie.match(/^\s*(\d+)\s*(rip|$)/i); if (r) out.reps = +r[1]; } }
+  const rpe = rpeT.match(/rpe\s*(\d+(?:[.,]\d)?)/i), rir = rpeT.match(/rir\s*(\d+)/i);
+  if (rpe) out.rpe = parseFloat(rpe[1].replace(",", ".")); else if (rir) out.rpe = 10 - +rir[1]; else { const n = rpeT.match(/^\s*(\d+(?:[.,]\d)?)\s*$/); if (n) out.rpe = parseFloat(n[1].replace(",", ".")); }
+  const pct = carico.match(/(\d+)\s*%/); if (pct) out.pct = +pct[1];
+  out.esplosivo = /x/i.test(tempo) || /esplosiv|massima velocit|veloc|balistic|potenza/.test(out.testo);
+  return out;
+}
+function obiettivoCol(e, x, c) {
+  const p = leggiPrescrizione(x, c);
+  if (!p.serie.trim()) return null;
+  const pat = e.pattern || [], reg = e.regime || [], ob = e.obiettivo || [];
+  if (pat.includes("Mobilità") || (ob.length === 1 && ob[0] === "Mobilità")) return "mob";
+  if (pat.includes("Salto/atterraggio") || reg.includes("Pliometrico")) {
+    const nomeTxt = [e.nome, e.alias].join(" ").toLowerCase();
+    const senzaSSC = /stick|stabilizz|atterragg|landing|snap.?down|da seduto|seated|senza contromovimento/.test(nomeTxt + " " + p.testo);
+    const conSSC = /rimbalz|continu|reattiv|pogo|depth|drop jump|hop/.test(nomeTxt + " " + p.testo);
+    if (!reg.includes("Pliometrico") || (senzaSSC && !conSSC)) return "prop";
+    return "plio";
+  }
+  if (p.durata != null) return p.durata <= 10 && p.rpe >= 8 ? "forza" : "capacita";
+  if (p.reps == null) return null;
+  const potente = p.esplosivo || (p.pct && p.pct <= 80 && (ob.includes("Potenza") || ob.includes("RFD"))) || ((ob.includes("Potenza") || ob.includes("RFD")) && !p.rpe && !p.pct);
+  if (p.reps <= 6 && potente) return "potenza";
+  if (p.reps <= 6) return "forza";
+  if (p.reps < 12) return "ipertrofia";
+  return "capacita";
+}
+function obiettiviEsercizio(e, x) {
+  const v = []; for (let c = 0; c < x.n; c++) { const o = obiettivoCol(e, x, c); if (o && v[v.length - 1] !== o) v.push(o); } return v;
+}
+const chipOb = (k) => `<span class="ob ${OBIETTIVI[k].cls}">${OBIETTIVI[k].label}</span>`;
+function badgeOb(e, x) { const v = obiettiviEsercizio(e, x); return v.length ? v.map(chipOb).join('<span class="ob-arrow">→</span>') : `<span class="ob-vuoto">Compila serie × ripetizioni per vedere l'obiettivo</span>`; }
+function aggiornaObiettivi(uidX) {
+  const x = trova(uidX); const e = x && byId(x.exId); if (!e) return;
+  const b = document.getElementById("ob-" + uidX); if (b) b.innerHTML = badgeOb(e, x);
+  for (let c = 0; c < x.n; c++) { const td = document.getElementById(`obc-${uidX}-${c}`); if (td) { const o = obiettivoCol(e, x, c); td.innerHTML = o ? chipOb(o) : ""; } }
+}
+
 function viewScheda() {
   const s = scheda;
   const blocchi = s.esercizi.map((x, i) => {
@@ -279,6 +336,7 @@ function viewScheda() {
       <div class="ex-top">
         ${imgPair(e)}
         <div style="min-width:0"><div class="ex-num">Esercizio ${i + 1}</div><h3 style="font-size:19px">${esc(e.nome)}</h3><div class="alias">${esc(e.alias || "")}</div>
+          <div class="ob-row" id="ob-${x.uid}" aria-live="polite">${badgeOb(e, x)}</div>
           <p class="ex-desc">${esc(e.descrizione)}</p>
           <ul class="ex-cue">${(e.cue || []).map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>
         <div class="ex-ctrl">
@@ -296,6 +354,7 @@ function viewScheda() {
       </div>
       ${righe.length ? `<div class="tbl-wrap"><table class="prog"><thead><tr><th></th>${cols.map((c) => `<th>${c}</th>`).join("")}</tr></thead><tbody>
         ${righe.map((r) => `<tr><th>${esc(r.label)}</th>${cols.map((_, c) => `<td><input type="text" id="c-${x.uid}-${r.key}-${c}" data-cella="${x.uid}" data-r="${r.key}" data-c="${c}" value="${esc(((x.celle[r.key] || [])[c]) || "")}" ${r.dl ? `list="${r.dl}"` : ""}></td>`).join("")}</tr>`).join("")}
+        <tr class="ob-tr"><th>Obiettivo (automatico)</th>${cols.map((_, c) => { const o = obiettivoCol(e, x, c); return `<td id="obc-${x.uid}-${c}">${o ? chipOb(o) : ""}</td>`; }).join("")}</tr>
       </tbody></table></div>` : ""}
       <label class="field"><span>Indicazioni per questo esercizio</span><input type="text" id="nota-${x.uid}" data-nota="${x.uid}" value="${esc(x.nota)}" placeholder="Es. aumenta il carico del 5% se RPE ≤ 7 su tutte le serie"></label>
     </section>`;
@@ -330,6 +389,16 @@ function legendaHTML(cls) {
       <tr><td>3–4</td><td>Sforzo leggero</td></tr>
       <tr><td>1–2</td><td>Sforzo minimo o nullo</td></tr></table>
     <p class="${cls === "legend" ? "note" : ""}" style="margin:4px 0 0">Zourdos MC et al. J Strength Cond Res 2016;30(1):267-75</p></div>
+    <div><h3>Obiettivo del lavoro</h3>
+    <table><tr><th>Obiettivo</th><th>Come viene riconosciuto</th></tr>
+      <tr><td>${chipOb("forza")}</td><td>≤ 6 ripetizioni (tipicamente 1–5 a RPE ≥ 8 / ≥ 85% 1RM), oppure isometria ≤ 10 s a RPE ≥ 8</td></tr>
+      <tr><td>${chipOb("potenza")}</td><td>≤ 6 ripetizioni eseguite alla massima velocità (tempo con X, carichi ≤ 80% 1RM) o esercizi balistici</td></tr>
+      <tr><td>${chipOb("ipertrofia")}</td><td>7–11 ripetizioni vicino al cedimento (RIR 0–3)</td></tr>
+      <tr><td>${chipOb("capacita")}</td><td>≥ 12 ripetizioni o isometrie/tenute a tempo: tolleranza al carico e resistenza muscolare</td></tr>
+      <tr><td>${chipOb("plio")}</td><td>Salti con ciclo stiramento-accorciamento (contromovimento, rimbalzo, contatti reattivi)</td></tr>
+      <tr><td>${chipOb("prop")}</td><td>Salti e atterraggi senza SSC (atterraggio stabilizzato, salto da fermo/seduto)</td></tr>
+      <tr><td>${chipOb("mob")}</td><td>Esercizi di mobilità</td></tr></table>
+    <p class="${cls === "legend" ? "note" : ""}" style="margin:4px 0 0">Haff GG, Triplett NT. NSCA Essentials of Strength Training and Conditioning, 4ª ed. 2016 · ACSM Position Stand. Med Sci Sports Exerc 2009;41:687-708 · Schoenfeld BJ, Grgic J et al. Sports 2021;9(2):32 · Komi PV. J Biomech 2000;33:1197-206</p></div>
     <div><h3>Tempo esecutivo</h3><p style="margin:0">Quattro cifre in secondi: <b>eccentrica – pausa in basso – concentrica – pausa in alto</b>. Es. 3-1-1-0 = scendi in 3 s, fermati 1 s, sali in 1 s, riparti subito. X = il più veloce possibile.</p></div>
   </div>`;
 }
@@ -384,6 +453,7 @@ function buildPrint() {
     const righe = RIGHE.filter((r) => x.righe[r.key]);
     return `<section class="pr-ex">
       <h2><span class="n">${i + 1}</span><span>${esc(e.nome)}</span><small>${esc(e.alias || "")}</small></h2>
+      ${obiettiviEsercizio(e, x).length ? `<div class="ob-row">${badgeOb(e, x)}</div>` : ""}
       <div class="pr-body">
         <div class="pr-imgs ${im && im.length > 1 ? "" : "one"}">${im ? im.map((src) => `<img src="${esc(src)}" alt="">`).join("") : placeholder(e)}</div>
         <div>
@@ -392,11 +462,11 @@ function buildPrint() {
           ${settings.stampaErrori && e.errori && e.errori.length ? `<h4>Da evitare</h4><ul>${e.errori.map((c) => `<li>${esc(c)}</li>`).join("")}</ul>` : ""}
         </div>
       </div>
-      ${righe.length ? `<table class="pr-tab"><thead><tr><th></th>${cols.map((c) => `<th>${c}</th>`).join("")}</tr></thead><tbody>${righe.map((r) => `<tr><th>${esc(r.label.split(" (")[0])}</th>${cols.map((_, c) => `<td>${esc(((x.celle[r.key] || [])[c]) || "")}</td>`).join("")}</tr>`).join("")}</tbody></table>` : ""}
+      ${righe.length ? `<table class="pr-tab"><thead><tr><th></th>${cols.map((c) => `<th>${c}</th>`).join("")}</tr></thead><tbody>${righe.map((r) => `<tr><th>${esc(r.label.split(" (")[0])}</th>${cols.map((_, c) => `<td>${esc(((x.celle[r.key] || [])[c]) || "")}</td>`).join("")}</tr>`).join("")}${obiettiviEsercizio(e, x).length ? `<tr><th>Obiettivo</th>${cols.map((_, c) => { const o = obiettivoCol(e, x, c); return `<td>${o ? chipOb(o) : ""}</td>`; }).join("")}</tr>` : ""}</tbody></table>` : ""}
       ${x.nota ? `<div class="pr-exnote">${esc(x.nota)}</div>` : ""}
     </section>`;
   }).join("");
-  const usaRpe = s.esercizi.some((x) => x.righe.rpe || x.righe.tempo);
+  const usaRpe = s.esercizi.some((x) => x.righe.rpe || x.righe.tempo || (byId(x.exId) && obiettiviEsercizio(byId(x.exId), x).length));
   $("#print-root").innerHTML = `<div class="pr">
     <div class="pr-head"><div class="pr-logo">${LOGO ? `<img src="${LOGO}" alt="${esc(settings.studio)}">` : `<div class="txt">${esc(settings.studio)}</div>`}</div>
       <div class="pr-studio">${settings.terapista ? `<b>${esc(settings.terapista)}</b>\n` : ""}${esc(settings.contatti)}</div></div>
@@ -508,8 +578,8 @@ document.addEventListener("click", async (ev) => {
 document.addEventListener("input", (ev) => {
   const t = ev.target;
   if (t.id === "cerca") { cerca = t.value; const pos = t.selectionStart; render(); const n = $("#cerca"); n.focus(); n.setSelectionRange(pos, pos); return; }
-  if (t.dataset.cella) { const x = trova(t.dataset.cella); (x.celle[t.dataset.r] = x.celle[t.dataset.r] || [])[+t.dataset.c] = t.value; salvaBozza(); return; }
-  if (t.dataset.nota) { trova(t.dataset.nota).nota = t.value; salvaBozza(); return; }
+  if (t.dataset.cella) { const x = trova(t.dataset.cella); (x.celle[t.dataset.r] = x.celle[t.dataset.r] || [])[+t.dataset.c] = t.value; salvaBozza(); aggiornaObiettivi(t.dataset.cella); return; }
+  if (t.dataset.nota) { trova(t.dataset.nota).nota = t.value; salvaBozza(); aggiornaObiettivi(t.dataset.nota); return; }
   if (t.dataset.s) { scheda[t.dataset.s] = t.value; salvaBozza(); return; }
   if (t.dataset.set && t.tagName !== "SELECT") { settings[t.dataset.set] = t.type === "number" ? Math.max(1, Math.min(12, +t.value || 4)) : t.value; store.set("settings", settings); if (t.dataset.set === "studio") $("#brand-name").textContent = t.value || "NC Fisioterapia"; }
 });
