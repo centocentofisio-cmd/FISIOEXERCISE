@@ -1,12 +1,13 @@
 /*
-  Database esercizi – distretto pilota: ANCA
+  Database esercizi – distretto pilota: ANCA (ampliamento in esercizi-anca.js)
   ------------------------------------------------
   Ogni esercizio ha:
   id, nome (italiano clinico), alias (nomi inglesi/letteratura), muscoli,
   primario / secondari (distretti), pattern, catena, carico, lateralita,
   attrezzatura, regime, obiettivo, fase, specificita, gesto,
   img (cartella in /img con 0.jpg e 1.jpg = posizione iniziale/finale, oppure null),
-  descrizione, cue, errori, progressioni, regressioni, rif (letteratura).
+  descrizione, cue, errori, progressioni, regressioni,
+  metriche (facoltativo: test e valori di riferimento), rif (letteratura).
 
   Immagini: free-exercise-db (github.com/yuhonas/free-exercise-db), licenza Unlicense / pubblico dominio.
   Testi: originali, scritti per NC Fisioterapia.
@@ -28,6 +29,7 @@ window.ESERCIZI = [
   errori: ["Iperestensione lombare a fine movimento al posto dell'estensione d'anca", "Ginocchia che cadono verso l'interno", "Spinta dalle punte dei piedi con prevalenza del quadricipite", "Crampi agli ischiocrurali per piedi troppo lontani dal bacino"],
   progressioni: ["ponte-gluteo-mono", "hip-thrust", "Ponte con elastico sopra le ginocchia (abduzione isometrica)"],
   regressioni: ["Retroversione del bacino da supino", "Isometrico in alto di breve durata"],
+  metriche: ["Ripetizioni in 30-60 s o tenuta isometrica in alto (s), confronto nel tempo"],
   rif: ["Neto WK et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med 2020"]
 },
 {
@@ -44,9 +46,10 @@ window.ESERCIZI = [
   descrizione: "Come il ponte gluteo, ma con un arto sollevato (ginocchio al petto o arto teso in linea con la coscia controlaterale). L'arto in appoggio estende l'anca mantenendo il bacino orizzontale sul piano frontale e trasverso.",
   cue: ["Spingi col tallone della gamba d'appoggio", "Bacino come un vassoio: non deve inclinarsi né ruotare", "Sali e scendi lentamente", "Tieni il ginocchio d'appoggio sopra il piede"],
   errori: ["Caduta del bacino dal lato dell'arto sollevato", "Rotazione del bacino", "Compenso lombare in iperestensione"],
-  progressioni: ["hip-thrust-mono", "Piede d'appoggio su step o fitball"],
+  progressioni: ["anca-ponte-ischio-mono", "hip-thrust-mono", "Piede d'appoggio su step o fitball"],
   regressioni: ["ponte-gluteo", "Ponte con marcia alternata (sollevare un piede per pochi secondi)"],
-  rif: ["Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012"]
+  metriche: ["Single Leg Bridge: ripetizioni fino a cedimento tecnico e simmetria tra lati"],
+  rif: ["Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012", "Freckleton G et al. The predictive validity of a single leg bridge test for hamstring injuries in Australian Rules Football Players. Br J Sports Med 2014"]
 },
 {
   id: "hip-thrust",
@@ -64,7 +67,8 @@ window.ESERCIZI = [
   errori: ["Iperestensione lombare in chiusura", "Piedi troppo lontani (più ischiocrurali) o troppo vicini (più quadricipite)", "Movimento incompleto nell'ultimo tratto di estensione", "Scapole che scivolano lungo la panca"],
   progressioni: ["Aumento del carico (%1RM o RPE)", "Pausa isometrica di 3 s in alto", "hip-thrust-mono"],
   regressioni: ["ponte-gluteo", "Hip thrust a corpo libero o con manubrio"],
-  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis EMG activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015"]
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
+  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis EMG activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015", "Andersen V et al. Electromyographic comparison of barbell deadlift, hex bar deadlift, and hip thrust exercises: a cross-over study. J Strength Cond Res 2018", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "hip-thrust-mono",
@@ -82,7 +86,8 @@ window.ESERCIZI = [
   errori: ["Rotazione del bacino verso il lato libero", "Iperestensione lombare", "Velocità eccessiva in discesa"],
   progressioni: ["Manubrio o kettlebell sull'anca", "Tempo eccentrico 3-4 s"],
   regressioni: ["hip-thrust", "ponte-gluteo-mono"],
-  rif: []
+  metriche: ["Ripetizioni o carico per lato, simmetria ≥ 90%"],
+  rif: ["Neto WK et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med 2020"]
 },
 {
   id: "clamshell",
@@ -100,6 +105,7 @@ window.ESERCIZI = [
   errori: ["Rotazione posteriore del bacino per guadagnare ampiezza", "Movimento rapido e senza controllo", "Compenso con i flessori d'anca (anca che si flette)"],
   progressioni: ["Elastico sopra le ginocchia", "Clamshell con ponte laterale (side plank clam)", "abduzione-decubito"],
   regressioni: ["Isometria in apertura parziale", "Ampiezza ridotta senza elastico"],
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in extrarotazione e abduzione"],
   rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? JOSPT 2013", "Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009"]
 },
 {
@@ -118,7 +124,8 @@ window.ESERCIZI = [
   errori: ["Flessione d'anca con reclutamento del TFL", "Rotazione esterna dell'arto (lavora il flessore)", "Elevazione del bacino (quadrato dei lombi)"],
   progressioni: ["Cavigliera o elastico alla caviglia", "Isometria finale di 5-10 s", "side-plank"],
   regressioni: ["clamshell", "Abduzione da supino scivolando sul pavimento"],
-  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009"]
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione", "Abduzione < 35,4% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
+  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009", "Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
 },
 {
   id: "abduzione-piedi-elastico",
@@ -136,7 +143,8 @@ window.ESERCIZI = [
   errori: ["Inclinazione laterale del tronco", "Rotazione esterna dell'arto in movimento", "Velocità eccessiva nel ritorno"],
   progressioni: ["Senza appoggio delle mani", "Cavo con carico progressivo", "monster-walk"],
   regressioni: ["abduzione-decubito", "Ampiezza ridotta con elastico leggero"],
-  rif: []
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione"],
+  rif: ["Macadam P et al. An examination of the gluteal muscle activity associated with dynamic hip abduction and hip external rotation exercise: a systematic review. Int J Sports Phys Ther 2015", "Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010"]
 },
 {
   id: "side-plank",
@@ -154,6 +162,7 @@ window.ESERCIZI = [
   errori: ["Bacino che cade o va indietro", "Spalla che collassa verso l'orecchio", "Apnea"],
   progressioni: ["Side plank con abduzione dell'arto superiore", "copenhagen", "Tenute più lunghe (es. 3×30-45 s)"],
   regressioni: ["Side plank con ginocchia flesse", "Side plank al muro in piedi"],
+  metriche: ["Tempo di tenuta (s) per lato; asimmetrie > 5% da monitorare"],
   rif: ["Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. IJSPT 2011"]
 },
 {
@@ -172,7 +181,8 @@ window.ESERCIZI = [
   errori: ["Bacino che ruota o cade indietro", "Partire subito dalla leva lunga", "Dolore inguinale non monitorato (tenere sotto 3/10 NRS)"],
   progressioni: ["Leva lunga (appoggio alla caviglia)", "Fase eccentrica lenta", "Aumento del volume secondo protocollo (es. 2-3 serie fino a 12-15 rip)"],
   regressioni: ["Leva corta (appoggio al ginocchio)", "squeeze-adduttori", "adduzione-cavo"],
-  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players. Br J Sports Med 2019", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014"]
+  metriche: ["Squeeze test a 45° (Delahunt 2011)", "Rapporto adduzione/abduzione < 80% associato a rischio 17 volte maggiore di stiramento degli adduttori (Tyler 2001)", "Nel programma ASP la riduzione dei problemi inguinali è stata circa del 41% (Harøy 2019)"],
+  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players. Br J Sports Med 2019", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
 },
 {
   id: "squeeze-adduttori",
@@ -188,9 +198,10 @@ window.ESERCIZI = [
   descrizione: "Supino, ginocchia flesse, una palla o i pugni tra le ginocchia. Si stringe progressivamente fino all'intensità prescritta e si mantiene. Primo step del rinforzo nelle algie inguinali da adduttori, con intensità dosata sul dolore. Lo stesso setup, con dinamometro o sfigmomanometro, è usato come test (squeeze test).",
   cue: ["Stringi la palla come se volessi schiacciarla", "Aumenta la forza in 2-3 secondi, non di colpo", "Mantieni il respiro regolare", "Fermati se il dolore supera la soglia concordata"],
   errori: ["Apnea e spinta addominale", "Contrazione esplosiva in fase irritabile"],
-  progressioni: ["Squeeze a 0° (arti estesi, leva lunga)", "adduzione-cavo", "copenhagen"],
+  progressioni: ["anca-adduzione-decubito", "Squeeze a 0° (arti estesi, leva lunga)", "adduzione-cavo", "copenhagen"],
   regressioni: ["Intensità ridotta (es. 50% dello sforzo massimo)"],
-  rif: ["Hölmich P et al. Effectiveness of active physical training as treatment for long-standing adductor-related groin pain in athletes: randomised trial. Lancet 1999"]
+  metriche: ["Squeeze test a 45° di flessione d'anca con sfigmomanometro (mmHg) o dinamometro: confronto nel tempo e con il dolore (NRS)", "HAGOS per i sintomi inguino-femorali"],
+  rif: ["Hölmich P et al. Effectiveness of active physical training as treatment for long-standing adductor-related groin pain in athletes: randomised trial. Lancet 1999", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
 },
 {
   id: "adduzione-cavo",
@@ -208,7 +219,8 @@ window.ESERCIZI = [
   errori: ["Inclinazione del tronco", "Uso dello slancio", "Rotazione del bacino"],
   progressioni: ["Aumento del carico", "Eccentrica lenta 3-4 s", "copenhagen"],
   regressioni: ["squeeze-adduttori", "Elastico leggero"],
-  rif: ["Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014"]
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in adduzione; rapporto ADD/ABD ≥ 80% (Tyler 2001)"],
+  rif: ["Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001"]
 },
 {
   id: "monster-walk",
@@ -226,6 +238,7 @@ window.ESERCIZI = [
   errori: ["Valgismo dinamico del ginocchio", "Ondeggiamento del tronco", "Piedi che si riuniscono e l'elastico perde tensione"],
   progressioni: ["Elastico ai piedi", "Camminata a X (monster walk diagonale)", "affondo-laterale"],
   regressioni: ["abduzione-piedi-elastico", "Elastico sopra le ginocchia, più leggero"],
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione"],
   rif: ["Selkowitz DM et al. JOSPT 2013", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
 },
 {
@@ -244,7 +257,8 @@ window.ESERCIZI = [
   errori: ["Spostare il bacino lontano dal muro (adduzione dell'arto d'appoggio)", "Tronco inclinato", "Spinta brusca"],
   progressioni: ["Tempi di tenuta più lunghi", "abduzione-piedi-elastico", "step-down-laterale"],
   regressioni: ["Isometria da supino con cintura sopra le ginocchia"],
-  rif: []
+  metriche: ["VISA-G nella tendinopatia glutea", "Dolore durante l'esercizio ≤ 3-5/10 NRS e rientro entro 24 h"],
+  rif: ["Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005"]
 },
 {
   id: "rdl",
@@ -253,16 +267,17 @@ window.ESERCIZI = [
   muscoli: "Ischiocrurali, grande gluteo, erettori spinali (isometrici)",
   primario: "Anca", secondari: ["Ischiocrurali", "Lombare"],
   pattern: ["Hinge"], catena: "Chiusa", carico: "In carico", lateralita: "Bilaterale",
-  attrezzatura: ["Bilanciere", "Manubri", "Kettlebell"],
+  attrezzatura: ["Bilanciere", "Manubri", "Kettlebell", "Smith"],
   regime: ["Eccentrico", "Concentrico"], obiettivo: ["Forza", "Ipertrofia"],
   fase: ["Intermedia", "Avanzata"], specificita: "Generale", gesto: "",
   img: "Romanian_Deadlift",
   descrizione: "In piedi, bilanciere in presa prona. Partendo dall'alto, si portano indietro le anche con ginocchia lievemente flesse e fisse, il bilanciere scorre lungo le cosce fino a metà tibia o fin dove la colonna resta neutra. Si risale estendendo le anche. Carica gli ischiocrurali in allungamento ed è centrale nella prevenzione e nella riabilitazione delle lesioni muscolari posteriori.",
   cue: ["Spingi le anche indietro verso il muro dietro di te", "Bilanciere sempre a contatto con le gambe", "Petto aperto, schiena lunga", "Risali spingendo il pavimento via e portando avanti il bacino"],
   errori: ["Flessione lombare per guadagnare ampiezza", "Ginocchia che si flettono troppo e diventa uno squat", "Bilanciere lontano dal corpo", "Iperestensione lombare in chiusura"],
-  progressioni: ["Tempo eccentrico 3-4 s", "stacco-convenzionale", "rdl-mono"],
+  progressioni: ["anca-rdl-bstance", "Tempo eccentrico 3-4 s", "stacco-convenzionale", "rdl-mono"],
   regressioni: ["good-morning-elastico", "RDL con kettlebell leggero e ampiezza ridotta", "Hip hinge con bastone lungo la schiena"],
-  rif: ["Bourne MN et al. Impact of exercise selection on hamstring muscle activation. Br J Sports Med 2017"]
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
+  rif: ["Bourne MN et al. Impact of exercise selection on hamstring muscle activation. Br J Sports Med 2017", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "rdl-mono",
@@ -280,6 +295,7 @@ window.ESERCIZI = [
   errori: ["Apertura del bacino (rotazione esterna dell'arto libero)", "Flessione lombare", "Ginocchio d'appoggio che va in valgo"],
   progressioni: ["Carico maggiore (kettlebell o manubri)", "Landmine monopodalico", "Su superficie instabile in fase di ritorno allo sport"],
   regressioni: ["Con appoggio della mano a un supporto", "Kickstand RDL (piede posteriore in punta)", "rdl"],
+  metriche: ["Carico per lato a RPE prefissato e simmetria ≥ 90%"],
   rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009"]
 },
 {
@@ -298,7 +314,8 @@ window.ESERCIZI = [
   errori: ["Partenza a strappo senza tensione", "Anche che salgono prima delle spalle", "Flessione lombare sotto carico", "Iperestensione in chiusura"],
   progressioni: ["Progressione del carico su %1RM o RPE", "Stacco con pausa sotto il ginocchio"],
   regressioni: ["Stacco con kettlebell tra i piedi", "Stacco da rialzo (rack pull)", "rdl"],
-  rif: []
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione", "1RM stimato da ripetizioni a RPE o da velocità del bilanciere"],
+  rif: ["Escamilla RF et al. A three-dimensional biomechanical analysis of sumo and conventional style deadlifts. Med Sci Sports Exerc 2000", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "stacco-sumo",
@@ -316,6 +333,7 @@ window.ESERCIZI = [
   errori: ["Ginocchia che collassano in valgo", "Base troppo larga rispetto alla mobilità d'anca", "Partenza con anche troppo basse (diventa uno squat)"],
   progressioni: ["Progressione del carico", "Pausa isometrica a metà tibia"],
   regressioni: ["Stacco sumo con kettlebell (goblet deadlift)"],
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
   rif: ["Escamilla RF et al. An electromyographic analysis of sumo and conventional style deadlifts. Med Sci Sports Exerc 2002"]
 },
 {
@@ -334,6 +352,7 @@ window.ESERCIZI = [
   errori: ["Squattare invece di fare hinge", "Sollevare con le spalle", "Iperestensione lombare in alto", "Flessione lombare in basso"],
   progressioni: ["Kettlebell più pesante", "Swing a una mano", "Serie a intervalli (EMOM)"],
   regressioni: ["Deadlift con kettlebell", "Hike pass (solo la fase bassa)"],
+  metriche: ["Carico e ripetizioni con mantenimento della velocità; potenza stimabile con encoder o app"],
   rif: ["Lake JP, Lauder MA. Kettlebell swing training improves maximal and explosive strength. J Strength Cond Res 2012"]
 },
 {
@@ -352,7 +371,8 @@ window.ESERCIZI = [
   errori: ["Flessione lombare", "Carichi eccessivi", "Ginocchia che avanzano"],
   progressioni: ["Tempo eccentrico lento", "Carico progressivo"],
   regressioni: ["good-morning-elastico", "Good morning con bastone"],
-  rif: []
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
+  rif: ["Vigotsky AD et al. Effects of load on good morning kinematics and EMG activity. PeerJ 2015", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "good-morning-elastico",
@@ -388,7 +408,7 @@ window.ESERCIZI = [
   errori: ["Tirare con le braccia", "Flessione lombare", "Iperestensione in chiusura"],
   progressioni: ["kb-swing", "Carico maggiore"],
   regressioni: ["good-morning-elastico"],
-  rif: []
+  rif: ["Neto WK et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med 2020"]
 },
 {
   id: "goblet-squat",
@@ -406,7 +426,8 @@ window.ESERCIZI = [
   errori: ["Valgismo dinamico", "Talloni che si sollevano", "Flessione lombare a fine discesa (butt wink) sotto carico"],
   progressioni: ["back-squat", "Tempo 3-1-1-0", "split-squat"],
   regressioni: ["box-squat", "Squat a corpo libero con ampiezza ridotta"],
-  rif: []
+  metriche: ["Profondità raggiunta senza flessione lombare; carico a RPE prefissato"],
+  rif: ["Kubo K et al. Effects of squat training with different depths on lower limb muscle volumes. Eur J Appl Physiol 2019"]
 },
 {
   id: "box-squat",
@@ -424,7 +445,8 @@ window.ESERCIZI = [
   errori: ["Crollare sulla panca perdendo tensione", "Spostare il carico su un solo lato", "Ginocchia che cadono all'interno"],
   progressioni: ["Box più basso", "goblet-squat", "Carico con bilanciere"],
   regressioni: ["Box più alto", "Sit-to-stand con appoggio delle mani"],
-  rif: []
+  metriche: ["Altezza del box come indice di progressione (cm)"],
+  rif: ["Schoenfeld BJ. Squatting kinematics and kinetics and their application to exercise performance. J Strength Cond Res 2010"]
 },
 {
   id: "back-squat",
@@ -442,7 +464,8 @@ window.ESERCIZI = [
   errori: ["Valgismo dinamico in risalita", "Anche che salgono prima del petto (good morning squat)", "Perdita della posizione neutra del rachide in fondo", "Talloni che si staccano"],
   progressioni: ["Progressione su %1RM o RPE/RIR", "Pause squat"],
   regressioni: ["squat-smith", "goblet-squat", "box-squat"],
-  rif: []
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione", "1RM stimato; rapporto 1RM/peso corporeo"],
+  rif: ["Schoenfeld BJ. Squatting kinematics and kinetics and their application to exercise performance. J Strength Cond Res 2010", "Kubo K et al. Effects of squat training with different depths on lower limb muscle volumes. Eur J Appl Physiol 2019", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "squat-smith",
@@ -460,7 +483,8 @@ window.ESERCIZI = [
   errori: ["Piedi troppo avanti con carico eccessivo sul lombare", "Rimbalzo in fondo"],
   progressioni: ["back-squat", "Split squat al multipower"],
   regressioni: ["box-squat", "goblet-squat"],
-  rif: []
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
+  rif: ["Schwanbeck S et al. A comparison of free weight squat to Smith machine squat using electromyography. J Strength Cond Res 2009"]
 },
 {
   id: "split-squat",
@@ -478,7 +502,8 @@ window.ESERCIZI = [
   errori: ["Piedi sulla stessa linea (base troppo stretta)", "Valgismo dell'arto anteriore", "Spinta prevalente con l'arto posteriore"],
   progressioni: ["bulgaro", "affondo-indietro", "Carico con manubri o bilanciere"],
   regressioni: ["Split squat con appoggio a un supporto", "Ampiezza ridotta"],
-  rif: []
+  metriche: ["Carico per lato a RPE prefissato e simmetria ≥ 90%"],
+  rif: ["Mausehund L et al. Muscle activation in unilateral barbell exercises: implications for strength training and rehabilitation. J Strength Cond Res 2019"]
 },
 {
   id: "bulgaro",
@@ -496,7 +521,8 @@ window.ESERCIZI = [
   errori: ["Spinta con l'arto posteriore", "Valgismo", "Bacino che ruota", "Piede anteriore troppo vicino alla panca"],
   progressioni: ["Carico progressivo", "Tempo eccentrico 3 s", "Versione con salto (solo ritorno allo sport)"],
   regressioni: ["split-squat", "Panca più bassa"],
-  rif: []
+  metriche: ["Carico per lato a RPE prefissato e simmetria ≥ 90%"],
+  rif: ["Mausehund L et al. Muscle activation in unilateral barbell exercises: implications for strength training and rehabilitation. J Strength Cond Res 2019", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "affondo-indietro",
@@ -514,7 +540,7 @@ window.ESERCIZI = [
   errori: ["Passo troppo corto con ginocchio molto avanti", "Busto che si flette in avanti in modo eccessivo", "Perdita di equilibrio sul piano frontale"],
   progressioni: ["Affondo in avanti (maggiore decelerazione)", "Affondo in camminata", "landmine-affondo"],
   regressioni: ["split-squat"],
-  rif: []
+  rif: ["Mausehund L et al. Muscle activation in unilateral barbell exercises: implications for strength training and rehabilitation. J Strength Cond Res 2019"]
 },
 {
   id: "affondo-laterale",
@@ -550,7 +576,8 @@ window.ESERCIZI = [
   errori: ["Spinta col piede a terra", "Valgismo", "Inclinazione laterale del tronco"],
   progressioni: ["Step più alto", "Carico con manubri", "Step-up con salita del ginocchio (gesto della corsa)"],
   regressioni: ["Step più basso", "step-down-laterale con ampiezza ridotta"],
-  rif: []
+  metriche: ["Altezza del box e carico per lato; simmetria ≥ 90%"],
+  rif: ["Simenz CJ et al. Electromyographical analysis of lower extremity muscle activation during variations of the loaded step-up exercise. J Strength Cond Res 2012"]
 },
 {
   id: "step-down-laterale",
@@ -566,9 +593,10 @@ window.ESERCIZI = [
   descrizione: "In piedi su uno step in appoggio monopodalico, l'arto libero lateralmente nel vuoto. Si flette l'arto d'appoggio fino a sfiorare il pavimento col tallone dell'arto libero e si risale. Esercizio di controllo del valgismo dinamico e della stabilità del bacino sul piano frontale.",
   cue: ["Ginocchio in linea col secondo dito, sempre", "Bacino livellato", "Sfiora il pavimento col tallone, non appoggiarti", "Siediti leggermente indietro"],
   errori: ["Valgismo dinamico", "Caduta controlaterale del bacino (Trendelenburg)", "Discesa troppo rapida"],
-  progressioni: ["Step più alto", "Carico in mano controlaterale", "Step-down anteriore"],
+  progressioni: ["anca-squat-mono-box", "Step più alto", "Carico in mano controlaterale", "Step-down anteriore"],
   regressioni: ["Step più basso", "Appoggio a un supporto"],
-  rif: []
+  metriche: ["Valutazione qualitativa (tronco, bacino, ginocchio) e ripetizioni in 30 s per lato"],
+  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005"]
 },
 {
   id: "landmine-affondo",
@@ -604,7 +632,8 @@ window.ESERCIZI = [
   errori: ["Flessione d'anca (sedere indietro) per accorciare la leva", "Caduta senza controllo nella prima parte", "Volume eccessivo all'inizio (DOMS importanti)"],
   progressioni: ["Volume progressivo secondo protocollo (es. da 2×5 a 3×12)", "Nordic con zavorra al petto"],
   regressioni: ["Nordic con elastico di assistenza", "Ampiezza ridotta (cuneo davanti)", "leg-curl"],
-  rif: ["Petersen J et al. Preventive effect of eccentric training on acute hamstring injuries in men's soccer. Am J Sports Med 2011", "van der Horst N et al. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players. Am J Sports Med 2015", "van Dyk N et al. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries. Br J Sports Med 2019"]
+  metriche: ["Forza eccentrica dei flessori del ginocchio (es. NordBord): < 256 N a inizio preseason associata a rischio 2,7 volte maggiore di lesione (Opar 2015)", "Angolo di rottura del controllo nella discesa (video)"],
+  rif: ["Petersen J et al. Preventive effect of eccentric training on acute hamstring injuries in men's soccer. Am J Sports Med 2011", "van der Horst N et al. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players. Am J Sports Med 2015", "van Dyk N et al. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries. Br J Sports Med 2019", "Opar DA et al. Eccentric hamstring strength and hamstring injury risk in Australian footballers. Med Sci Sports Exerc 2015"]
 },
 {
   id: "leg-curl",
@@ -622,7 +651,8 @@ window.ESERCIZI = [
   errori: ["Sollevamento del bacino", "Movimento a strappo", "Escursione incompleta"],
   progressioni: ["Eccentrico monopodalico (2 su, 1 giù)", "Versione seduta", "nordic"],
   regressioni: ["Carico ridotto, escursione parziale"],
-  rif: []
+  metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
+  rif: ["Bourne MN et al. Impact of exercise selection on hamstring muscle activation. Br J Sports Med 2017", "Maeo S et al. Greater hamstrings muscle hypertrophy but similar damage protection after training at long versus short muscle lengths. Med Sci Sports Exerc 2021"]
 },
 {
   id: "flessione-anca-elastico",
@@ -640,7 +670,8 @@ window.ESERCIZI = [
   errori: ["Retroversione del bacino e flessione lombare", "Inclinazione indietro del tronco", "Slancio"],
   progressioni: ["Cavo con carico progressivo", "Isometria a 90° più lunga", "Flessione d'anca oltre 90° da seduto (psoas)"],
   regressioni: ["Flessione d'anca da supino senza resistenza"],
-  rif: []
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in flessione d'anca; valori normativi negli sportivi (Mosler 2017)"],
+  rif: ["Mosler AB et al. Hip strength and range of motion: normal values from a professional football league. J Sci Med Sport 2017"]
 },
 {
   id: "estensione-anca-elastico",
@@ -658,7 +689,8 @@ window.ESERCIZI = [
   errori: ["Iperestensione lombare", "Rotazione del bacino", "Flessione del tronco in avanti"],
   progressioni: ["kickback-cavo", "Elastico più resistente"],
   regressioni: ["Estensione d'anca da prono", "ponte-gluteo"],
-  rif: []
+  metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in estensione"],
+  rif: ["Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010"]
 },
 {
   id: "kickback-cavo",
@@ -676,7 +708,7 @@ window.ESERCIZI = [
   errori: ["Iperestensione lombare", "Rotazione esterna dell'arto e del bacino", "Slancio"],
   progressioni: ["Carico progressivo", "Pausa isometrica in estensione"],
   regressioni: ["estensione-anca-elastico"],
-  rif: []
+  rif: ["Neto WK et al. Gluteus maximus activation during common strength and hypertrophy exercises: a systematic review. J Sports Sci Med 2020"]
 },
 {
   id: "stretch-flessori",
@@ -694,7 +726,8 @@ window.ESERCIZI = [
   errori: ["Iperlordosi lombare", "Avanzamento eccessivo con antiversione", "Bacino ruotato"],
   progressioni: ["Braccio omolaterale sopra la testa con inclinazione laterale", "Piede posteriore su panca (allungamento del retto femorale)"],
   regressioni: ["Allungamento da supino a bordo lettino (Thomas)"],
-  rif: []
+  metriche: ["Test di Thomas modificato: angolo di estensione d'anca e flessione di ginocchio (Harvey 1998)"],
+  rif: ["Harvey D. Assessment of the flexibility of elite athletes using the modified Thomas test. Br J Sports Med 1998"]
 },
 {
   id: "90-90",
@@ -712,7 +745,8 @@ window.ESERCIZI = [
   errori: ["Busto che crolla all'indietro", "Forzare in presenza di dolore inguinale anteriore"],
   progressioni: ["Senza mani", "Con estensione del tronco sopra l'anca anteriore", "Sollevamento attivo del piede posteriore (rotazione interna attiva)"],
   regressioni: ["Mani d'appoggio dietro", "Arco ridotto"],
-  rif: []
+  metriche: ["Intrarotazione ed extrarotazione passive con inclinometro, confronto tra lati"],
+  rif: ["Kemp JL et al. Physiotherapist-led treatment for young to middle-aged active adults with hip-related pain: consensus recommendations from the International Hip-related Pain Research Network, Zurich 2018. Br J Sports Med 2020"]
 },
 {
   id: "suitcase-carry",
@@ -730,7 +764,8 @@ window.ESERCIZI = [
   errori: ["Inclinazione verso il carico o compenso dal lato opposto", "Spalla che si alza", "Passi troppo larghi"],
   progressioni: ["Carico maggiore", "Carico in posizione rack o overhead", "Distanza o tempo maggiore"],
   regressioni: ["Farmer carry bilaterale", "Carico leggero, distanza breve"],
-  rif: []
+  metriche: ["Carico come % del peso corporeo e distanza o tempo per lato"],
+  rif: ["McGill SM et al. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009"]
 },
 {
   id: "box-jump",
@@ -746,9 +781,10 @@ window.ESERCIZI = [
   descrizione: "Contromovimento rapido e salto sul box con atterraggio morbido in mezzo squat. Il box riduce l'impatto dell'atterraggio rispetto al salto a terra e permette di lavorare la potenza concentrica. Si scende dal box camminando, non saltando, nelle prime fasi.",
   cue: ["Carica veloce con le braccia e le anche", "Spingi forte il pavimento via", "Atterra in silenzio, ginocchia sopra i piedi", "Scendi dal box camminando"],
   errori: ["Box troppo alto (atterraggio in squat profondo)", "Valgismo all'atterraggio", "Ripetizioni a fatica: la qualità cala"],
-  progressioni: ["Salto da seduto (senza contromovimento)", "Salto monopodalico sul box", "atterraggio-mono"],
+  progressioni: ["anca-cmj", "Salto da seduto (senza contromovimento)", "Salto monopodalico sul box", "atterraggio-mono"],
   regressioni: ["Salto verticale con atterraggio stabilizzato", "Box più basso"],
-  rif: []
+  metriche: ["Altezza del box raggiunta con atterraggio stabile; CMJ come test di riferimento (Markovic 2004)"],
+  rif: ["Chmielewski TL et al. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop Sports Phys Ther 2006", "Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004"]
 },
 {
   id: "lateral-bound",
@@ -766,7 +802,8 @@ window.ESERCIZI = [
   errori: ["Valgismo all'atterraggio", "Tronco che si inclina oltre l'arto d'appoggio", "Atterraggio rigido"],
   progressioni: ["Rimbalzo continuo", "Distanza maggiore", "Con elastico in resistenza laterale"],
   regressioni: ["affondo-laterale", "Spostamento laterale senza fase di volo"],
-  rif: []
+  metriche: ["Distanza del balzo laterale per lato (LSI ≥ 90%)"],
+  rif: ["Chmielewski TL et al. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop Sports Phys Ther 2006"]
 },
 {
   id: "split-jump",
@@ -784,14 +821,14 @@ window.ESERCIZI = [
   errori: ["Atterraggio rigido o rumoroso", "Valgismo", "Ampiezza di affondo che si riduce con la fatica"],
   progressioni: ["Senza pausa tra le ripetizioni", "Con giubbetto zavorrato"],
   regressioni: ["Affondo alternato senza volo", "Split jump con pausa e stabilizzazione"],
-  rif: []
+  rif: ["Chmielewski TL et al. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop Sports Phys Ther 2006"]
 },
 {
   id: "atterraggio-mono",
   nome: "Atterraggio monopodalico stabilizzato",
   alias: "Single-leg landing / drop and stick",
   muscoli: "Gluteo medio e grande gluteo, quadricipite (eccentrico)",
-  primario: "Anca", secondari: ["Ginocchio", "Caviglia"],
+  primario: "Anca", secondari: ["Ginocchio", "Piede e caviglia"],
   pattern: ["Salto/atterraggio"], catena: "Chiusa", carico: "In carico", lateralita: "Unilaterale",
   attrezzatura: ["Corpo libero"],
   regime: ["Eccentrico", "Pliometrico"], obiettivo: ["Controllo motorio", "RFD"],
@@ -800,16 +837,17 @@ window.ESERCIZI = [
   descrizione: "Da un piccolo rialzo o da un salto, si atterra su un solo arto stabilizzando la posizione per 2-3 secondi. Nella pallavolo riproduce l'atterraggio asimmetrico dopo schiacciata o muro. Il controllo del valgismo dinamico e della flessione di anca e ginocchio all'atterraggio è un obiettivo chiave nella prevenzione delle lesioni del LCA.",
   cue: ["Atterra morbido, come se il pavimento fosse di vetro", "Anca e ginocchio si piegano insieme", "Ginocchio sopra il piede, mai verso l'interno", "Tieni la posizione 2-3 secondi"],
   errori: ["Atterraggio a ginocchio esteso (rigido)", "Valgismo dinamico", "Caduta del bacino o inclinazione del tronco"],
-  progressioni: ["Rialzo più alto", "Atterraggio con direzione (in avanti, laterale, rotazione)", "Atterraggio dopo rincorsa con disturbo (pallone)"],
+  progressioni: ["anca-atterraggio-attacco", "Rialzo più alto", "Atterraggio con direzione (in avanti, laterale, rotazione)", "Atterraggio dopo rincorsa con disturbo (pallone)"],
   regressioni: ["Atterraggio bipodalico", "step-down-laterale"],
-  rif: ["Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes. Am J Sports Med 2005"]
+  metriche: ["Valutazione video dell'atterraggio (valgismo, flessione di ginocchio) e Tuck Jump Assessment"],
+  rif: ["Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes. Am J Sports Med 2005", "Lobietti R et al. Landing techniques in volleyball. J Sports Sci 2010"]
 },
 {
   id: "rincorsa-attacco",
   nome: "Rincorsa e stacco d'attacco",
   alias: "Volleyball approach jump",
   muscoli: "Estensori di anca, ginocchio e caviglia; core",
-  primario: "Anca", secondari: ["Ginocchio", "Caviglia"],
+  primario: "Anca", secondari: ["Ginocchio", "Piede e caviglia"],
   pattern: ["Salto/atterraggio"], catena: "Chiusa", carico: "In carico", lateralita: "Bilaterale",
   attrezzatura: ["Corpo libero"],
   regime: ["Pliometrico"], obiettivo: ["Potenza", "RFD"],
@@ -818,8 +856,9 @@ window.ESERCIZI = [
   descrizione: "Rincorsa a 2, 3 o 4 passi con penultimo passo lungo e frenata a due piedi, caricamento delle braccia e stacco verticale. Riproduce il gesto dell'attacco con progressione del volume di salti in fase di ritorno allo sport. Monitorare il numero di salti per seduta.",
   cue: ["Penultimo passo lungo e basso", "Frena con entrambi i piedi, talloni prima", "Braccia indietro e poi su con forza", "Atterra su due piedi, morbido"],
   errori: ["Stacco su una sola gamba per abitudine", "Atterraggio asimmetrico non controllato", "Volume di salti eccessivo"],
-  progressioni: ["Rincorsa completa", "Con attacco su palla", "Volume progressivo di salti per seduta"],
+  progressioni: ["anca-attacco-mono", "Rincorsa completa", "Con attacco su palla", "Volume progressivo di salti per seduta"],
   regressioni: ["Rincorsa a 2 passi senza salto massimale", "box-jump", "atterraggio-mono"],
-  rif: []
+  metriche: ["Altezza del salto d'attacco (spike jump) e CMJ", "Numero di salti per seduta e per settimana"],
+  rif: ["Sheppard JM et al. An analysis of playing positions in elite men's volleyball: considerations for competition demands and physiologic characteristics. J Strength Cond Res 2009", "Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004"]
 }
 ];
