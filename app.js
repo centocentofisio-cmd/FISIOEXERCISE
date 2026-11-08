@@ -56,6 +56,12 @@ const FILTRI = [
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+/* Distretti: elenco base + eventuali distretti presenti nei file dati (esercizi-*.js) */
+{
+  const base = ["Piede", "Caviglia", "Ginocchio", "Anca", "Adduttori", "Ischiocrurali", "Lombare", "Toracica", "Cervicale", "Spalla", "Gomito", "Polso", "Mano", "Core"];
+  const visti = (window.ESERCIZI || []).flatMap((e) => [e.primario].concat(e.secondari || [])).filter(Boolean);
+  FILTRI[0].valori = base.concat(visti.filter((d, i) => !base.includes(d) && visti.indexOf(d) === i));
+}
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
