@@ -4,6 +4,7 @@ Web app statica (HTML + CSS + JavaScript, nessuna installazione) per creare sche
 
 - `index.html` – interfaccia e stile (anche il layout di stampa/PDF)
 - `esercizi.js` – database esercizi (distretto pilota: anca)
+- `esercizi/*.js` – un file dati per distretto (es. `esercizi/polso-mano.js`), caricato in `index.html` dopo `esercizi.js`; i nuovi valori di distretto e attrezzatura compaiono da soli nei filtri
 - `app.js` – logica: filtri, scheda paziente, tabella di progressione, archivio, backup
 - `img/` – foto da free-exercise-db (Unlicense, pubblico dominio)
 

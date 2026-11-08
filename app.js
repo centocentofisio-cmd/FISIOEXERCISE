@@ -57,6 +57,12 @@ const FILTRI = [
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
 const DISTRETTI = FILTRI[0].valori;
+// Valori aggiunti dai file dati per distretto (cartella esercizi/): un distretto, un'attrezzatura o un
+// altro valore nuovo compare nei filtri senza dover modificare questa lista.
+(window.ESERCIZI || []).forEach((e) => FILTRI.forEach((f) => {
+  const v = f.key === "distretto" ? [e.primario].concat(e.secondari || []) : [].concat(e[f.key] || []);
+  v.forEach((x) => { if (x && !f.valori.includes(x)) f.valori.push(x); });
+}));
 
 const RIGHE = [
   { key: "serie", label: "Serie × ripetizioni / durata", dl: "dl-serie", on: true },
