@@ -191,6 +191,7 @@ function dettaglio(id) {
       ${lst("Errori frequenti", e.errori, "err")}
       ${lst("Progressioni", e.progressioni, "", nomeRif)}
       ${lst("Regressioni", e.regressioni, "", nomeRif)}
+      ${lst("Metriche e test di riferimento", e.metriche)}
       ${e.rif && e.rif.length ? `<div class="sec ref"><h4>Letteratura</h4><ul>${e.rif.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>` : ""}
     </div>
     <div class="dlg-f">
