@@ -45,7 +45,7 @@ function toast(msg) {
 
 /* ---------- tassonomia filtri ---------- */
 const FILTRI = [
-  { key: "distretto", label: "Distretto", valori: ["Anca", "Adduttori", "Ischiocrurali", "Ginocchio", "Lombare", "Core", "Caviglia"] },
+  { key: "distretto", label: "Distretto", valori: ["Anca", "Adduttori", "Ischiocrurali", "Ginocchio", "Lombare", "Core", "Caviglia", "Cervicale", "Toracica", "Spalla"] },
   { key: "pattern", label: "Pattern di movimento", valori: ["Squat", "Hinge", "Affondo", "Spinta", "Trazione", "Carry", "Rotazione/anti-rotazione", "Salto/atterraggio", "Analitico", "Mobilità"], arr: true },
   { key: "catena", label: "Catena cinetica", valori: ["Aperta", "Chiusa"] },
   { key: "carico", label: "Carico", valori: ["In carico", "In scarico"] },
@@ -56,6 +56,8 @@ const FILTRI = [
   { key: "fase", label: "Fase riabilitativa", valori: ["Precoce", "Intermedia", "Avanzata", "Ritorno allo sport"], arr: true },
   { key: "specificita", label: "Specificità", valori: ["Generale", "Gesto-specifico"] },
 ];
+// aggiunge in coda i distretti presenti nei file dati ma non ancora elencati sopra
+(window.ESERCIZI || []).forEach((e) => [e.primario].concat(e.secondari || []).forEach((d) => { if (d && !FILTRI[0].valori.includes(d)) FILTRI[0].valori.push(d); }));
 const DISTRETTI = FILTRI[0].valori;
 
 const RIGHE = [
