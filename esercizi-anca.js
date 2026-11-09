@@ -30,7 +30,7 @@
   progressioni: ["Manubrio nella mano del lato libero", "Pausa isometrica di 5 s in alto", "anca-hip-airplane"],
   regressioni: ["abduzione-decubito", "isometria-muro"],
   metriche: ["Forza isometrica di abduzione con dinamometro manuale (HHD), affidabile (Thorborg 2010): confronta con il controlaterale e normalizza sul peso corporeo", "Prospetticamente, abduzione < 35,4% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005;35(8):487-494", "Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005;35(8):487-494", "Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "anca-abduzione-isometrica-supina",
@@ -87,7 +87,7 @@
   progressioni: ["Elastico più rigido o cavo", "anca-rotazione-mono-carico"],
   regressioni: ["clamshell", "Isometrico contro la mano"],
   metriche: ["Forza di extrarotazione con HHD da seduto (Thorborg 2010)", "Extrarotazione < 20,3% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "anca-intrarotazione-seduto",
@@ -688,7 +688,7 @@
   progressioni: ["Senza appoggio", "Goblet con kettlebell"],
   regressioni: ["box-squat basso", "90-90"],
   metriche: ["Profondità raggiunta (es. distanza bacino-pavimento o angolo di flessione d'anca)"],
-  rif: ["Griffin DR et al. The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an international consensus statement. Br J Sports Med 2016"]
+  rif: ["Griffin DR et al. The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an international consensus statement. Br J Sports Med 2016;50(19):1169-1176"]
 },
 
 /* ===================== CONTROLLO MOTORIO / EQUILIBRIO ===================== */
@@ -749,7 +749,7 @@
   progressioni: ["Con slancio delle braccia", "anca-jump-squat-carico", "anca-drop-jump"],
   regressioni: ["box-jump", "Salto submassimale con atterraggio stabilizzato"],
   metriche: ["Altezza del CMJ da tempo di volo (pedana, app validate): test molto affidabile (Markovic 2004)", "Rapporto CMJ/SJ (indice di utilizzo del contromovimento)", "Nella pallavolo esistono valori di riferimento per ruolo (Sattler 2012)"],
-  rif: ["Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004", "Bosco C et al. A simple method for measurement of mechanical power in jumping. Eur J Appl Physiol 1983", "Sattler T et al. Vertical jumping tests in volleyball: reliability, validity, and playing-position specifics. J Strength Cond Res 2012"]
+  rif: ["Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004", "Bosco C et al. A simple method for measurement of mechanical power in jumping. Eur J Appl Physiol Occup Physiol 1983;50(2):273-282", "Sattler T et al. Vertical jumping tests in volleyball: reliability, validity, and playing-position specifics. J Strength Cond Res 2012"]
 },
 {
   id: "anca-jump-squat-carico",

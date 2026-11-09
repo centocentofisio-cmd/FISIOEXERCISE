@@ -50,7 +50,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Mento che avanza (perdita della flessione craniocervicale, prevalenza SCM)", "Sollevare troppo il capo", "Apnea e tensione della mandibola", "Tremore marcato ignorato: è il segnale di fine serie"],
   progressioni: ["cerv-flessione-supino-disco", "Tenute progressivamente più lunghe (es. 3 × 20-30 s)"],
   regressioni: ["cerv-flessione-craniocervicale", "Esecuzione su piano inclinato (busto rialzato di 30-45°)"],
-  rif: ["Harris KD et al. Reliability of a measurement of neck flexor muscle endurance. Phys Ther 2005", "Domenech MA et al. The deep neck flexor endurance test: normative data scores in healthy adults. PM R 2011"]
+  rif: ["Harris KD et al. Reliability of a measurement of neck flexor muscle endurance. Phys Ther 2005;85(12):1349-1355", "Domenech MA et al. The deep neck flexor endurance test: normative data scores in healthy adults. PM R 2011"]
 },
 {
   id: "cerv-ccf-quadrupedia",
@@ -474,7 +474,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimenti veloci", "Aprire gli occhi prima di aver concluso il riposizionamento", "Rotazione del tronco", "Proseguire con capogiri importanti (ridurre il volume)"],
   progressioni: ["Tracciare forme sul bersaglio con il laser (precisione)", "Esecuzione in piedi o su base instabile", "Riposizionamento in posizioni intermedie del range"],
   regressioni: ["Esecuzione a occhi aperti", "Range ridotto e solo rotazione"],
-  rif: ["Revel M et al. Cervicocephalic kinesthetic sensibility in patients with cervical pain. Arch Phys Med Rehabil 1991", "Jull G et al. Retraining cervical joint position sense: the effect of two exercise regimes. J Orthop Res 2007", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. J Orthop Sports Phys Ther 2009"]
+  rif: ["Revel M et al. Cervicocephalic kinesthetic sensibility in patients with cervical pain. Arch Phys Med Rehabil 1991", "Jull G et al. Retraining cervical joint position sense: the effect of two exercise regimes. J Orthop Res 2007", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain: implications for assessment and management. J Orthop Sports Phys Ther 2009;39(5):364-377"]
 },
 {
   id: "cerv-stabilita-sguardo",
@@ -492,7 +492,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Perdere la fissazione del bersaglio", "Velocità eccessiva troppo presto", "Proseguire con sintomi importanti (nausea, capogiro marcato)"],
   progressioni: ["cerv-coordinazione-occhio-capo", "Bersaglio su sfondo complesso", "Esecuzione in piedi o in cammino"],
   regressioni: ["Solo movimenti oculari di inseguimento a capo fermo", "Range e velocità ridotti"],
-  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. J Orthop Sports Phys Ther 2009"]
+  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain: implications for assessment and management. J Orthop Sports Phys Ther 2009;39(5):364-377"]
 },
 {
   id: "cerv-coordinazione-occhio-capo",
@@ -622,6 +622,6 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Eseguire un tensioner (allungamento simultaneo) invece di uno slider", "Provocare parestesie", "Spalla che sale durante l'abduzione", "Movimento rapido o balistico"],
   progressioni: ["Tensioner del nervo mediano (solo con sintomi stabili)", "Maggiore abduzione o estensione del polso"],
   regressioni: ["Slider con braccio a 45° di abduzione", "Solo movimento distale (polso) a capo fermo"],
-  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13:213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
+  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13(3):213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
 }
 ]);

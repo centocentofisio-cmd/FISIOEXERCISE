@@ -68,7 +68,7 @@ window.ESERCIZI = [
   progressioni: ["Aumento del carico (%1RM o RPE)", "Pausa isometrica di 3 s in alto", "hip-thrust-mono"],
   regressioni: ["ponte-gluteo", "Hip thrust a corpo libero o con manubrio"],
   metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
-  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis EMG activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015", "Andersen V et al. Electromyographic comparison of barbell deadlift, hex bar deadlift, and hip thrust exercises: a cross-over study. J Strength Cond Res 2018;32(3):587-593", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
+  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis electromyographic activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015;31(6):452-458", "Andersen V et al. Electromyographic comparison of barbell deadlift, hex bar deadlift, and hip thrust exercises: a cross-over study. J Strength Cond Res 2018;32(3):587-593", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "hip-thrust-mono",
@@ -106,7 +106,7 @@ window.ESERCIZI = [
   progressioni: ["Elastico sopra le ginocchia", "Clamshell con ponte laterale (side plank clam)", "abduzione-decubito"],
   regressioni: ["Isometria in apertura parziale", "Ampiezza ridotta senza elastico"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in extrarotazione e abduzione"],
-  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? J Orthop Sports Phys Ther 2013", "Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009"]
+  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther 2013;43(2):54-64", "Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "abduzione-decubito",
@@ -125,7 +125,7 @@ window.ESERCIZI = [
   progressioni: ["Cavigliera o elastico alla caviglia", "Isometria finale di 5-10 s", "side-plank"],
   regressioni: ["clamshell", "Abduzione da supino scivolando sul pavimento"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione", "Abduzione < 35,4% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009", "Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009", "Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "abduzione-piedi-elastico",
@@ -182,7 +182,7 @@ window.ESERCIZI = [
   progressioni: ["Leva lunga (appoggio alla caviglia)", "Fase eccentrica lenta", "Aumento del volume secondo protocollo (es. 2-3 serie fino a 12-15 rip)"],
   regressioni: ["Leva corta (appoggio al ginocchio)", "squeeze-adduttori", "adduzione-cavo"],
   metriche: ["Squeeze test a 45° (Delahunt 2011)", "Rapporto adduzione/abduzione < 80% associato a rischio 17 volte maggiore di stiramento degli adduttori (Tyler 2001)", "Nel programma ASP la riduzione dei problemi inguinali è stata circa del 41% (Harøy 2019)"],
-  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players. Br J Sports Med 2019", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
+  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial. Br J Sports Med 2019;53(3):150-157", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
 },
 {
   id: "squeeze-adduttori",
@@ -239,7 +239,7 @@ window.ESERCIZI = [
   progressioni: ["Elastico ai piedi", "Camminata a X (monster walk diagonale)", "affondo-laterale"],
   regressioni: ["abduzione-piedi-elastico", "Elastico sopra le ginocchia, più leggero"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione"],
-  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? J Orthop Sports Phys Ther 2013", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
+  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther 2013;43(2):54-64", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
 },
 {
   id: "isometria-muro",
@@ -372,7 +372,7 @@ window.ESERCIZI = [
   progressioni: ["Tempo eccentrico lento", "Carico progressivo"],
   regressioni: ["good-morning-elastico", "Good morning con bastone"],
   metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
-  rif: ["Vigotsky AD et al. Effects of load on good morning kinematics and EMG activity. PeerJ 2015", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
+  rif: ["Vigotsky AD et al. Effects of load on good morning kinematics and EMG activity. PeerJ 2015;3:e708", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "good-morning-elastico",
@@ -727,7 +727,7 @@ window.ESERCIZI = [
   progressioni: ["Braccio omolaterale sopra la testa con inclinazione laterale", "Piede posteriore su panca (allungamento del retto femorale)"],
   regressioni: ["Allungamento da supino a bordo lettino (Thomas)"],
   metriche: ["Test di Thomas modificato: angolo di estensione d'anca e flessione di ginocchio (Harvey 1998)"],
-  rif: ["Harvey D. Assessment of the flexibility of elite athletes using the modified Thomas test. Br J Sports Med 1998"]
+  rif: ["Harvey D. Assessment of the flexibility of elite athletes using the modified Thomas test. Br J Sports Med 1998;32(1):68-70"]
 },
 {
   id: "90-90",

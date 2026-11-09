@@ -227,7 +227,7 @@
   errori: ["Gomito che cade con la fatica", "Serie troppo lunghe (diventa resistenza, non potenza)", "Introdurlo con dolore o con forza ER ancora insufficiente"],
   progressioni: ["Elastico più resistente", "Esecuzione in semi-inginocchio o in appoggio monopodalico", "sp-decelerazione-eccentrica"],
   regressioni: ["sp-er-90-90", "Isometria ritmica 90/90"],
-  rif: ["Swanik KA et al. The effect of shoulder plyometric training on proprioception and selected muscle performance characteristics. J Shoulder Elbow Surg 2002;11(6):579-586", "Carter AB et al. Effects of high volume upper extremity plyometric training on throwing velocity and functional strength ratios of the shoulder rotators in collegiate baseball players. J Strength Cond Res 2007;21(1):208-215"]
+  rif: ["Swanik KA et al. The effects of shoulder plyometric training on proprioception and selected muscle performance characteristics. J Shoulder Elbow Surg 2002;11(6):579-586", "Carter AB et al. Effects of high volume upper extremity plyometric training on throwing velocity and functional strength ratios of the shoulder rotators in collegiate baseball players. J Strength Cond Res 2007;21(1):208-215"]
 },
 {
   id: "sp-decelerazione-eccentrica",

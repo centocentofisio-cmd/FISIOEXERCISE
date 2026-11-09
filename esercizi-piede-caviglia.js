@@ -136,7 +136,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimento solo delle dita", "Rotazione del piede in inversione", "Ritorno rapido lasciando tirare l'elastico"],
   progressioni: ["Elastico più resistente", "pc-calf-raise-seduto", "pc-calf-raise"],
   regressioni: ["Flessione plantare attiva senza resistenza", "pc-circonduzioni"],
-  rif: ["Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52:956"]
+  rif: ["Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52(15):956"]
 },
 
 /* ===================== TENDINOPATIA ACHILLEA E FASCIOPATIA ===================== */
@@ -266,7 +266,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Rotazione dell'anca al posto dell'eversione", "Movimento troppo ampio e veloce", "Abduzione della sola punta del piede"],
   progressioni: ["Elastico più forte", "Eversione al cavo in piedi", "pc-equilibrio-mono", "pc-side-hop"],
   regressioni: ["Isometria in eversione contro il piede opposto o un muro"],
-  rif: ["Martin RL et al. Ankle stability and movement coordination impairments: lateral ankle ligament sprains revision 2021. Clinical practice guideline. J Orthop Sports Phys Ther 2021;51:CPG1-CPG80", "Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52:956"]
+  rif: ["Martin RL et al. Ankle stability and movement coordination impairments: lateral ankle ligament sprains revision 2021. Clinical practice guideline. J Orthop Sports Phys Ther 2021;51:CPG1-CPG80", "Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52(15):956"]
 },
 {
   id: "pc-inversione-elastico",
@@ -304,7 +304,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Flessione delle dita ad artiglio", "Supinazione del piede sollevando il bordo interno", "Contrazione dei muscoli della gamba invece che del piede"],
   progressioni: ["Da seduto a in piedi, poi monopodalico", "Mantenimento durante pc-calf-raise e pc-equilibrio-mono"],
   regressioni: ["Esecuzione assistita con le mani del terapista", "pc-flessione-dita"],
-  rif: ["McKeon PO et al. The foot core system: a new paradigm for understanding intrinsic foot muscle function. Br J Sports Med 2015;49:290", "Mulligan EP, Cook PG. Effect of plantar intrinsic muscle training on medial longitudinal arch morphology and dynamic function. Man Ther 2013;18:425-430", "Taddei UT et al. Foot core training to prevent running-related injuries: a survival analysis of a single-blind, randomized controlled trial. Am J Sports Med 2020;48:3610-3619"]
+  rif: ["McKeon PO et al. The foot core system: a new paradigm for understanding intrinsic foot muscle function. Br J Sports Med 2015;49:290", "Mulligan EP, Cook PG. Effect of plantar intrinsic muscle training on medial longitudinal arch morphology and dynamic function. Man Ther 2013;18(5):425-430", "Taddei UT et al. Foot core training to prevent running-related injuries: a survival analysis of a single-blind, randomized controlled trial. Am J Sports Med 2020;48:3610-3619"]
 },
 {
   id: "pc-flessione-dita",
@@ -360,7 +360,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimento delle sole dita", "Rotazione di anca o ginocchio al posto della caviglia", "Forzare nel dolore"],
   progressioni: ["pc-knee-to-wall", "pc-calf-raise-elastico"],
   regressioni: ["Mobilizzazione passiva assistita"],
-  rif: ["Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52:956"]
+  rif: ["Vuurberg G et al. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 2018;52(15):956"]
 },
 {
   id: "pc-knee-to-wall",
@@ -654,7 +654,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Atterraggio sul bordo esterno del piede", "Toccare le linee (nel test la prova si ripete)", "Busto che oscilla molto"],
   progressioni: ["Distanza maggiore", "In diagonale", "lateral-bound"],
   regressioni: ["Saltelli laterali bipodalici", "pc-equilibrio-perturbazioni"],
-  rif: ["Docherty CL et al. Functional-performance deficits in volunteers with functional ankle instability. J Athl Train 2005;40:30-34", "Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39:799-806"]
+  rif: ["Docherty CL et al. Functional-performance deficits in volunteers with functional ankle instability. J Athl Train 2005;40:30-34", "Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39(11):799-806"]
 },
 {
   id: "pc-hop-avanti",
@@ -672,7 +672,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Atterraggio rigido", "Perdita dell'equilibrio all'atterraggio", "Valgismo del ginocchio"],
   progressioni: ["Triplo balzo", "Crossover hop", "pc-figura-otto"],
   regressioni: ["Balzo breve", "atterraggio-mono"],
-  rif: ["Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39:799-806"]
+  rif: ["Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39(11):799-806"]
 },
 {
   id: "pc-figura-otto",
@@ -690,7 +690,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Caduta del bacino in curva", "Atterraggio in inversione", "Rallentare nelle curve"],
   progressioni: ["Percorso più stretto", "Con richiamo visivo o sonoro (reattivo)"],
   regressioni: ["pc-side-hop", "pc-pogo-mono"],
-  rif: ["Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39:799-806"]
+  rif: ["Caffrey E et al. The ability of 4 single-limb hopping tests to detect functional performance deficits in individuals with functional ankle instability. J Orthop Sports Phys Ther 2009;39(11):799-806"]
 },
 {
   id: "pc-hurdle-hops",

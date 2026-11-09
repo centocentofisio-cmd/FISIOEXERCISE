@@ -216,7 +216,7 @@ window.ESERCIZI.push(
   errori: ["Discesa troppo veloce", "Carico non progredito per settimane", "Gomito flesso per tutta la durata del programma"],
   progressioni: ["pm-tyler-twist", "Aumento del carico"],
   regressioni: ["pm-isometria-estensori-polso"],
-  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19", "Stasinopoulos D, Stasinopoulos I. Comparison of effects of eccentric training, eccentric-concentric training, and eccentric-concentric training combined with isometric contraction in the treatment of lateral elbow tendinopathy. J Hand Ther 2017"]
+  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19", "Stasinopoulos D, Stasinopoulos I. Comparison of effects of eccentric training, eccentric-concentric training, and eccentric-concentric training combined with isometric contraction in the treatment of lateral elbow tendinopathy. J Hand Ther 2017;30(1):13-19"]
 },
 {
   id: "pm-tyler-twist",

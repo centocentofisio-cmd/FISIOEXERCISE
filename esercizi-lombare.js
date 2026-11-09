@@ -138,7 +138,7 @@ const L = [
   errori: ["Eseguire il tensionamento (gamba tesa + mento al petto) invece dello scorrimento", "Velocità eccessiva", "Proseguire se i sintomi aumentano e persistono dopo l'esercizio"],
   progressioni: ["Scorrimento da supino con anca flessa a 90°", "Tensionamento progressivo (tensioner) se ben tollerato"],
   regressioni: ["Solo estensione del ginocchio in ampiezza ridotta"],
-  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13:213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
+  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13(3):213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
 },
 {
   id: "lomb-slider-femorale",
