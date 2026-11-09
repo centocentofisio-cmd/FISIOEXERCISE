@@ -27,7 +27,7 @@
   errori: ["Muovere attivamente il braccio con i muscoli della spalla (perde lo scopo passivo)", "Oscillazioni ampie e veloci che aumentano il dolore", "Spalla sollevata verso l'orecchio", "Schiena in flessione eccessiva senza appoggio"],
   progressioni: ["sp-flessione-bastone", "Piccolo peso in mano (0,5-1 kg) per decoaptazione"],
   regressioni: ["Oscillazioni di ampiezza minima, solo avanti-indietro"],
-  rif: ["Long JL et al. Activation of the shoulder musculature during pendulum exercises and light activities. JOSPT 2010;40(4):230-237"]
+  rif: ["Long JL et al. Activation of the shoulder musculature during pendulum exercises and light activities. J Orthop Sports Phys Ther 2010;40(4):230-237"]
 },
 {
   id: "sp-flessione-bastone",
@@ -81,7 +81,7 @@
   errori: ["Rotazione del busto che annulla l'allungamento", "Scapola che scivola in avanti (allunga i romboidi, non la capsula)", "Dolore anteriore da compressione: ridurre l'ampiezza"],
   progressioni: ["Versione supina con stabilizzazione scapolare", "sp-sleeper"],
   regressioni: ["Ampiezza ridotta in piedi"],
-  rif: ["McClure P et al. A randomized controlled comparison of stretching procedures for posterior shoulder tightness. JOSPT 2007;37(3):108-114"]
+  rif: ["McClure P et al. A randomized controlled comparison of stretching procedures for posterior shoulder tightness. J Orthop Sports Phys Ther 2007;37(3):108-114"]
 },
 {
   id: "sp-sleeper",
@@ -99,7 +99,7 @@
   errori: ["Spinta brusca o dolorosa (rischio di sintomi anteriori)", "Spalla in elevazione verso l'orecchio", "Prescriverlo senza un deficit misurato di rotazione interna"],
   progressioni: ["Contrazione-rilasciamento (3-5 s di extrarotazione isometrica, poi allungamento)"],
   regressioni: ["sp-cross-body", "Versione con busto ruotato indietro"],
-  rif: ["Wilk KE et al. Correlation of glenohumeral internal rotation deficit and total rotational motion to shoulder injuries in professional baseball pitchers. AJSM 2011;39(2):329-335", "McClure P et al. A randomized controlled comparison of stretching procedures for posterior shoulder tightness. JOSPT 2007;37(3):108-114", "Challoumas D et al. The volleyball athlete's shoulder: biomechanical adaptations and injury associations. Sports Biomech 2017;16(2):220-237"]
+  rif: ["Wilk KE et al. Correlation of glenohumeral internal rotation deficit and total rotational motion to shoulder injuries in professional baseball pitchers. Am J Sports Med 2011;39(2):329-335", "McClure P et al. A randomized controlled comparison of stretching procedures for posterior shoulder tightness. J Orthop Sports Phys Ther 2007;37(3):108-114", "Challoumas D et al. The volleyball athlete's shoulder: biomechanical adaptations and injury associations. Sports Biomech 2017;16(2):220-237"]
 },
 {
   id: "sp-stretch-pettorale",
@@ -155,7 +155,7 @@
   errori: ["Rotazione del busto all'indietro", "Gomito che si stacca (lavora il deltoide)", "Carico eccessivo con escursione incompleta", "Polso in estensione per 'tirare' il peso"],
   progressioni: ["Aumento del carico (RPE 7-8)", "sp-er-elastico", "sp-er-90-90"],
   regressioni: ["Senza peso, escursione ridotta", "sp-isometrie-cuffia"],
-  rif: ["Reinold MM et al. Electromyographic analysis of the rotator cuff and deltoid musculature during common shoulder external rotation exercises. JOSPT 2004;34(7):385-394"]
+  rif: ["Reinold MM et al. Electromyographic analysis of the rotator cuff and deltoid musculature during common shoulder external rotation exercises. J Orthop Sports Phys Ther 2004;34(7):385-394"]
 },
 {
   id: "sp-er-elastico",
@@ -173,7 +173,7 @@
   errori: ["Busto che ruota", "Gomito che si allontana dal fianco", "Spalla che sale", "Ritorno 'trascinato' dall'elastico"],
   progressioni: ["sp-er-90-90", "Elastico più resistente", "Extrarotazione con passo laterale (step-out) per aumentare la tensione"],
   regressioni: ["sp-er-decubito", "sp-isometrie-cuffia"],
-  rif: ["Reinold MM et al. Electromyographic analysis of the rotator cuff and deltoid musculature during common shoulder external rotation exercises. JOSPT 2004;34(7):385-394"]
+  rif: ["Reinold MM et al. Electromyographic analysis of the rotator cuff and deltoid musculature during common shoulder external rotation exercises. J Orthop Sports Phys Ther 2004;34(7):385-394"]
 },
 {
   id: "sp-ir-elastico",
@@ -191,7 +191,7 @@
   errori: ["Protrazione della spalla a fine movimento", "Busto che ruota", "Gomito che si stacca dal corpo"],
   progressioni: ["Intrarotazione a 90° di abduzione (90/90)", "Elastico più resistente"],
   regressioni: ["sp-isometrie-cuffia"],
-  rif: ["Ellenbecker TS, Cools A. Rehabilitation of shoulder impingement syndrome and rotator cuff injuries: an evidence-based review. BJSM 2010;44(5):319-327"]
+  rif: ["Ellenbecker TS, Cools A. Rehabilitation of shoulder impingement syndrome and rotator cuff injuries: an evidence-based review. Br J Sports Med 2010;44(5):319-327"]
 },
 {
   id: "sp-er-90-90",
@@ -209,7 +209,7 @@
   errori: ["Gomito che scende sotto la spalla", "Iperestensione lombare per raggiungere la verticale", "Spalla che sale verso l'orecchio", "Introdurlo prima di una buona tolleranza a 0°"],
   progressioni: ["sp-er-pliometrica", "sp-decelerazione-eccentrica", "Isometria oscillante 90/90 (ritmica)"],
   regressioni: ["sp-er-elastico", "Extrarotazione a 45° di abduzione"],
-  rif: ["Reinold MM, Escamilla RF, Wilk KE. Current concepts in the scientific and clinical rationale behind exercises for glenohumeral and scapulothoracic musculature. JOSPT 2009;39(2):105-117"]
+  rif: ["Reinold MM, Escamilla RF, Wilk KE. Current concepts in the scientific and clinical rationale behind exercises for glenohumeral and scapulothoracic musculature. J Orthop Sports Phys Ther 2009;39(2):105-117"]
 },
 {
   id: "sp-er-pliometrica",
@@ -227,7 +227,7 @@
   errori: ["Gomito che cade con la fatica", "Serie troppo lunghe (diventa resistenza, non potenza)", "Introdurlo con dolore o con forza ER ancora insufficiente"],
   progressioni: ["Elastico più resistente", "Esecuzione in semi-inginocchio o in appoggio monopodalico", "sp-decelerazione-eccentrica"],
   regressioni: ["sp-er-90-90", "Isometria ritmica 90/90"],
-  rif: ["Swanik KA et al. The effect of shoulder plyometric training on proprioception and selected muscle performance characteristics. J Shoulder Elbow Surg 2002;11(6):579-586", "Carter AB et al. Effects of high volume upper extremity plyometric training on throwing velocity and functional strength ratios of the shoulder rotators in collegiate baseball players. JSCR 2007;21(1):208-215"]
+  rif: ["Swanik KA et al. The effect of shoulder plyometric training on proprioception and selected muscle performance characteristics. J Shoulder Elbow Surg 2002;11(6):579-586", "Carter AB et al. Effects of high volume upper extremity plyometric training on throwing velocity and functional strength ratios of the shoulder rotators in collegiate baseball players. J Strength Cond Res 2007;21(1):208-215"]
 },
 {
   id: "sp-decelerazione-eccentrica",
@@ -265,7 +265,7 @@
   errori: ["Pollice verso il basso (empty can) nella spalla dolorosa", "Elevazione della spalla (shrug) per compensare", "Iperestensione lombare", "Carico eccessivo con slancio"],
   progressioni: ["Elevazione oltre i 90° se indolore", "Esecuzione monopodalica", "Aumento del carico"],
   regressioni: ["Senza carico o con elastico leggero", "Ampiezza 0-60°"],
-  rif: ["Kelly BT et al. The manual muscle examination for rotator cuff strength: an electromyographic investigation. AJSM 1996;24(5):581-588", "Reinold MM, Escamilla RF, Wilk KE. JOSPT 2009;39(2):105-117"]
+  rif: ["Kelly BT et al. The manual muscle examination for rotator cuff strength: an electromyographic investigation. Am J Sports Med 1996;24(5):581-588", "Reinold MM, Escamilla RF, Wilk KE. Current concepts in the scientific and clinical rationale behind exercises for glenohumeral and scapulothoracic musculature. J Orthop Sports Phys Ther 2009;39(2):105-117"]
 },
 {
   id: "sp-alzate-laterali",
@@ -283,7 +283,7 @@
   errori: ["Slancio con il busto", "Rotazione interna marcata ('versare la brocca') con dolore", "Trapezio superiore dominante con spalle alle orecchie", "Polsi più alti dei gomiti"],
   progressioni: ["Alzata laterale al cavo (tensione costante)", "Alzata laterale monolaterale inclinati su un appoggio"],
   regressioni: ["sp-full-can", "Elastico leggero"],
-  rif: ["Reinold MM, Escamilla RF, Wilk KE. JOSPT 2009;39(2):105-117"]
+  rif: ["Reinold MM, Escamilla RF, Wilk KE. Current concepts in the scientific and clinical rationale behind exercises for glenohumeral and scapulothoracic musculature. J Orthop Sports Phys Ther 2009;39(2):105-117"]
 },
 {
   id: "sp-prono-y",
@@ -301,7 +301,7 @@
   errori: ["Iperestensione cervicale o lombare", "Elevazione delle scapole (trapezio superiore)", "Carico eccessivo: bastano 0,5-2 kg"],
   progressioni: ["Manubri leggeri", "Panca orizzontale invece che inclinata", "sp-carry-overhead"],
   regressioni: ["Y con le mani appoggiate al muro (wall slide con sollevamento)", "sp-wall-slide"],
-  rif: ["Ekstrom RA et al. Surface electromyographic analysis of exercises for the trapezius and serratus anterior muscles. JOSPT 2003;33(5):247-258"]
+  rif: ["Ekstrom RA, Donatelli RA, Soderberg GL. Surface electromyographic analysis of exercises for the trapezius and serratus anterior muscles. J Orthop Sports Phys Ther 2003;33(5):247-258"]
 },
 {
   id: "sp-prono-t",
@@ -319,7 +319,7 @@
   errori: ["Shrug in salita", "Gomiti piegati che accorciano la leva senza volerlo", "Iperestensione del collo"],
   progressioni: ["Manubri leggeri", "sp-band-pull-apart in piedi", "sp-face-pull"],
   regressioni: ["Retrazione scapolare isometrica da prono", "Braccia flesse a 90° (leva corta)"],
-  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? AJSM 2007;35(10):1744-1751"]
+  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med 2007;35(10):1744-1751"]
 },
 {
   id: "sp-flessione-decubito",
@@ -337,7 +337,7 @@
   errori: ["Rotazione del busto in avanti o indietro", "Scapola che si solleva verso l'orecchio", "Gomito che si piega"],
   progressioni: ["Manubrio leggero (0,5-1 kg)", "sp-prono-y"],
   regressioni: ["Escursione ridotta a 90°"],
-  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? AJSM 2007;35(10):1744-1751"]
+  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med 2007;35(10):1744-1751"]
 },
 {
   id: "sp-estensione-prona",
@@ -355,7 +355,7 @@
   errori: ["Estensione oltre il tronco con spalla che va in avanti", "Shrug", "Iperestensione cervicale"],
   progressioni: ["Manubri leggeri", "sp-rematore-manubrio"],
   regressioni: ["Isometria della retrazione scapolare"],
-  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? AJSM 2007;35(10):1744-1751"]
+  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med 2007;35(10):1744-1751"]
 },
 {
   id: "sp-band-pull-apart",
@@ -409,7 +409,7 @@
   errori: ["Iperestensione lombare per salire", "Spalle alle orecchie", "Avambracci che si staccano dal muro"],
   progressioni: ["Elastico intorno ai polsi (spinta in fuori)", "Sollevare le mani dal muro in alto (lift-off)", "sp-prono-y"],
   regressioni: ["sp-flessione-bastone", "Escursione fino a 90°"],
-  rif: ["Hardwick DH et al. A comparison of serratus anterior muscle activation during a wall slide exercise and other traditional exercises. JOSPT 2006;36(12):903-910"]
+  rif: ["Hardwick DH et al. A comparison of serratus anterior muscle activation during a wall slide exercise and other traditional exercises. J Orthop Sports Phys Ther 2006;36(12):903-910"]
 },
 {
   id: "sp-dynamic-hug",
@@ -427,7 +427,7 @@
   errori: ["Gomiti che si estendono (diventa una spinta)", "Spalle che salgono", "Tronco che si flette in avanti"],
   progressioni: ["Elastico più resistente", "sp-push-up-plus"],
   regressioni: ["Protrazione scapolare da supino senza carico (punch supino)"],
-  rif: ["Decker MJ et al. Serratus anterior muscle activity during selected rehabilitation exercises. AJSM 1999;27(6):784-791"]
+  rif: ["Decker MJ et al. Serratus anterior muscle activity during selected rehabilitation exercises. Am J Sports Med 1999;27(6):784-791"]
 },
 
 /* ===================== SPINTA ===================== */
@@ -447,7 +447,7 @@
   errori: ["Bacino che cade (lombare in estensione)", "Gomiti aperti a 90° (stress anteriore sulla spalla)", "Testa che anticipa il petto"],
   progressioni: ["Rialzo più basso", "sp-push-up", "sp-push-up-plus"],
   regressioni: ["Push-up al muro", "Push-up sulle ginocchia"],
-  rif: ["Ludewig PM et al. Relative balance of serratus anterior and upper trapezius muscle activity during push-up exercises. AJSM 2004;32(2):484-493"]
+  rif: ["Ludewig PM et al. Relative balance of serratus anterior and upper trapezius muscle activity during push-up exercises. Am J Sports Med 2004;32(2):484-493"]
 },
 {
   id: "sp-push-up-plus",
@@ -465,7 +465,7 @@
   errori: ["Movimento del bacino invece delle scapole", "Collo che cade", "Gomiti che si piegano durante il plus"],
   progressioni: ["Push-up completo + plus", "Plus su una mano (in quadrupedia)", "sp-ckcuest"],
   regressioni: ["Plus al muro", "Plus in quadrupedia", "sp-dynamic-hug"],
-  rif: ["Ludewig PM et al. Relative balance of serratus anterior and upper trapezius muscle activity during push-up exercises. AJSM 2004;32(2):484-493", "Decker MJ et al. AJSM 1999;27(6):784-791"]
+  rif: ["Ludewig PM et al. Relative balance of serratus anterior and upper trapezius muscle activity during push-up exercises. Am J Sports Med 2004;32(2):484-493", "Decker MJ et al. Serratus anterior muscle activity during selected rehabilitation exercises. Am J Sports Med 1999;27(6):784-791"]
 },
 {
   id: "sp-push-up",
@@ -483,7 +483,7 @@
   errori: ["Bacino che cade o sale", "Gomiti a 90° dal tronco", "Ampiezza incompleta", "Scapole 'alate' in alto"],
   progressioni: ["Elastico sulla schiena", "Piedi su rialzo", "sp-push-up-plio"],
   regressioni: ["sp-push-up-inclinato", "Fase eccentrica lenta (4 s) e risalita sulle ginocchia"],
-  rif: ["Calatayud J et al. Bench press and push-up at comparable levels of muscle activity results in similar strength gains. JSCR 2015;29(1):246-253"]
+  rif: ["Calatayud J et al. Bench press and push-up at comparable levels of muscle activity results in similar strength gains. J Strength Cond Res 2015;29(1):246-253"]
 },
 {
   id: "sp-panca-manubri",
@@ -501,7 +501,7 @@
   errori: ["Gomiti a 90° con spalla in abduzione e rotazione esterna estreme", "Discesa eccessiva in estensione orizzontale", "Scapole che si staccano dalla panca in alto", "Rimbalzo sul petto"],
   progressioni: ["Aumento del carico (%1RM, RPE)", "Panca monolaterale con manubrio (anti-rotazione)"],
   regressioni: ["sp-floor-press", "sp-push-up-inclinato"],
-  rif: ["Kolber MJ et al. Shoulder injuries attributed to resistance training: a brief review. JSCR 2010;24(6):1696-1704"]
+  rif: ["Kolber MJ et al. Shoulder injuries attributed to resistance training: a brief review. J Strength Cond Res 2010;24(6):1696-1704"]
 },
 {
   id: "sp-floor-press",
@@ -555,7 +555,7 @@
   errori: ["Iperestensione lombare per compensare la flessione di spalla mancante", "Spinta dietro la nuca", "Gomiti completamente aperti sul piano frontale", "Shrug eccessivo all'inizio della spinta"],
   progressioni: ["Aumento del carico", "sp-press-kb-mono", "sp-push-press-kb"],
   regressioni: ["sp-landmine-press", "Military press seduto con schienale"],
-  rif: ["Kolber MJ et al. Shoulder injuries attributed to resistance training: a brief review. JSCR 2010;24(6):1696-1704"]
+  rif: ["Kolber MJ et al. Shoulder injuries attributed to resistance training: a brief review. J Strength Cond Res 2010;24(6):1696-1704"]
 },
 {
   id: "sp-press-kb-mono",
@@ -665,7 +665,7 @@
   errori: ["Bacino che cade", "Mento che va verso il bilanciere invece del petto", "Spalle che salgono"],
   progressioni: ["Bilanciere più basso", "Piedi su rialzo", "Esecuzione monolaterale"],
   regressioni: ["Bilanciere più alto (corpo più verticale)", "sp-rematore-cavo"],
-  rif: ["Fenwick CM, Brown SH, McGill SM. Comparison of different rowing exercises: trunk muscle activation and lumbar spine motion, load, and stiffness. JSCR 2009;23(2):350-358"]
+  rif: ["Fenwick CM, Brown SH, McGill SM. Comparison of different rowing exercises: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23(2):350-358"]
 },
 {
   id: "sp-rematore-cavo",
@@ -829,7 +829,7 @@
   errori: ["Traiettoria che diventa una semplice abduzione", "Shrug in salita", "Busto che ruota troppo per compensare"],
   progressioni: ["Elastico più resistente", "Esecuzione veloce in concentrica e lenta in eccentrica", "sp-decelerazione-eccentrica"],
   regressioni: ["Diagonale senza carico", "sp-full-can"],
-  rif: ["Witt D, Talbott N, Kotowski S. Electromyographic activity of scapular muscles during diagonal patterns using elastic resistance and free weights. IJSPT 2011;6(4):322-332"]
+  rif: ["Witt D, Talbott N, Kotowski S. Electromyographic activity of scapular muscles during diagonal patterns using elastic resistance and free weights. Int J Sports Phys Ther 2011;6(4):322-332"]
 }
 
 );

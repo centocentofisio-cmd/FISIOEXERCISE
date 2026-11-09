@@ -68,7 +68,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Testa che cade verso il pavimento (flessione cervicale bassa)", "Estensione di tutto il collo invece del solo segmento craniocervicale", "Scapole alate o spalle verso le orecchie", "Lombare in iperlordosi"],
   progressioni: ["cerv-rotazione-quadrupedia", "cerv-estensori-quadrupedia"],
   regressioni: ["cerv-flessione-craniocervicale", "Esecuzione da proni appoggiati sui gomiti"],
-  rif: ["Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders: a research-informed approach. Elsevier 2018", "O'Leary S et al. Muscle dysfunction in cervical spine pain: implications for assessment and management. JOSPT 2009"]
+  rif: ["Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders: a research-informed approach. Elsevier 2018", "O'Leary S et al. Muscle dysfunction in cervical spine pain: implications for assessment and management. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "cerv-retrazione",
@@ -86,7 +86,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Flettere il capo (guardare in basso) invece di traslarlo", "Spingere indietro le spalle al posto del capo", "Partire da posizione seduta in cifosi", "Eseguire con dolore che si periferizza al braccio (sospendere e rivalutare)"],
   progressioni: ["Retrazione con sovrapressione delle dita sul mento", "Retrazione seguita da estensione (se indicata dalla risposta dei sintomi)", "cerv-retrazione-elastico"],
   regressioni: ["Retrazione da supino (capo appoggiato sul lettino)"],
-  rif: ["Ordway NR et al. Cervical flexion, extension, protrusion, and retraction: a radiographic segmental analysis. Spine 1999", "Blanpied PR et al. Neck pain: revision 2017. JOSPT 2017"]
+  rif: ["Ordway NR et al. Cervical flexion, extension, protrusion, and retraction: a radiographic segmental analysis. Spine 1999", "Blanpied PR et al. Neck pain: revision 2017. J Orthop Sports Phys Ther 2017"]
 },
 {
   id: "cerv-retrazione-elastico",
@@ -104,7 +104,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Estensione del capo (guardare in alto) contro l'elastico", "Elastico troppo pesante con perdita del controllo", "Elevazione delle spalle"],
   progressioni: ["cerv-estensione-elastico", "Elastico di resistenza maggiore"],
   regressioni: ["cerv-retrazione"],
-  rif: ["Blanpied PR et al. Neck pain: revision 2017. JOSPT 2017"]
+  rif: ["Blanpied PR et al. Neck pain: revision 2017. J Orthop Sports Phys Ther 2017"]
 },
 
 /* ===================== ESTENSORI / ROTATORI PROFONDI ===================== */
@@ -124,7 +124,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Estendere il capo guardando avanti (lavoro dei sub-occipitali superficiali)", "Andare oltre la linea del tronco in iperestensione", "Movimento veloce e balistico", "Perdita della posizione delle scapole"],
   progressioni: ["cerv-rotazione-quadrupedia", "cerv-estensione-prono-disco"],
   regressioni: ["cerv-ccf-quadrupedia", "Range ridotto, da proni sui gomiti"],
-  rif: ["Schomacher J, Falla D. Function and structure of the deep cervical extensor muscles in patients with neck pain. Man Ther 2013", "Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders. Elsevier 2018"]
+  rif: ["Schomacher J, Falla D. Function and structure of the deep cervical extensor muscles in patients with neck pain. Man Ther 2013", "Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders: a research-informed approach. Elsevier 2018"]
 },
 {
   id: "cerv-rotazione-quadrupedia",
@@ -142,7 +142,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Inclinazione laterale associata alla rotazione", "Capo che scende verso il pavimento", "Rotazione del tronco o delle spalle", "Range eccessivo con perdita dell'allineamento"],
   progressioni: ["cerv-isometria-rotazione", "Rotazione con piccolo peso (fascia) sul capo"],
   regressioni: ["cerv-rotazione-attiva", "cerv-ccf-quadrupedia"],
-  rif: ["Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders. Elsevier 2018"]
+  rif: ["Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders: a research-informed approach. Elsevier 2018"]
 },
 {
   id: "cerv-estensione-prono-disco",
@@ -198,7 +198,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Spinta brusca o massimale fin da subito", "Movimento del capo durante la spinta", "Apnea", "Elevazione delle spalle"],
   progressioni: ["cerv-isometria-laterale", "cerv-isometria-rotazione", "cerv-flessione-seduto-elastico", "cerv-estensione-elastico"],
   regressioni: ["cerv-flessione-craniocervicale"],
-  rif: ["Gross A et al. Exercises for mechanical neck disorders. Cochrane Database Syst Rev 2015", "Ylinen J et al. Active neck muscle training in the treatment of chronic neck pain in women. JAMA 2003"]
+  rif: ["Gross A et al. Exercises for mechanical neck disorders. Cochrane Database Syst Rev 2015", "Ylinen J et al. Active neck muscle training in the treatment of chronic neck pain in women: a randomized controlled trial. JAMA 2003"]
 },
 {
   id: "cerv-isometria-laterale",
@@ -310,7 +310,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Rotolare le spalle in cerchio (inutile e irritante)", "Protrazione del capo durante la salita", "Piegare i gomiti trasformandolo in una tirata", "Carico eccessivo con range ridotto"],
   progressioni: ["Aumento del carico (%1RM o RPE)", "Scrollata con bilanciere o al cavo", "cerv-farmer-walk"],
   regressioni: ["Scrollata senza carico o con elastico sotto i piedi"],
-  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008", "Andersen LL et al. Muscle activation during selected strength exercises in women with chronic neck muscle pain. Phys Ther 2008"]
+  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008;59(1):84-91", "Andersen LL et al. Muscle activation during selected strength exercises in women with chronic neck muscle pain. Phys Ther 2008;88(6):703-711"]
 },
 {
   id: "cerv-alzate-laterali-elastico",
@@ -328,7 +328,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Elevare le spalle verso le orecchie durante l'abduzione", "Superare i 90° con dolore", "Slancio del tronco", "Gomiti troppo flessi"],
   progressioni: ["Elastico più resistente o manubri (RPE 7-8)", "Dumbbell scaption (alzate nel piano scapolare)"],
   regressioni: ["Alzate unilaterali con elastico leggero", "Range ridotto a 60°"],
-  rif: ["Andersen LL et al. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial. Pain 2011", "Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008"]
+  rif: ["Andersen LL et al. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial. Pain 2011;152(2):440-446", "Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008;59(1):84-91"]
 },
 {
   id: "cerv-rematore-manubrio",
@@ -346,7 +346,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Testa in estensione per guardare avanti", "Rotazione del tronco per tirare più carico", "Spalla che sale verso l'orecchio", "Fase eccentrica non controllata"],
   progressioni: ["Aumento del carico (RPE 7-8)", "Rematore in split stance senza appoggio"],
   regressioni: ["Rematore con elastico in piedi o seduto", "Carico ridotto con focus sulla retrazione scapolare"],
-  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008"]
+  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008;59(1):84-91"]
 },
 {
   id: "cerv-reverse-fly",
@@ -364,7 +364,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Estendere il capo", "Usare lo slancio del tronco", "Elevare le spalle", "Gomiti che si piegano trasformando l'esercizio in un rematore"],
   progressioni: ["Aperture posteriori al cavo", "Prono su panca inclinata con extrarotazione"],
   regressioni: ["cerv-band-pull-apart"],
-  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008"]
+  rif: ["Andersen LL et al. Effect of two contrasting types of physical exercise on chronic neck muscle pain. Arthritis Rheum 2008;59(1):84-91"]
 },
 {
   id: "cerv-tirata-al-mento",
@@ -382,7 +382,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Salire oltre i 90° con rotazione interna forzata", "Presa troppo stretta", "Slancio con il tronco", "Protrazione del capo"],
   progressioni: ["Aumento del carico (RPE 7-8)"],
   regressioni: ["cerv-alzate-laterali-elastico", "cerv-scrollata-manubri"],
-  rif: ["Andersen LL et al. Muscle activation during selected strength exercises in women with chronic neck muscle pain. Phys Ther 2008"]
+  rif: ["Andersen LL et al. Muscle activation during selected strength exercises in women with chronic neck muscle pain. Phys Ther 2008;88(6):703-711"]
 },
 {
   id: "cerv-face-pull",
@@ -400,7 +400,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Capo che avanza verso la corda", "Iperestensione lombare", "Spalle che salgono", "Carico eccessivo che impedisce l'extrarotazione finale"],
   progressioni: ["Aumento del carico", "Pausa isometrica di 2 secondi in chiusura"],
   regressioni: ["cerv-band-pull-apart"],
-  rif: ["Blanpied PR et al. Neck pain: revision 2017. JOSPT 2017"]
+  rif: ["Blanpied PR et al. Neck pain: revision 2017. J Orthop Sports Phys Ther 2017"]
 },
 {
   id: "cerv-band-pull-apart",
@@ -418,7 +418,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Spalle che salgono", "Iperestensione lombare", "Gomiti piegati", "Capo protruso"],
   progressioni: ["cerv-face-pull", "cerv-reverse-fly", "Elastico più resistente"],
   regressioni: ["Retrazione scapolare isometrica senza elastico"],
-  rif: ["Andersen LL et al. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain. Pain 2011"]
+  rif: ["Andersen LL et al. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial. Pain 2011;152(2):440-446"]
 },
 {
   id: "cerv-y-prono",
@@ -436,7 +436,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Sollevare il capo in estensione", "Spalle verso le orecchie (prevalenza trapezio superiore)", "Iperestensione lombare", "Carico eccessivo"],
   progressioni: ["Manubri leggeri (0,5-2 kg)", "Esecuzione su panca inclinata a 45°"],
   regressioni: ["Y a terra con le sole scapole (braccia appoggiate)", "Range ridotto"],
-  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med 2007"]
+  rif: ["Cools AM et al. Rehabilitation of scapular muscle balance: which exercises to prescribe? Am J Sports Med 2007;35(10):1744-1751"]
 },
 {
   id: "cerv-farmer-walk",
@@ -474,7 +474,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimenti veloci", "Aprire gli occhi prima di aver concluso il riposizionamento", "Rotazione del tronco", "Proseguire con capogiri importanti (ridurre il volume)"],
   progressioni: ["Tracciare forme sul bersaglio con il laser (precisione)", "Esecuzione in piedi o su base instabile", "Riposizionamento in posizioni intermedie del range"],
   regressioni: ["Esecuzione a occhi aperti", "Range ridotto e solo rotazione"],
-  rif: ["Revel M et al. Cervicocephalic kinesthetic sensibility in patients with cervical pain. Arch Phys Med Rehabil 1991", "Jull G et al. Retraining cervical joint position sense: the effect of two exercise regimes. J Orthop Res 2007", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. JOSPT 2009"]
+  rif: ["Revel M et al. Cervicocephalic kinesthetic sensibility in patients with cervical pain. Arch Phys Med Rehabil 1991", "Jull G et al. Retraining cervical joint position sense: the effect of two exercise regimes. J Orthop Res 2007", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "cerv-stabilita-sguardo",
@@ -492,7 +492,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Perdere la fissazione del bersaglio", "Velocità eccessiva troppo presto", "Proseguire con sintomi importanti (nausea, capogiro marcato)"],
   progressioni: ["cerv-coordinazione-occhio-capo", "Bersaglio su sfondo complesso", "Esecuzione in piedi o in cammino"],
   regressioni: ["Solo movimenti oculari di inseguimento a capo fermo", "Range e velocità ridotti"],
-  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. JOSPT 2009"]
+  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Kristjansson E, Treleaven J. Sensorimotor function and dizziness in neck pain. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "cerv-coordinazione-occhio-capo",
@@ -510,7 +510,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Muovere occhi e capo insieme fin dall'inizio", "Velocità eccessiva", "Compensi del tronco"],
   progressioni: ["Occhi e capo in direzioni opposte", "Inseguimento oculare con tronco ruotato (torsione cervicale)", "Esecuzione in piedi"],
   regressioni: ["cerv-stabilita-sguardo"],
-  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders. Elsevier 2018"]
+  rif: ["Treleaven J. Sensorimotor disturbances in neck disorders affecting postural stability, head and eye movement control. Man Ther 2008", "Jull G, Falla D, Treleaven J, O'Leary S. Management of neck pain disorders: a research-informed approach. Elsevier 2018"]
 },
 
 /* ===================== MOBILITÀ ===================== */
@@ -530,7 +530,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Forzare oltre il dolore", "Ruotare il tronco", "Inclinazione o flessione associate"],
   progressioni: ["cerv-snag-rotazione", "cerv-rotazione-quadrupedia"],
   regressioni: ["Rotazione da supino (capo appoggiato)"],
-  rif: ["Blanpied PR et al. Neck pain: revision 2017. JOSPT 2017", "Gross A et al. Exercises for mechanical neck disorders. Cochrane Database Syst Rev 2015"]
+  rif: ["Blanpied PR et al. Neck pain: revision 2017. J Orthop Sports Phys Ther 2017", "Gross A et al. Exercises for mechanical neck disorders. Cochrane Database Syst Rev 2015"]
 },
 {
   id: "cerv-snag-rotazione",
@@ -548,7 +548,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Asciugamano posizionato troppo in basso", "Trazione in direzione sbagliata", "Eseguire con dolore durante la manovra", "Inclinazione del capo associata"],
   progressioni: ["Aumento delle ripetizioni (secondo risposta sintomatica)", "cerv-rotazione-quadrupedia"],
   regressioni: ["cerv-rotazione-attiva"],
-  rif: ["Hall T et al. Efficacy of a C1-C2 self-sustained natural apophyseal glide (SNAG) in the management of cervicogenic headache. JOSPT 2007"]
+  rif: ["Hall T et al. Efficacy of a C1-C2 self-sustained natural apophyseal glide (SNAG) in the management of cervicogenic headache. J Orthop Sports Phys Ther 2007"]
 },
 {
   id: "cerv-allungamento-trapezio",
@@ -584,7 +584,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Trazione con le mani", "Flessione di tutto il tronco", "Proseguire con sintomi irradiati agli arti"],
   progressioni: ["Aggiunta di una lieve rotazione per diversificare la zona di allungamento"],
   regressioni: ["Flessione attiva senza mani"],
-  rif: ["Ylinen J et al. Stretching exercises vs manual therapy in treatment of chronic neck pain. J Rehabil Med 2007"]
+  rif: ["Ylinen J et al. Stretching exercises vs manual therapy in treatment of chronic neck pain: a randomized, controlled cross-over trial. J Rehabil Med 2007"]
 },
 {
   id: "cerv-cat-camel",
@@ -602,7 +602,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimento concentrato solo nel lombare", "Iperestensione cervicale nella fase gatto", "Velocità eccessiva", "Gomiti bloccati in iperestensione"],
   progressioni: ["Apertura toracica in decubito laterale (open book)", "Estensione toracica su rullo"],
   regressioni: ["Esecuzione da seduto (flessione-estensione del tronco)"],
-  rif: ["Blanpied PR et al. Neck pain: revision 2017. JOSPT 2017"]
+  rif: ["Blanpied PR et al. Neck pain: revision 2017. J Orthop Sports Phys Ther 2017"]
 },
 
 /* ===================== NEURODINAMICA ===================== */
@@ -622,6 +622,6 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Eseguire un tensioner (allungamento simultaneo) invece di uno slider", "Provocare parestesie", "Spalla che sale durante l'abduzione", "Movimento rapido o balistico"],
   progressioni: ["Tensioner del nervo mediano (solo con sintomi stabili)", "Maggiore abduzione o estensione del polso"],
   regressioni: ["Slider con braccio a 45° di abduzione", "Solo movimento distale (polso) a capo fermo"],
-  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. JOSPT 2017"]
+  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13:213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
 }
 ]);

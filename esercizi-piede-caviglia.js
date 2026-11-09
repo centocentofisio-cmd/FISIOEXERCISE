@@ -28,7 +28,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Ampiezza ridotta (si sale a metà)", "Carico sul bordo esterno del piede con talloni in inversione", "Rimbalzo veloce in basso", "Compenso con flessione di anca e busto in avanti"],
   progressioni: ["pc-calf-raise-mono", "pc-calf-raise-bilanciere", "pc-calf-raise-smith", "Avampiede su gradino per aumentare l'escursione"],
   regressioni: ["pc-calf-raise-elastico", "pc-calf-raise-seduto", "Con appoggio delle mani e carico parziale"],
-  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43:1704-1711"]
+  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43(7):1704-1711"]
 },
 {
   id: "pc-calf-raise-mono",
@@ -64,7 +64,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Rimbalzo nell'allungamento", "Ginocchia che si flettono per aiutare", "Peso spostato sul bordo esterno del piede", "Carico eccessivo con ampiezza ridotta"],
   progressioni: ["Aumento del carico secondo RPE/RIR", "Landmine monopodalico", "pc-pogo"],
   regressioni: ["pc-calf-raise-smith", "pc-calf-raise"],
-  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43:1704-1711"]
+  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43(7):1704-1711"]
 },
 {
   id: "pc-calf-raise-smith",
@@ -82,7 +82,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Movimento rapido e rimbalzato", "Ampiezza incompleta", "Ginocchia che si flettono"],
   progressioni: ["Monopodalico allo Smith", "pc-calf-raise-bilanciere"],
   regressioni: ["pc-calf-raise", "pc-calf-raise-seduto"],
-  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43:1704-1711"]
+  rif: ["Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43(7):1704-1711"]
 },
 {
   id: "pc-calf-raise-seduto",
@@ -100,7 +100,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Carico appoggiato sulle cosce troppo vicino all'anca", "Ampiezza ridotta", "Aiuto con le braccia a sollevare il bilanciere"],
   progressioni: ["pc-calf-raise-seduto-mono", "pc-eccentrico-soleo", "Aumento del carico (fino a 1-1,5 volte il peso corporeo negli atleti)"],
   regressioni: ["Senza carico o con manubri leggeri", "pc-calf-raise-elastico"],
-  rif: ["Dorn TW et al. Muscular strategy shift in human running: dependence of running speed on hip and ankle muscle performance. J Exp Biol 2012;215:1944-1956", "Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43:1704-1711"]
+  rif: ["Dorn TW et al. Muscular strategy shift in human running: dependence of running speed on hip and ankle muscle performance. J Exp Biol 2012;215:1944-1956", "Beyer R et al. Heavy slow resistance versus eccentric training as treatment for Achilles tendinopathy: a randomized controlled trial. Am J Sports Med 2015;43(7):1704-1711"]
 },
 {
   id: "pc-calf-raise-seduto-mono",
@@ -156,7 +156,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Discesa veloce", "Risalita con un solo piede (diventa concentrico)", "Ampiezza incompleta", "Progressione troppo rapida del carico"],
   progressioni: ["Zaino o manubrio per aumentare il carico", "pc-calf-raise-bilanciere (HSR)", "pc-pogo"],
   regressioni: ["pc-calf-raise", "Eccentrico bipodalico", "pc-isometria-flessori-plantari"],
-  rif: ["Alfredson H et al. Heavy-loaded eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 1998;26:360-366", "Silbernagel KG et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study. Am J Sports Med 2007;35:897-906"]
+  rif: ["Alfredson H et al. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 1998;26(3):360-366", "Silbernagel KG et al. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study. Am J Sports Med 2007;35:897-906"]
 },
 {
   id: "pc-eccentrico-soleo",
@@ -174,7 +174,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Ginocchio che si estende durante la discesa", "Discesa rapida", "Valgismo del ginocchio"],
   progressioni: ["Carico aggiunto con zaino o manubrio", "pc-calf-raise-seduto con carico elevato"],
   regressioni: ["pc-calf-raise-seduto senza carico", "Eccentrico bipodalico a ginocchia flesse"],
-  rif: ["Alfredson H et al. Heavy-loaded eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 1998;26:360-366"]
+  rif: ["Alfredson H et al. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 1998;26(3):360-366"]
 },
 {
   id: "pc-isometria-flessori-plantari",
@@ -378,7 +378,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Tallone che si solleva", "Ginocchio che cade verso l'interno (pronazione compensatoria)", "Piede ruotato verso l'esterno"],
   progressioni: ["pc-mwm-dorsiflessione", "Con manubrio sul ginocchio per aumentare la pressione", "pc-split-squat-dorsiflessione"],
   regressioni: ["pc-circonduzioni", "pc-stretch-soleo"],
-  rif: ["Bennell KL et al. Intra-rater and inter-rater reliability of a weight-bearing lunge measure of ankle dorsiflexion. Aust J Physiother 1998;44:175-180", "Powden CJ, Hoch JM, Hoch MC. Reliability and minimal detectable change of the weight-bearing lunge test: a systematic review. Man Ther 2015;20:524-532"]
+  rif: ["Bennell KL et al. Intra-rater and inter-rater reliability of a weight-bearing lunge measure of ankle dorsiflexion. Aust J Physiother 1998;44(3):175-180", "Powden CJ, Hoch JM, Hoch MC. Reliability and minimal detectable change of the weight-bearing lunge test: a systematic review. Man Ther 2015;20:524-532"]
 },
 {
   id: "pc-mwm-dorsiflessione",
@@ -524,7 +524,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Sollevamento del tallone d'appoggio", "Appoggio del peso sul piede che raggiunge", "Valgismo del ginocchio d'appoggio", "Mani che si staccano dai fianchi (se richiesto dal protocollo)"],
   progressioni: ["Tutte le 8 direzioni", "Su superficie instabile", "Con carico (manubrio)"],
   regressioni: ["Solo direzione anteriore", "pc-equilibrio-mono"],
-  rif: ["Plisky PJ et al. Star Excursion Balance Test as a predictor of lower extremity injury in high school basketball players. J Orthop Sports Phys Ther 2006;36:911-919", "Gribble PA et al. Using the Star Excursion Balance Test to assess dynamic postural-control deficits and outcomes in lower extremity injury: a literature and systematic review. J Athl Train 2012;47:339-357"]
+  rif: ["Plisky PJ et al. Star Excursion Balance Test as a predictor of lower extremity injury in high school basketball players. J Orthop Sports Phys Ther 2006;36(12):911-919", "Gribble PA et al. Using the Star Excursion Balance Test to assess dynamic postural-control deficits and outcomes in lower extremity injury: a literature and systematic review. J Athl Train 2012;47:339-357"]
 },
 {
   id: "pc-equilibrio-perturbazioni",
@@ -762,7 +762,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Deriva in avanti verso la linea centrale", "Atterraggio su un piede in inversione", "Atterraggio rigido"],
   progressioni: ["Con avversario o compagno simulato vicino alla linea", "Muro dopo spostamento di 3 passi", "Volume crescente di salti per seduta"],
   regressioni: ["atterraggio-mono", "pc-hurdle-hops", "box-jump"],
-  rif: ["Bahr R, Lian O, Bahr IA. A twofold reduction in the incidence of acute ankle sprains in volleyball after the introduction of an injury prevention program: a prospective cohort study. Scand J Med Sci Sports 1997;7:172-177"]
+  rif: ["Bahr R, Lian O, Bahr IA. A twofold reduction in the incidence of acute ankle sprains in volleyball after the introduction of an injury prevention program: a prospective cohort study. Scand J Med Sci Sports 1997;7(3):172-177"]
 },
 {
   id: "pc-shuffle-laterale",

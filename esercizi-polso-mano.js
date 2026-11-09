@@ -90,7 +90,7 @@ window.ESERCIZI.push(
   errori: ["Esecuzione in tensione massima (tensioner) invece che in scorrimento", "Elevazione della spalla", "Sintomi neurologici che persistono dopo l'esercizio: ridurre l'ampiezza"],
   progressioni: ["Tensioner progressivo: estendere polso e gomito con testa controlaterale (solo se ben tollerato)"],
   regressioni: ["Slider limitato a polso e dita con gomito flesso", "pm-tendon-gliding"],
-  rif: ["Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017", "Page MJ, O'Connor D, Pitt V, Massy-Westropp N. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database Syst Rev 2012"]
+  rif: ["Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615", "Page MJ, O'Connor D, Pitt V, Massy-Westropp N. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database Syst Rev 2012"]
 },
 {
   id: "pm-stretch-flessori-polso",
@@ -126,7 +126,7 @@ window.ESERCIZI.push(
   errori: ["Gomito flesso che riduce l'allungamento sugli estensori radiali", "Forzare in presenza di dolore acuto all'epicondilo", "Spalla elevata"],
   progressioni: ["Aggiungere deviazione ulnare e pugno chiuso"],
   regressioni: ["Esecuzione con gomito flesso a 90°"],
-  rif: ["Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015"]
+  rif: ["Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015;45(11):938-949"]
 },
 {
   id: "pm-dart-thrower",
@@ -162,7 +162,7 @@ window.ESERCIZI.push(
   errori: ["Presa troppo forte che aggiunge carico sui flessori", "Polso che cede in flessione verso fine serie", "Intensità scelta sul dolore massimo invece che su una scala condivisa"],
   progressioni: ["pm-estensione-polso-manubrio", "Gomito progressivamente più esteso"],
   regressioni: ["Isometria submassimale contro la propria mano"],
-  rif: ["Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015"]
+  rif: ["Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015;45(11):938-949"]
 },
 {
   id: "pm-flessione-polso-manubrio",
@@ -198,7 +198,7 @@ window.ESERCIZI.push(
   errori: ["Compenso con supinazione o elevazione del gomito", "Movimento troppo rapido nella fase eccentrica", "Partire subito con il gomito esteso in fase irritabile"],
   progressioni: ["pm-estensione-polso-eccentrica", "Esecuzione con gomito esteso", "pm-tyler-twist"],
   regressioni: ["pm-isometria-estensori-polso", "Estensione con elastico leggero"],
-  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014", "Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015"]
+  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19", "Coombes BK, Bisset L, Vicenzino B. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 2015;45(11):938-949"]
 },
 {
   id: "pm-estensione-polso-eccentrica",
@@ -216,7 +216,7 @@ window.ESERCIZI.push(
   errori: ["Discesa troppo veloce", "Carico non progredito per settimane", "Gomito flesso per tutta la durata del programma"],
   progressioni: ["pm-tyler-twist", "Aumento del carico"],
   regressioni: ["pm-isometria-estensori-polso"],
-  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014", "Stasinopoulos D, Stasinopoulos I. Comparison of effects of eccentric training, eccentric-concentric training, and eccentric-concentric training combined with isometric contraction in the treatment of lateral elbow tendinopathy. J Hand Ther 2017"]
+  rif: ["Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19", "Stasinopoulos D, Stasinopoulos I. Comparison of effects of eccentric training, eccentric-concentric training, and eccentric-concentric training combined with isometric contraction in the treatment of lateral elbow tendinopathy. J Hand Ther 2017"]
 },
 {
   id: "pm-tyler-twist",
@@ -234,7 +234,7 @@ window.ESERCIZI.push(
   errori: ["Mano affetta che fa anche la torsione concentrica", "Gomiti flessi", "Rilascio rapido della torsione"],
   progressioni: ["Barra di resistenza superiore"],
   regressioni: ["pm-estensione-polso-eccentrica", "pm-isometria-estensori-polso"],
-  rif: ["Tyler TF, Thomas GC, Nicholas SJ, McHugh MP. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. J Shoulder Elbow Surg 2010"]
+  rif: ["Tyler TF, Thomas GC, Nicholas SJ, McHugh MP. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. J Shoulder Elbow Surg 2010;19(6):917-922"]
 },
 {
   id: "pm-tyler-twist-inverso",
@@ -378,7 +378,7 @@ window.ESERCIZI.push(
   errori: ["Polso flesso durante la presa (posizione di forza ridotta)", "Mancato rilassamento completo tra le ripetizioni", "Durezza eccessiva in fase precoce o in caso di rizoartrosi dolorosa"],
   progressioni: ["pm-hand-gripper", "pm-farmer-walk", "pm-pinza-dischi"],
   regressioni: ["pm-tendon-gliding", "Presa in acqua tiepida"],
-  rif: ["Mathiowetz V et al. Grip and pinch strength: normative data for adults. Arch Phys Med Rehabil 1985", "Dodds RM et al. Grip strength across the life course: normative data from twelve British studies. PLoS One 2014", "Bohannon RW. Minimal clinically important difference for grip strength: a systematic review. J Phys Ther Sci 2019"]
+  rif: ["Mathiowetz V et al. Grip and pinch strength: normative data for adults. Arch Phys Med Rehabil 1985", "Dodds RM et al. Grip strength across the life course: normative data from twelve British studies. PLoS One 2014", "Bohannon RW. Minimal clinically important difference for grip strength: a systematic review. J Phys Ther Sci 2019;31(1):75-78"]
 },
 {
   id: "pm-hand-gripper",
@@ -450,7 +450,7 @@ window.ESERCIZI.push(
   errori: ["Pollice che scivola sul piano del palmo (adduzione) invece di opporsi", "Collasso della MCF in iperestensione", "Movimento eseguito dal polso"],
   progressioni: ["Abduzione palmare contro elastico", "pm-stabilizzazione-trapezio-metacarpale", "pm-pinza-plastilina"],
   regressioni: ["Opposizione attivo-assistita"],
-  rif: ["Østerås N et al. Exercise for hand osteoarthritis. Cochrane Database Syst Rev 2017", "Bertozzi L et al. Investigation of the effect of conservative interventions in thumb carpometacarpal osteoarthritis: systematic review and meta-analysis. Disabil Rehabil 2015"]
+  rif: ["Østerås N et al. Exercise for hand osteoarthritis. Cochrane Database Syst Rev 2017", "Bertozzi L et al. Investigation of the effect of conservative interventions in thumb carpometacarpal osteoarthritis: systematic review and meta-analysis. Disabil Rehabil 2015;37(22):2025-2043"]
 },
 {
   id: "pm-stabilizzazione-trapezio-metacarpale",
@@ -468,7 +468,7 @@ window.ESERCIZI.push(
   errori: ["Iperestensione della MCF del pollice", "Pinza forte troppo precoce", "Dolore alla base del pollice durante l'esercizio"],
   progressioni: ["pm-pinza-plastilina", "Prese funzionali (aprire barattoli, girare chiavi) mantenendo la C"],
   regressioni: ["pm-opposizione-pollice"],
-  rif: ["O'Brien VH, Giveans MR. Effects of a dynamic stability approach in conservative intervention of the carpometacarpal joint of the thumb: a retrospective study. J Hand Ther 2013", "Bertozzi L et al. Investigation of the effect of conservative interventions in thumb carpometacarpal osteoarthritis: systematic review and meta-analysis. Disabil Rehabil 2015"]
+  rif: ["O'Brien VH, Giveans MR. Effects of a dynamic stability approach in conservative intervention of the carpometacarpal joint of the thumb: a retrospective study. J Hand Ther 2013", "Bertozzi L et al. Investigation of the effect of conservative interventions in thumb carpometacarpal osteoarthritis: systematic review and meta-analysis. Disabil Rehabil 2015;37(22):2025-2043"]
 },
 {
   id: "pm-estensione-dita-elastico",
@@ -607,7 +607,7 @@ window.ESERCIZI.push(
   regime: ["Concentrico", "Eccentrico"], obiettivo: ["Forza", "Ipertrofia"],
   fase: ["Avanzata", "Ritorno allo sport"], specificita: "Generale", gesto: "",
   img: "Pushups",
-  descrizione: "Piegamenti a terra con corpo in linea. Nel percorso del polso rappresentano il carico completo in estensione (circa il 65% del peso corporeo sulle mani nella posizione alta), passaggio necessario prima del ritorno a sport con cadute e appoggi sulle mani (pallavolo, ginnastica, arti marziali).",
+  descrizione: "Piegamenti a terra con corpo in linea. Nel percorso del polso rappresentano il carico completo in estensione (circa il 69% del peso corporeo sulle mani in posizione alta e il 75% in basso, Ebben 2011), passaggio necessario prima del ritorno a sport con cadute e appoggi sulle mani (pallavolo, ginnastica, arti marziali).",
   cue: ["Corpo in linea da testa a talloni", "Dita aperte, spingi con tutto il palmo", "Gomiti a 45° dal busto", "Petto vicino al pavimento, poi spingi via"],
   errori: ["Bacino che cade o si alza", "Scapole alate", "Dolore dorsale di polso: usare impugnature o manubri a presa neutra"],
   progressioni: ["Piedi rialzati", "Piegamenti su pugni o su palla", "Piegamenti pliometrici"],
