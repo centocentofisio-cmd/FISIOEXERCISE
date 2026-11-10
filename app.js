@@ -85,6 +85,51 @@ const FOTO = {}; // id -> [dataURL, dataURL]
 let LOGO = null;
 let installEvt = null;
 
+/* ---------- professionisti (più nomi sullo stesso dispositivo) ---------- */
+let professionisti = store.get("professionisti", null);
+if (!Array.isArray(professionisti)) {
+  // Prima apertura con questa funzione: il vecchio campo "Fisioterapista" diventa il primo profilo.
+  professionisti = settings.terapista && settings.terapista.trim() ? [{ id: uid(), nome: settings.terapista.trim() }] : [];
+  store.set("professionisti", professionisti);
+}
+let profAttivo = store.get("profAttivo", null);
+if (!professionisti.some((p) => p.id === profAttivo)) profAttivo = professionisti.length === 1 ? professionisti[0].id : null;
+let obbligaProf = false; // true finché nessun professionista è stato scelto: la finestra non si può chiudere
+const profCorrente = () => professionisti.find((p) => p.id === profAttivo) || null;
+const nomeProf = () => (profCorrente() ? profCorrente().nome : "");
+function salvaProf() { store.set("professionisti", professionisti); store.set("profAttivo", profAttivo); }
+function aggiornaProfBtn() {
+  let b = $("#prof-btn");
+  if (!b) {
+    const brand = $(".brand"); if (!brand) return;
+    b = document.createElement("button"); b.id = "prof-btn"; b.className = "btn sm"; b.dataset.act = "scegli-prof";
+    b.title = "Cambia professionista"; brand.insertAdjacentElement("afterend", b);
+  }
+  const n = nomeProf();
+  b.textContent = n ? "👤 " + n : "👤 Scegli professionista";
+  b.setAttribute("aria-label", n ? "Professionista attivo: " + n + ". Cambia professionista" : "Scegli professionista");
+}
+function sceltaProf() {
+  obbligaProf = !profCorrente();
+  openDlg(`<div class="dlg-h"><div><h2>Chi sta usando FISIOEXERCISE?</h2><div class="alias">Il nome scelto compare nell'intestazione della scheda stampata.</div></div>
+      ${obbligaProf ? "" : `<button class="btn ghost sm x" data-act="chiudi" aria-label="Chiudi">✕</button>`}</div>
+    <div class="dlg-b">
+      ${professionisti.length ? `<div class="list">${professionisti.map((p) => `<div class="li"><div class="t"><b>${esc(p.nome)}</b>${p.id === profAttivo ? `<span>Attivo ora</span>` : ""}</div>
+        <button class="btn sm ${p.id === profAttivo ? "" : "primary"}" data-act="usa-prof" data-pid="${p.id}">${p.id === profAttivo ? "Continua" : "Entra"}</button></div>`).join("")}</div>`
+        : `<p class="note" style="margin:0">Nessun professionista salvato su questo dispositivo. Inserisci il tuo nome per iniziare.</p>`}
+      <form id="form-prof" class="row" autocomplete="off">
+        <label class="field" style="flex:1;min-width:220px"><span>Nuovo professionista</span><input type="text" name="nome" id="prof-nuovo" placeholder="Dott. Nome Cognome, Fisioterapista" maxlength="80"></label>
+        <button class="btn primary" type="submit" style="align-self:flex-end">Aggiungi ed entra</button>
+      </form>
+      <p class="note" style="margin:0">I nomi restano salvati solo in questo browser. Puoi rinominarli o eliminarli da Impostazioni.</p>
+    </div>`);
+  if (!professionisti.length) setTimeout(() => { const i = $("#prof-nuovo"); if (i) i.focus(); }, 50);
+}
+function entraProf(id) {
+  profAttivo = id; obbligaProf = false; salvaProf(); closeDlg(); aggiornaProfBtn(); render();
+  toast("Professionista attivo: " + nomeProf());
+}
+
 function nuovaScheda() {
   return { id: uid(), paziente: "", data: oggi(), titolo: "", note: "", esercizi: [] };
 }
@@ -140,6 +185,7 @@ function render() {
   document.querySelectorAll(".tab").forEach((b) => b.setAttribute("aria-selected", b.dataset.tab === tab ? "true" : "false"));
   $("#badge").textContent = scheda.esercizi.length;
   $("#brand-name").textContent = settings.studio || "NC Fisioterapia";
+  aggiornaProfBtn();
   const v = $("#view");
   if (tab === "esercizi") v.innerHTML = viewEsercizi();
   else if (tab === "scheda") v.innerHTML = viewScheda();
@@ -367,7 +413,7 @@ function viewScheda() {
     <div class="sheet-head">
       <label class="field"><span>Paziente</span><input type="text" id="s-paziente" data-s="paziente" value="${esc(s.paziente)}" placeholder="Nome e cognome"></label>
       <label class="field"><span>Data</span><input type="date" id="s-data" data-s="data" value="${esc(s.data)}"></label>
-      <label class="field"><span>Titolo / obiettivo</span><input type="text" id="s-titolo" data-s="titolo" value="${esc(s.titolo)}" placeholder="Es. Tendinopatia glutea – fase 2"></label>
+      <label class="field"><span>Titolo della scheda (usato anche nel nome del PDF)</span><input type="text" id="s-titolo" data-s="titolo" value="${esc(s.titolo)}" placeholder="Es. Tendinopatia glutea – fase 2"></label>
       <label class="field full"><span>Indicazioni generali</span><textarea id="s-note" data-s="note" placeholder="Frequenza settimanale, riscaldamento, gestione del dolore (es. NRS ≤ 3/10 durante e il giorno dopo)…">${esc(s.note)}</textarea></label>
     </div>
     ${s.esercizi.length ? blocchi : `<div class="empty" style="margin-top:16px">La scheda è vuota. Vai su <button class="link" data-tab-go="esercizi">Esercizi</button>, filtra e premi “+ Scheda”.</div>`}
@@ -408,7 +454,7 @@ function viewArchivio() {
   return `<div class="sheet-bar"><h1>Archivio schede</h1>
       <button class="btn" data-act="esporta">Esporta backup</button>
       <label class="btn">Importa backup<input type="file" accept="application/json,.json" hidden id="importa"></label></div>
-    ${l.length ? `<div class="list">${l.map((s) => `<div class="li"><div class="t"><b>${esc(s.paziente || "Senza nome")}${s.titolo ? " · " + esc(s.titolo) : ""}</b><span>${fmtData(s.data)} · ${s.esercizi.length} esercizi</span></div>
+    ${l.length ? `<div class="list">${l.map((s) => `<div class="li"><div class="t"><b>${esc(s.paziente || "Senza nome")}${s.titolo ? " · " + esc(s.titolo) : ""}</b><span>${fmtData(s.data)} · ${s.esercizi.length} esercizi${s.professionista ? " · " + esc(s.professionista) : ""}</span></div>
       <button class="btn sm primary" data-act="apri-scheda" data-sid="${s.id}">Apri</button>
       <button class="btn sm" data-act="duplica-scheda" data-sid="${s.id}">Duplica</button>
       <button class="btn sm danger" data-act="elimina-scheda" data-sid="${s.id}">Elimina</button></div>`).join("")}</div>`
@@ -420,11 +466,19 @@ function viewImpostazioni() {
   return `<div class="sheet-bar"><h1>Impostazioni</h1></div>
     <div class="panel"><h3>Intestazione del PDF</h3>
       <label class="field"><span>Nome dello studio</span><input type="text" id="set-studio" data-set="studio" value="${esc(settings.studio)}"></label>
-      <label class="field"><span>Fisioterapista</span><input type="text" id="set-terapista" data-set="terapista" value="${esc(settings.terapista)}" placeholder="Dott. Nome Cognome, Fisioterapista"></label>
+      <p class="note" style="margin:0">Il nome del fisioterapista nell'intestazione è quello del professionista attivo (vedi sotto).</p>
       <label class="field"><span>Contatti (una riga per voce)</span><textarea id="set-contatti" data-set="contatti" placeholder="Via…, Città&#10;Tel. …&#10;email@…">${esc(settings.contatti)}</textarea></label>
       <div class="row">${LOGO ? `<img class="logo-prev" src="${LOGO}" alt="Logo">` : `<span class="note">Nessun logo caricato: nel PDF compare il nome dello studio.</span>`}
         <label class="btn sm">Carica logo<input type="file" accept="image/*" hidden id="logo-in"></label>
         ${LOGO ? `<button class="btn sm danger" data-act="togli-logo">Rimuovi logo</button>` : ""}</div>
+    </div>
+    <div class="panel"><h3>Professionisti</h3>
+      ${professionisti.length ? `<div class="list">${professionisti.map((p) => `<div class="li"><div class="t" style="flex:1;min-width:200px">
+          <label class="field"><span>${p.id === profAttivo ? "Attivo ora" : "Nome"}</span><input type="text" data-prof-nome="${p.id}" value="${esc(p.nome)}" maxlength="80"></label></div>
+        ${p.id === profAttivo ? "" : `<button class="btn sm" data-act="usa-prof" data-pid="${p.id}">Usa questo</button>`}
+        <button class="btn sm danger" data-act="elimina-prof" data-pid="${p.id}">Elimina</button></div>`).join("")}</div>` : ""}
+      <div class="row"><button class="btn sm primary" data-act="scegli-prof">Cambia o aggiungi professionista</button></div>
+      <p class="note" style="margin:0">Ogni professionista entra con il proprio nome; nella scheda stampata compare solo il nome del professionista attivo. Schede, foto ed esercizi restano condivisi su questo dispositivo.</p>
     </div>
     <div class="panel"><h3>Contenuto della scheda stampata</h3>
       <label class="chk"><input type="checkbox" id="set-descr" data-setb="stampaDescr" ${settings.stampaDescr ? "checked" : ""}> Stampa la descrizione tecnica</label>
@@ -469,21 +523,28 @@ function buildPrint() {
   const usaRpe = s.esercizi.some((x) => x.righe.rpe || x.righe.tempo || (byId(x.exId) && obiettiviEsercizio(byId(x.exId), x).length));
   $("#print-root").innerHTML = `<div class="pr">
     <div class="pr-head"><div class="pr-logo">${LOGO ? `<img src="${LOGO}" alt="${esc(settings.studio)}">` : `<div class="txt">${esc(settings.studio)}</div>`}</div>
-      <div class="pr-studio">${settings.terapista ? `<b>${esc(settings.terapista)}</b>\n` : ""}${esc(settings.contatti)}</div></div>
+      <div class="pr-studio">${nomeProf() ? `<b>${esc(nomeProf())}</b>` : ""}</div></div>
     <div class="pr-paz"><div><span>Paziente</span><b>${esc(s.paziente || "–")}</b></div><div><span>Data</span><b>${fmtData(s.data)}</b></div>
       ${s.titolo ? `<div style="grid-column:1/-1"><span>Obiettivo</span><b>${esc(s.titolo)}</b></div>` : ""}</div>
     ${s.note ? `<div class="pr-note">${esc(s.note)}</div>` : ""}
     ${ex}
     ${usaRpe ? legendaHTML("pr-legend") : ""}
-    <div class="pr-foot">${esc(settings.studio)} · Scheda personale, da eseguire secondo le indicazioni del fisioterapista.</div>
+    <div class="pr-foot">${esc(settings.studio)}${settings.contatti ? " · " + esc(lines(settings.contatti).join(" · ")) : ""} · Scheda personale, da eseguire secondo le indicazioni del fisioterapista.</div>
   </div>`;
 }
 function stampa() {
-  buildPrint();
+  buildPrint(); document.title = titoloPdf();
   if (inFrame) toast("In questa anteprima la stampa è bloccata: usa la versione pubblicata su Netlify o GitHub Pages");
   setTimeout(() => window.print(), 50);
 }
-window.addEventListener("beforeprint", buildPrint);
+// Titolo del PDF (= nome file proposto dal browser): "Paziente - Titolo scheda"
+const TITOLO_APP = document.title;
+function titoloPdf() {
+  const t = [scheda.paziente, scheda.titolo].map((x) => String(x || "").replace(/[\\/:*?"<>|]+/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean).join(" - ");
+  return t || "Scheda esercizi " + fmtData(scheda.data).replace(/\//g, "-");
+}
+window.addEventListener("beforeprint", () => { buildPrint(); document.title = titoloPdf(); });
+window.addEventListener("afterprint", () => { document.title = TITOLO_APP; });
 
 /* ---------- dialog ---------- */
 function openDlg(html) { const d = $("#dlg"); d.innerHTML = html; if (!d.open) { try { d.showModal(); } catch (e) { d.setAttribute("open", ""); } } d.scrollTop = 0; const b = d.querySelector(".dlg-b"); if (b) b.scrollTop = 0; }
@@ -506,7 +567,7 @@ function comprimi(file, max = 900) {
 /* ---------- backup ---------- */
 async function esporta() {
   const foto = {}; Object.keys(FOTO).forEach((k) => (foto[k] = FOTO[k]));
-  const data = { app: "ncf-schede", versione: 1, esportato: new Date().toISOString(), custom, settings, schede, bozza: scheda, foto, logo: LOGO };
+  const data = { app: "ncf-schede", versione: 1, esportato: new Date().toISOString(), custom, settings, schede, bozza: scheda, foto, logo: LOGO, professionisti };
   const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
   const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `backup-schede-${oggi()}.json`;
   document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
@@ -518,6 +579,10 @@ async function importa(file) {
     if (d.app !== "ncf-schede") throw new Error();
     custom = d.custom || custom; settings = Object.assign(settings, d.settings || {}); schede = d.schede || schede; if (d.bozza) scheda = d.bozza;
     store.set("custom", custom); store.set("settings", settings); store.set("schede", schede); salvaBozza();
+    if (Array.isArray(d.professionisti)) {
+      d.professionisti.forEach((p) => { if (p && p.nome && !professionisti.some((q) => q.nome.toLowerCase() === String(p.nome).toLowerCase())) professionisti.push({ id: p.id || uid(), nome: String(p.nome) }); });
+      salvaProf();
+    }
     for (const k of Object.keys(d.foto || {})) { FOTO[k] = d.foto[k]; await idb.set("foto:" + k, d.foto[k]); }
     if (d.logo) { LOGO = d.logo; await idb.set("logo", d.logo); }
     render(); toast("Backup importato");
@@ -529,13 +594,13 @@ function trova(uidX) { return scheda.esercizi.find((x) => x.uid === uidX); }
 
 document.addEventListener("click", async (ev) => {
   const t = ev.target.closest("[data-tab],[data-tab-go],[data-act],[data-riga]");
-  if (!t) { if (ev.target === $("#dlg")) closeDlg(); return; }
+  if (!t) { if (ev.target === $("#dlg") && !obbligaProf) closeDlg(); return; }
   if (t.dataset.tab || t.dataset.tabGo) { tab = t.dataset.tab || t.dataset.tabGo; render(); window.scrollTo(0, 0); return; }
   if (t.dataset.riga) { const x = trova(t.dataset.uid); x.righe[t.dataset.riga] = !x.righe[t.dataset.riga]; salvaBozza(); render(); return; }
   const id = t.dataset.id, a = t.dataset.act;
   switch (a) {
     case "apri": dettaglio(id); break;
-    case "chiudi": closeDlg(); break;
+    case "chiudi": if (!obbligaProf) closeDlg(); break;
     case "aggiungi": aggiungi(id); if ($("#dlg").open) closeDlg(); render(); break;
     case "azzera": filtri = {}; cerca = ""; store.set("filtri", filtri); render(); break;
     case "nuovo-es": editor(null); break;
@@ -556,7 +621,7 @@ document.addEventListener("click", async (ev) => {
       if (scheda.esercizi.length && t.dataset.conferma !== "1") { t.dataset.conferma = "1"; t.textContent = "Conferma: svuota la scheda"; return; }
       scheda = nuovaScheda(); salvaBozza(); render(); break;
     case "salva-scheda": {
-      const copia = clone(scheda); copia.salvata = new Date().toISOString();
+      const copia = clone(scheda); copia.salvata = new Date().toISOString(); if (nomeProf()) copia.professionista = nomeProf();
       const i = schede.findIndex((s) => s.id === scheda.id); if (i >= 0) schede[i] = copia; else schede.push(copia);
       store.set("schede", schede); toast("Scheda salvata in archivio"); break; }
     case "apri-scheda": scheda = clone(schede.find((s) => s.id === t.dataset.sid)); salvaBozza(); tab = "scheda"; render(); break;
@@ -572,6 +637,13 @@ document.addEventListener("click", async (ev) => {
       if (!installEvt) { toast("Usa il menu del browser: Installa app / Aggiungi a schermata Home"); break; }
       installEvt.prompt(); installEvt.userChoice.finally(() => { installEvt = null; $("#installa").hidden = true; render(); }); break;
     case "togli-logo": LOGO = null; await idb.del("logo"); render(); break;
+    case "scegli-prof": sceltaProf(); break;
+    case "usa-prof": entraProf(t.dataset.pid); break;
+    case "elimina-prof": {
+      if (t.dataset.conferma !== "1") { t.dataset.conferma = "1"; t.textContent = "Conferma eliminazione"; return; }
+      professionisti = professionisti.filter((p) => p.id !== t.dataset.pid);
+      if (profAttivo === t.dataset.pid) profAttivo = null;
+      salvaProf(); render(); if (!profCorrente()) sceltaProf(); break; }
   }
 });
 
@@ -581,6 +653,7 @@ document.addEventListener("input", (ev) => {
   if (t.dataset.cella) { const x = trova(t.dataset.cella); (x.celle[t.dataset.r] = x.celle[t.dataset.r] || [])[+t.dataset.c] = t.value; salvaBozza(); aggiornaObiettivi(t.dataset.cella); return; }
   if (t.dataset.nota) { trova(t.dataset.nota).nota = t.value; salvaBozza(); aggiornaObiettivi(t.dataset.nota); return; }
   if (t.dataset.s) { scheda[t.dataset.s] = t.value; salvaBozza(); return; }
+  if (t.dataset.profNome) { const p = professionisti.find((q) => q.id === t.dataset.profNome); if (p && t.value.trim()) { p.nome = t.value.trim(); salvaProf(); aggiornaProfBtn(); } return; }
   if (t.dataset.set && t.tagName !== "SELECT") { settings[t.dataset.set] = t.type === "number" ? Math.max(1, Math.min(12, +t.value || 4)) : t.value; store.set("settings", settings); if (t.dataset.set === "studio") $("#brand-name").textContent = t.value || "NC Fisioterapia"; }
 });
 
@@ -602,7 +675,19 @@ document.addEventListener("change", async (ev) => {
   if (t.id === "importa" && t.files[0]) { importa(t.files[0]); }
 });
 
-document.addEventListener("submit", (ev) => { if (ev.target.id === "form-ed") { ev.preventDefault(); salvaEditor(ev.target); } });
+document.addEventListener("submit", (ev) => {
+  if (ev.target.id === "form-ed") { ev.preventDefault(); salvaEditor(ev.target); }
+  if (ev.target.id === "form-prof") {
+    ev.preventDefault();
+    const nome = (new FormData(ev.target).get("nome") || "").toString().trim();
+    if (!nome) { toast("Inserisci il nome del professionista"); return; }
+    let p = professionisti.find((q) => q.nome.toLowerCase() === nome.toLowerCase());
+    if (!p) { p = { id: uid(), nome }; professionisti.push(p); }
+    entraProf(p.id);
+  }
+});
+// Esc non chiude la finestra di scelta finché non c'è un professionista attivo
+$("#dlg").addEventListener("cancel", (ev) => { if (obbligaProf) ev.preventDefault(); });
 document.addEventListener("keydown", (ev) => { if (ev.key === "Escape" && document.body.classList.contains("preview")) document.body.classList.remove("preview"); });
 
 /* ---------- app installabile (PWA) ---------- */
@@ -620,6 +705,7 @@ if ("serviceWorker" in navigator && !inFrame && location.protocol.startsWith("ht
 /* ---------- avvio ---------- */
 (async function init() {
   render();
+  if (professionisti.length !== 1) sceltaProf(); // con 0 o più profili si sceglie chi entra; con uno solo si entra direttamente
   const all = await idb.all();
   Object.keys(all).forEach((k) => { if (k.startsWith("foto:")) FOTO[k.slice(5)] = all[k]; });
   LOGO = all.logo || null;
