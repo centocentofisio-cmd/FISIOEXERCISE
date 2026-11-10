@@ -6,6 +6,7 @@
 <title>FISIOEXERCISE</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0D5C53">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -54,7 +55,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:10px}
 .brand{display:flex;align-items:baseline;gap:8px;margin-right:auto}
-.brand b{font-family:var(--f-display);font-size:20px;letter-spacing:-.01em;color:var(--accent)}
+.brand b{font-family:var(--f-display);font-size:22px;letter-spacing:-.01em;color:var(--accent)}
+/* Logo: FISIO + EXERCISE con la X sostituita dal mirino (anello, tacche verticali, X, punto sul bersaglio) */
+.wm{white-space:nowrap}
+.wm .wm-a{color:var(--ink)}
+.wm .wm-b{color:var(--accent)}
+.wm svg{display:inline-block;height:1.24em;width:1.12em;vertical-align:-.29em;overflow:visible}
+.wm .wm-ring,.wm .wm-x{fill:none;stroke:var(--accent);stroke-linecap:round}
+.wm .wm-dot{fill:var(--warn)}
 .brand span{color:var(--muted);font-size:13px}
 .tabs{display:flex;gap:4px;flex-wrap:wrap}
 .tab{border:0;background:transparent;padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:700}
@@ -246,7 +254,7 @@ body.preview .preview-bar{display:flex}
 </div>
 <div id="app-ui">
   <header class="top"><div class="wrap">
-    <div class="brand"><b>FISIOEXERCISE</b><span id="brand-name">NC Fisioterapia</span></div>
+    <div class="brand"><b class="wm" role="img" aria-label="FISIOEXERCISE"><span class="wm-a">FISIO</span><span class="wm-b">E<svg viewBox="-56 -95 112 124" aria-hidden="true" focusable="false"><g transform="translate(0 -33)"><circle class="wm-ring" r="45" stroke-width="7"/><path class="wm-ring" d="M0 -52V-62M0 52V62" stroke-width="7"/><path class="wm-x" d="M-21 -27L21 27M21 -27L-21 27" stroke-width="13.5"/><circle class="wm-dot" r="8.5"/></g></svg>ERCISE</span></b><span id="brand-name">NC Fisioterapia</span></div>
     <button class="btn sm primary" id="installa" data-act="installa" hidden>Installa app</button>
     <nav class="tabs" role="tablist">
       <button class="tab" role="tab" data-tab="esercizi" aria-selected="true">Esercizi</button>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>FISIOEXERCISE</title><rect width="512" height="512" rx="112" fill="#0D5C53"/>
+<g transform="translate(256 256) scale(0.98)" fill="none" stroke-linecap="round">
+<circle r="150" stroke="#FFFFFF" stroke-width="26"/>
+<g stroke="#FFFFFF" stroke-width="26"><line y1="-178" y2="-218"/><line y1="178" y2="218"/><line x1="-178" x2="-218"/><line x1="178" x2="218"/></g>
+<g stroke="#FFFFFF" stroke-width="44"><line x1="-68" y1="-88" x2="68" y2="88"/><line x1="68" y1="-88" x2="-68" y2="88"/></g>
+<circle r="29" fill="#F2997A" stroke="none"/>
+</g>
+</svg>
