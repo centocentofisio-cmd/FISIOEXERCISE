@@ -163,7 +163,7 @@ window.ESERCIZI = [
   progressioni: ["Side plank con abduzione dell'arto superiore", "copenhagen", "Tenute più lunghe (es. 3×30-45 s)"],
   regressioni: ["Side plank con ginocchia flesse", "Side plank al muro in piedi"],
   metriche: ["Tempo di tenuta (s) per lato: in giovani sani circa 95 s nei maschi e 75 s nelle femmine (McGill 1999)", "Rapporto destra/sinistra atteso tra 0,95 e 1,05 (criterio di McGill)"],
-  rif: ["Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. Int J Sports Phys Ther 2011", "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944"]
+  rif: ["Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. Int J Sports Phys Ther 2011;6(3):206-223", "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944"]
 },
 {
   id: "copenhagen",

@@ -30,7 +30,7 @@ const R = {
   risberg: "Risberg MA et al. Neuromuscular training versus strength training during first 6 months after anterior cruciate ligament reconstruction: a randomized clinical trial. J Orthop Sports Phys Ther 2007;37(10):737-750",
   webster: "Webster KE, Hewett TE. Meta-analysis of meta-analyses of anterior cruciate ligament injury reduction training programs. J Orthop Res 2018;36(10):2696-2708",
   almon: "Almonroeder TG et al. Cognitive demands influence lower extremity mechanics during a drop vertical jump task in female athletes. J Orthop Sports Phys Ther 2018;48(5):381-387",
-  dai: "Dai B et al. The effect of a secondary cognitive task on landing mechanics and jump performance. Sports Biomech (doi:10.1080/14763141.2016.1265579)",
+  dai: "Dai B et al. The effect of a secondary cognitive task on landing mechanics and jump performance. Sports Biomech 2018;17(2):192-205",
   grooms: "Grooms D, Appelbaum G, Onate J. Neuroplasticity following anterior cruciate ligament injury: a framework for visual-motor training approaches in rehabilitation. J Orthop Sports Phys Ther 2015;45(5):381-393",
   gokeler: "Gokeler A, Neuhaus D, Benjaminse A, Grooms DR, Baumeister J. Principles of motor learning to support neuroplasticity after ACL injury: implications for optimizing performance and reducing risk of second ACL injury. Sports Med 2019;49(6):853-865",
   besier: "Besier TF, Lloyd DG, Ackland TR, Cochrane JL. Anticipatory effects on knee joint loading during running and cutting maneuvers. Med Sci Sports Exerc 2001;33(7):1176-1181",

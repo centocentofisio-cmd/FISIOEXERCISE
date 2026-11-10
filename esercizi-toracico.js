@@ -31,7 +31,7 @@
     LIF: "Watson SL et al. High-intensity resistance and impact training improves bone mineral density and physical function in postmenopausal women with osteopenia and osteoporosis: the LIFTMOR randomized controlled trial. J Bone Miner Res 2018;33(2):211-220",
     MAR: "Marchetti PH, Uchida MC. Effects of the pullover exercise on the pectoralis major and latissimus dorsi muscles as evaluated by EMG. J Appl Biomech 2011;27(4):380-384",
     LUD: "Ludewig PM et al. Relative balance of serratus anterior and upper trapezius muscle activity during push-up exercises. Am J Sports Med 2004;32(2):484-493",
-    KIB: "Kibler WB, Press J, Sciascia A. The role of core stability in athletic function. Sports Med 2006",
+    KIB: "Kibler WB, Press J, Sciascia A. The role of core stability in athletic function. Sports Med 2006;36(3):189-198",
     KIS: "Kibler WB, Sciascia A. Current concepts: scapular dyskinesis. Br J Sports Med 2010",
     REE: "Reeser JC et al. Upper limb biomechanics during the volleyball serve and spike. Sports Health 2010;2(5):368-374",
     HEN: "Heneghan NR et al. Thoracic spine mobility, an essential link in upper limb kinetic chains in athletes: a systematic review. Transl Sports Med 2019",
