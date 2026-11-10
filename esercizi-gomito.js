@@ -227,12 +227,12 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   regime: ["Eccentrico"], obiettivo: ["Forza"],
   fase: ["Intermedia"], specificita: "Generale", gesto: "",
   img: "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl",
-  descrizione: "Seduto, avambraccio pronato appoggiato sulla coscia. L'altra mano porta il polso in estensione completa (fase concentrica assistita), poi si lascia scendere il manubrio in flessione in 3-5 secondi con il solo lato trattato. Protocollo classico: 3 × 15, una o due volte al giorno, accettando un dolore lieve, progressione del carico quando il dolore si riduce (Stasinopoulos 2005). Le revisioni indicano benefici su dolore e funzione, senza superiorità netta rispetto al carico concentrico-eccentrico.",
+  descrizione: "Seduto, avambraccio pronato appoggiato sulla coscia. L'altra mano porta il polso in estensione completa (fase concentrica assistita), poi si lascia scendere il manubrio in flessione in 3-5 secondi con il solo lato trattato. Dosaggio usato negli studi: 3 × 15 al giorno, accettando un dolore lieve e aumentando il carico quando il dolore si riduce (Tyler 2010, con barra flessibile); nel programma di Stasinopoulos 2005 l'eccentrico è associato allo stretching statico degli estensori (30-45 s, 3 volte prima e dopo). Le revisioni indicano benefici su dolore e funzione, senza superiorità netta rispetto al carico concentrico-eccentrico.",
   cue: ["Sali con l'aiuto dell'altra mano", "Scendi lento contando fino a 4", "Gomito fermo sulla coscia", "Lieve fastidio sì, dolore che sale no"],
   errori: ["Fase eccentrica troppo veloce", "Sollevare il carico attivamente con il lato dolente", "Gomito che si stacca dall'appoggio", "Carico fermo per settimane senza progressione"],
   progressioni: ["Aumento del carico", "Esecuzione a gomito esteso", "gom-tyler-twist"],
   regressioni: ["gom-isometria-estensori-polso", "gom-estensione-polso"],
-  rif: ["Stasinopoulos D, Stasinopoulou K, Johnson MI. An exercise programme for the management of lateral elbow tendinopathy. Br J Sports Med 2005;39(12):944-947", "Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19"]
+  rif: ["Stasinopoulos D, Stasinopoulou K, Johnson MI. An exercise programme for the management of lateral elbow tendinopathy. Br J Sports Med 2005;39(12):944-947", "Tyler TF, Thomas GC, Nicholas SJ, McHugh MP. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. J Shoulder Elbow Surg 2010;19(6):917-922", "Cullinane FL, Boocock MG, Trevelyan FC. Is eccentric exercise an effective treatment for lateral epicondylitis? A systematic review. Clin Rehabil 2014;28(1):3-19"]
 },
 {
   id: "gom-tyler-twist",
@@ -250,7 +250,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Srotolare velocemente", "Gomiti flessi durante l'eccentrica", "Barra troppo rigida all'inizio"],
   progressioni: ["Barra di resistenza maggiore (colore successivo)"],
   regressioni: ["gom-eccentrico-estensori", "Asciugamano arrotolato al posto della barra"],
-  rif: ["Tyler TF et al. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. J Shoulder Elbow Surg 2010;19(6):917-922"]
+  rif: ["Tyler TF, Thomas GC, Nicholas SJ, McHugh MP. Addition of isolated wrist extensor eccentric exercise to standard treatment for chronic lateral epicondylosis: a prospective randomized trial. J Shoulder Elbow Surg 2010;19(6):917-922"]
 },
 {
   id: "gom-flessione-polso",

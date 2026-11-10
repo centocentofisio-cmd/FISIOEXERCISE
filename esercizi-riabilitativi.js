@@ -10,8 +10,8 @@
     3. Perturbazioni: tavole instabili, spinte e trazioni casuali del terapista.
     4. Doppio compito e compiti reattivi: attenzione divisa, decisioni all'ultimo momento.
     5. Multi-distretto: arto inferiore + tronco + arto superiore nello stesso gesto.
-  Gli esercizi di base già presenti (es. gin-squat-rnt, lomb-pallof-press,
-  anca-pallof-mezzo-ginocchio, gin-equilibrio-mono, gin-cambio-direzione) non sono
+  Gli esercizi di base già presenti (es. gin-squat-rnt, lomb-pallof-press, core-pallof-walkout,
+  core-bear-crawl, core-mb-lancio-rotazionale, gin-equilibrio-mono, gin-cambio-direzione) non sono
   duplicati: sono richiamati qui come progressioni/regressioni tramite il loro id.
 
   Fonti: solo articoli verificati (titolo, rivista e anno controllati).
@@ -268,7 +268,7 @@ return [
   descrizione: "Di fianco al cavo, braccia tese in avanti in posizione di Pallof per tutta la serie. Si esegue un affondo indietro e si torna in piedi senza che le mani o il tronco ruotino verso il cavo. Rispetto allo split squat con Pallof, il passo crea un momento di appoggio monopodalico e un cambio di base mentre il tronco è sotto carico rotatorio: più vicino a quanto accade nello sport.",
   cue: ["Le mani restano al centro del petto per tutta la ripetizione", "Passo indietro lungo e controllato", "Ginocchio anteriore in asse", "Ritorna spingendo col piede davanti"],
   errori: ["Mani che si spostano verso il cavo durante il passo", "Bacino che ruota", "Passo troppo stretto (camminare su un filo)"],
-  progressioni: ["Affondo in avanti o laterale con tenuta Pallof", "riab-pallof-passo-laterale", "riab-affondo-chop"],
+  progressioni: ["Affondo in avanti o laterale con tenuta Pallof", "core-pallof-walkout", "riab-affondo-chop"],
   regressioni: ["riab-split-squat-pallof"],
   metriche: ["Ripetizioni corrette consecutive a carico fisso e confronto tra lati", M.rpe],
   rif: [R.kibler]
@@ -303,31 +303,12 @@ return [
   regime: ["Isometrico"], obiettivo: ["Controllo motorio", "Forza", "Resistenza"],
   fase: ["Precoce", "Intermedia"], specificita: "Generale", gesto: "",
   img: null,
-  descrizione: "In posizione atletica (mezzo squat, ginocchia flesse a circa 60°), di fianco al cavo, si eseguono serie di Pallof press. L'isometria di quadricipite e glutei si somma al lavoro anti-rotatorio: utile quando lo squat dinamico non è ancora tollerato (ad esempio tendinopatia rotulea in fase reattiva, dove le isometrie sono la prima scelta) e per insegnare la posizione di base della difesa nella pallavolo.",
+  descrizione: "In posizione atletica (mezzo squat, ginocchia flesse a circa 60°), di fianco al cavo, si eseguono serie di Pallof press. L'isometria di quadricipite e glutei si somma al lavoro anti-rotatorio: utile quando lo squat dinamico non è ancora tollerato (ad esempio tendinopatia rotulea in fase reattiva). La versione specifica per la ricezione nella pallavolo è core-pallof-ricezione.",
   cue: ["Siediti in posizione atletica e resta lì", "Ginocchia in asse coi piedi, non dentro", "Spingi le mani dritte davanti", "Peso su tutto il piede"],
   errori: ["Ginocchia che cedono verso il cavo", "Risalita graduale durante la serie", "Rotazione del tronco"],
-  progressioni: ["riab-split-squat-pallof", "riab-pallof-passo-laterale"],
+  progressioni: ["riab-split-squat-pallof", "core-pallof-ricezione", "core-pallof-walkout"],
   regressioni: ["lomb-pallof-press", "gin-wall-sit"],
   metriche: ["Durata della tenuta (es. 5 × 30-45 s) e dolore durante e dopo (NRS)", M.rpe],
-  rif: [R.kibler]
-},
-{
-  id: "riab-pallof-passo-laterale",
-  nome: "Pallof press con passi laterali (side-step)",
-  alias: "Pallof press side-step, lateral Pallof walk",
-  muscoli: "Gluteo medio, adduttori, obliqui, trasverso dell'addome",
-  primario: "Core", secondari: ["Anca"],
-  pattern: ["Rotazione/anti-rotazione"], catena: "Chiusa", carico: "In carico", lateralita: "Bilaterale",
-  attrezzatura: ["Cavo", "Elastico"],
-  regime: ["Isometrico"], obiettivo: ["Controllo motorio", "Forza"],
-  fase: ["Intermedia", "Avanzata", "Ritorno allo sport"], specificita: "Generale", gesto: "",
-  img: null,
-  descrizione: "Braccia tese davanti in posizione di Pallof, ci si allontana dall'ancoraggio con passi laterali in posizione atletica e poi si torna. Allontanandosi la resistenza aumenta progressivamente. Il tronco resiste alla rotazione mentre gli arti inferiori si muovono sul piano frontale: è la versione 'in movimento' del Pallof, ponte verso gli spostamenti difensivi.",
-  cue: ["Mani ferme al centro del petto", "Passi corti, piedi che non si toccano", "Ginocchia flesse, altezza costante", "Bacino e spalle sempre frontali"],
-  errori: ["Rotazione del tronco a ogni passo", "Gambe tese e altezza che cambia", "Passi incrociati"],
-  progressioni: ["Passi laterali veloci (shuffle) con tenuta", "riab-affondo-reattivo-direzioni"],
-  regressioni: ["riab-pallof-squat", "lomb-pallof-press"],
-  metriche: ["Distanza massima dall'ancoraggio mantenendo il tronco frontale (m) a elastico fisso"],
   rif: [R.kibler]
 },
 {
@@ -344,7 +325,7 @@ return [
   descrizione: "Cavo alto, impugnatura con due mani. Si esegue un affondo in avanti (o indietro) e, mentre si scende, si porta la maniglia in diagonale dall'alto verso il basso fino all'anca opposta; si risale riportando la maniglia in alto. Il tronco ruota sopra un'anca e un ginocchio che devono restare stabili: allena il trasferimento di forza dalla gamba al tronco alle braccia (catena cinetica, Kibler 2006).",
   cue: ["Le braccia guidano, ma la rotazione parte dal tronco", "Ginocchio anteriore fermo sopra il piede", "Scendi e tira nello stesso tempo", "Risali controllando il ritorno del cavo"],
   errori: ["Ginocchio che segue la rotazione del tronco", "Flessione lombare durante il chop", "Movimento solo di braccia"],
-  progressioni: ["Lift al cavo (dal basso in alto) con affondo indietro", "riab-lancio-palla-rotazionale"],
+  progressioni: ["Lift al cavo (dal basso in alto) con affondo indietro", "core-mb-lancio-rotazionale"],
   regressioni: ["anca-chop-cavo", "lomb-chop-cavo", "Chop in mezza ginocchio"],
   metriche: [M.rpe],
   rif: [R.kibler]
@@ -609,45 +590,6 @@ return [
   regressioni: ["sp-landmine-press", "landmine-affondo"],
   metriche: [M.rpe],
   rif: [R.kibler]
-},
-{
-  id: "riab-lancio-palla-rotazionale",
-  nome: "Lancio rotazionale di palla medica al muro in split stance",
-  alias: "Rotational medicine ball throw, split-stance scoop toss",
-  muscoli: "Obliqui, grande gluteo, adduttori, gran dorsale, pettorale",
-  primario: "Core", secondari: ["Anca", "Toracico", "Spalla"],
-  pattern: ["Rotazione/anti-rotazione"], catena: "Chiusa", carico: "In carico", lateralita: "Split stance",
-  attrezzatura: ["Piccoli attrezzi"],
-  regime: ["Pliometrico", "Concentrico"], obiettivo: ["Potenza", "RFD"],
-  fase: ["Avanzata", "Ritorno allo sport"], specificita: "Gesto-specifico",
-  gesto: "Gesti rotazionali di lancio e colpo (attacco, servizio, tiro)",
-  img: null,
-  descrizione: "Di fianco al muro a 1-2 m, palla medica di 2-4 kg. Si carica la palla sull'anca lontana dal muro e la si lancia con una rotazione rapida che parte dal piede posteriore, passa per l'anca e il tronco e finisce nelle braccia. Si riprende al rimbalzo. Allena la produzione di potenza lungo la catena cinetica gamba-tronco-braccio (Kibler 2006), dopo aver consolidato il controllo anti-rotatorio.",
-  cue: ["Parte il piede, poi l'anca, poi il busto, per ultime le braccia", "Lancia forte e veloce", "Schiena lunga, ruota con le anche", "Riprendi la palla in posizione atletica"],
-  errori: ["Lancio solo di braccia", "Flessione lombare in carica", "Palla troppo pesante che rallenta il gesto"],
-  progressioni: ["Lancio da passo (step-behind)", "Palla più pesante o lancio a una mano"],
-  regressioni: ["riab-affondo-chop", "lomb-landmine-rotazione"],
-  metriche: ["Distanza o velocità di lancio (m o m/s) confrontata tra i lati e nel tempo"],
-  rif: [R.kibler]
-},
-{
-  id: "riab-bear-crawl",
-  nome: "Bear crawl (camminata in quadrupedia a ginocchia sollevate)",
-  alias: "Bear crawl",
-  muscoli: "Dentato anteriore, cuffia dei rotatori, trasverso e obliqui, quadricipite, flessori d'anca",
-  primario: "Core", secondari: ["Spalla", "Polso e mano", "Anca"],
-  pattern: ["Anti-estensione", "Rotazione/anti-rotazione"], catena: "Chiusa", carico: "In carico", lateralita: "Bilaterale",
-  attrezzatura: ["Corpo libero"],
-  regime: ["Isometrico"], obiettivo: ["Controllo motorio", "Resistenza"],
-  fase: ["Intermedia", "Avanzata"], specificita: "Generale", gesto: "",
-  img: null,
-  descrizione: "Dalla posizione di bear plank (quadrupedia con ginocchia sollevate di pochi centimetri) ci si sposta avanti, indietro e lateralmente muovendo in contemporanea mano e piede opposti. Schiena piatta e bacino fermo: il tronco resiste alla rotazione a ogni passo, le spalle lavorano in catena chiusa. Esercizio di integrazione spalla-tronco-anca utile anche come riscaldamento.",
-  cue: ["Ginocchia appena sollevate, schiena piatta come un tavolo", "Passi piccoli: mano e piede opposti insieme", "Bacino fermo, non ondeggiare", "Spingi il pavimento via con le mani"],
-  errori: ["Bacino alto o che oscilla", "Passi lunghi", "Scapole che si avvicinano (alate)"],
-  progressioni: ["Con elastico attorno ai polsi", "Con kettlebell trascinato (lomb-plank-drag)", "Bear crawl laterale"],
-  regressioni: ["lomb-bear-plank", "lomb-bird-dog"],
-  metriche: ["Distanza o tempo a qualità invariata"],
-  rif: []
 },
 
 ];

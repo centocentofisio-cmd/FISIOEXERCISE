@@ -1,11 +1,11 @@
 /* FISIOEXERCISE – service worker: rende l'app installabile e utilizzabile offline.
    Codice e dati: prima la rete (così gli aggiornamenti arrivano subito), poi la copia salvata.
    Immagini: prima la copia salvata, poi la rete. */
-const CACHE = "fisioexercise-v3";
+const CACHE = "fisioexercise-v4";
 const CORE = [
   "./", "index.html", "app.js", "manifest.webmanifest",
   "esercizi.js", "esercizi-anca.js", "esercizi-cervicale.js", "esercizi-toracico.js", "esercizi-lombare.js",
-  "esercizi-spalla.js", "esercizi-gomito.js", "esercizi-polso-mano.js", "esercizi-ginocchio.js", "esercizi-piede-caviglia.js", "esercizi-riabilitativi.js",
+  "esercizi-spalla.js", "esercizi-gomito.js", "esercizi-polso-mano.js", "esercizi-ginocchio.js", "esercizi-piede-caviglia.js", "esercizi-core.js", "esercizi-riabilitativi.js",
   "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png",
 ];
 
