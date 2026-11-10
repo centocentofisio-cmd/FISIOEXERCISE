@@ -703,7 +703,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   attrezzatura: ["Corpo libero", "Elastico"],
   regime: ["Isometrico"], obiettivo: ["Mobilità"],
   fase: ["Intermedia", "Avanzata"], specificita: "Generale", gesto: "",
-  img: null,
+  img: "On_Your_Side_Quad_Stretch",
   descrizione: "In decubito laterale, arto inferiore sotto flesso al petto per bloccare il bacino. Si afferra la caviglia dell'arto sopra (o si usa una cinghia) e si porta il tallone verso il gluteo, poi si estende l'anca portando il ginocchio indietro fino a sentire l'allungamento sulla coscia anteriore. Mantenere 30-60 secondi. La rigidità del quadricipite è descritta tra i fattori associati al dolore femoro-rotuleo; misura semplice: distanza tallone-gluteo in prono o test di Thomas modificato.",
   cue: ["Ginocchio sotto al petto per bloccare il bacino", "Tallone verso il gluteo, poi ginocchio indietro", "Non inarcare la schiena", "Tieni 30-60 secondi respirando"],
   errori: ["Iperestensione lombare al posto dell'estensione d'anca", "Ginocchio che va in abduzione", "Dolore alla rotula per flessione forzata"],

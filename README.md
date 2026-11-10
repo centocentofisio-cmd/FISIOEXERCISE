@@ -9,5 +9,6 @@ Web app statica (HTML + CSS + JavaScript, nessuna installazione) per creare sche
 - `manifest.webmanifest`, `sw.js`, `icon-*.png` – app installabile (PWA) e uso offline; aggiungere ogni nuovo file `esercizi-*.js` anche all'elenco `CORE` in `sw.js` e incrementare `CACHE`
 - `app.js` – logica: filtri, scheda paziente, tabella di progressione, archivio, backup
 - `img/` – foto da free-exercise-db (Unlicense, pubblico dominio)
+- `ill/<id>/0.svg`, `1.svg` + `illustrazioni.js` – illustrazioni originali (posizione iniziale/finale) per gli esercizi senza foto libere; sono generate da `tools/illustrazioni/` (pose in `pose-*.js`, motore in `motore.js`). Per rigenerarle: `node tools/illustrazioni/build.js`
 
 I dati (schede, foto caricate, logo) restano nel browser del dispositivo. Usa "Archivio > Esporta backup" per salvarli o spostarli.
