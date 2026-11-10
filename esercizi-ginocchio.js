@@ -65,7 +65,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Rotazione della gamba verso l'esterno per guadagnare gradi", "Sollevare il bacino", "Forzare con dolore acuto"],
   progressioni: ["Flessione assistita con cinghia", "Wall slide: supino coi piedi al muro, lasciando scendere il piede per gravità", "Flessione in quadrupedia (dondolo all'indietro verso i talloni)"],
   regressioni: ["Mobilizzazione passiva da parte del terapista"],
-  rif: ["van Melick N et al. Evidence-based clinical practice update: practice guidelines for anterior cruciate ligament rehabilitation. Br J Sports Med 2016;50(24):1506-1515"]
+  rif: ["van Melick N et al. Evidence-based clinical practice update: practice guidelines for anterior cruciate ligament rehabilitation based on a systematic review and multidisciplinary consensus. Br J Sports Med 2016;50(24):1506-1515"]
 },
 {
   id: "gin-prone-hang",
@@ -83,7 +83,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Rotula sul bordo del lettino (dolore anteriore)", "Contrazione degli ischiocrurali per difesa", "Carico eccessivo che provoca spasmo"],
   progressioni: ["Cavigliera 0,5-2 kg", "Estensione da seduto con tallone su rialzo e peso sopra la coscia"],
   regressioni: ["Tallone su rialzo da supino senza carico"],
-  rif: ["van Melick N et al. Br J Sports Med 2016;50(24):1506-1515"]
+  rif: ["van Melick N et al. Evidence-based clinical practice update: practice guidelines for anterior cruciate ligament rehabilitation based on a systematic review and multidisciplinary consensus. Br J Sports Med 2016;50(24):1506-1515"]
 },
 {
   id: "gin-short-arc",
@@ -175,7 +175,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Slancio con il busto", "Asse disallineato (cuscinetto che scivola)", "Arco completo quando non tollerato o non ancora consentito"],
   progressioni: ["gin-leg-extension-mono", "Eccentrica monopodalica: sali con due gambe, scendi con una", "Aumento del carico secondo RPE/RIR"],
   regressioni: ["gin-short-arc", "gin-isometria-leg-ext", "Arco ridotto 90-45°"],
-  rif: ["van Melick N et al. Br J Sports Med 2016;50(24):1506-1515", "Perriman A et al. The effect of open- versus closed-kinetic-chain exercises on anterior tibial laxity, strength, and function following anterior cruciate ligament reconstruction: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2018;48(7):552-566", "Powers CM et al. Patellofemoral joint stress during weight-bearing and non-weight-bearing quadriceps exercises. J Orthop Sports Phys Ther 2014;44(5):320-327", "Kongsgaard M et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 2009;19(6):790-802"]
+  rif: ["van Melick N et al. Evidence-based clinical practice update: practice guidelines for anterior cruciate ligament rehabilitation based on a systematic review and multidisciplinary consensus. Br J Sports Med 2016;50(24):1506-1515", "Perriman A et al. The effect of open- versus closed-kinetic-chain exercises on anterior tibial laxity, strength, and function following anterior cruciate ligament reconstruction: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2018;48(7):552-566", "Powers CM et al. Patellofemoral joint stress during weight-bearing and non-weight-bearing quadriceps exercises. J Orthop Sports Phys Ther 2014;44(5):320-327", "Kongsgaard M et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 2009;19(6):790-802"]
 },
 {
   id: "gin-leg-extension-mono",
@@ -285,7 +285,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Gomiti che cadono e bilanciere che scivola in avanti", "Arrotondamento toracico", "Ginocchia in valgo in risalita"],
   progressioni: ["Carico in %1RM o RPE 7-9", "Pausa in basso", "Front squat con tempo HSR"],
   regressioni: ["gin-cyclist-squat", "goblet-squat", "squat-smith"],
-  rif: ["Gullett JC et al. A biomechanical comparison of back and front squats in healthy trained individuals. J Strength Cond Res 2009;23(1):284-292", "Hartmann H et al. Analysis of the load on the knee joint and vertebral column with changes in squatting depth and weight load. Sports Med 2013;43(10):993-1008", "Kongsgaard M et al. Scand J Med Sci Sports 2009;19(6):790-802"]
+  rif: ["Gullett JC et al. A biomechanical comparison of back and front squats in healthy trained individuals. J Strength Cond Res 2009;23(1):284-292", "Hartmann H et al. Analysis of the load on the knee joint and vertebral column with changes in squatting depth and weight load. Sports Med 2013;43(10):993-1008", "Kongsgaard M et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 2009;19(6):790-802"]
 },
 {
   id: "gin-landmine-squat",
@@ -339,7 +339,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Inclinazione del busto in avanti", "Valgismo del ginocchio", "Discesa troppo rapida"],
   progressioni: ["Zaino o manubri (aumento di 5 kg quando 3 × 15 sono senza dolore)", "Bilanciere sulle spalle"],
   regressioni: ["Decline squat bipodalico", "gin-spanish-squat"],
-  rif: ["Purdam CR et al. A pilot study of the eccentric decline squat in the management of painful chronic patellar tendinopathy. Br J Sports Med 2004;38(4):395-397", "Young MA et al. Eccentric decline squat protocol offers superior results at 12 months compared with traditional eccentric protocol for patellar tendinopathy in volleyball players. Br J Sports Med 2005;39(2):102-105", "Kongsgaard M et al. Scand J Med Sci Sports 2009;19(6):790-802", "Breda SJ et al. Effectiveness of progressive tendon-loading exercise therapy in patients with patellar tendinopathy: a randomised clinical trial. Br J Sports Med 2021;55(9):501-509"]
+  rif: ["Purdam CR et al. A pilot study of the eccentric decline squat in the management of painful chronic patellar tendinopathy. Br J Sports Med 2004;38(4):395-397", "Young MA et al. Eccentric decline squat protocol offers superior results at 12 months compared with traditional eccentric protocol for patellar tendinopathy in volleyball players. Br J Sports Med 2005;39(2):102-105", "Kongsgaard M et al. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 2009;19(6):790-802", "Breda SJ et al. Effectiveness of progressive tendon-loading exercise therapy in patients with patellar tendinopathy: a randomised clinical trial. Br J Sports Med 2021;55(9):501-509"]
 },
 
 /* ---------- MONOPODALICI E AFFONDI ---------- */
@@ -359,7 +359,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Valgismo dinamico", "Caduta controlaterale del bacino", "Busto che si inclina sul lato d'appoggio", "Slancio per risalire"],
   progressioni: ["Box più basso", "Manubri o kettlebell al petto", "gin-pistol"],
   regressioni: ["Box più alto", "Appoggio di una mano a un supporto o a un elastico", "gin-mini-squat"],
-  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011;39(4):866-873", "Willy RW et al. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
+  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011;39(4):866-873", "Willy RW et al. Patellofemoral pain: clinical practice guidelines. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
 },
 {
   id: "gin-pistol",
@@ -413,7 +413,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Valgismo dinamico", "Caduta del bacino", "Appoggio del piede libero per scaricare il peso"],
   progressioni: ["Step più alto (20-25 cm)", "Manubri in mano", "gin-squat-mono-box"],
   regressioni: ["step-down-laterale", "Step basso (5-10 cm) con appoggio di una mano"],
-  rif: ["Willy RW et al. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
+  rif: ["Willy RW et al. Patellofemoral pain: clinical practice guidelines. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
 },
 {
   id: "gin-step-up-laterale",
@@ -599,7 +599,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Tempo di contatto lungo (diventa un salto con contromovimento)", "Valgismo all'impatto", "Box troppo alto per la capacità del paziente"],
   progressioni: ["Box più alto", "Drop jump monopodalico", "Drop jump con cambio di direzione dopo il rimbalzo"],
   regressioni: ["gin-atterraggio-bipodalico", "gin-squat-jump"],
-  rif: ["Hewett TE et al. Am J Sports Med 2005;33(4):492-501"]
+  rif: ["Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes: a prospective study. Am J Sports Med 2005;33(4):492-501"]
 },
 {
   id: "gin-tuck-jump",
@@ -635,7 +635,7 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Atterraggio rigido o in valgo", "Mancata stabilizzazione (il test non è valido)", "Progressione a balzi multipli prima di un singolo stabile"],
   progressioni: ["Triple hop", "Crossover hop (zig-zag su una linea)", "gin-hop-laterale", "Hop su tempo (6 m cronometrati)"],
   regressioni: ["atterraggio-mono", "Balzi bipodalici in avanti"],
-  rif: ["Noyes FR, Barber SD, Mangine RE. Abnormal lower limb symmetry determined by function hop tests after anterior cruciate ligament rupture. Am J Sports Med 1991;19(5):513-518", "Grindem H et al. Br J Sports Med 2016;50(13):804-808"]
+  rif: ["Noyes FR, Barber SD, Mangine RE. Abnormal lower limb symmetry determined by function hop tests after anterior cruciate ligament rupture. Am J Sports Med 1991;19(5):513-518", "Grindem H et al. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study. Br J Sports Med 2016;50(13):804-808"]
 },
 {
   id: "gin-hop-laterale",
@@ -709,6 +709,6 @@ window.ESERCIZI = (window.ESERCIZI || []).concat([
   errori: ["Iperestensione lombare al posto dell'estensione d'anca", "Ginocchio che va in abduzione", "Dolore alla rotula per flessione forzata"],
   progressioni: ["Allungamento in ginocchio (couch stretch)", "Contrai-rilassa (PNF)"],
   regressioni: ["Cinghia attorno alla caviglia", "Minor flessione del ginocchio"],
-  rif: ["Willy RW et al. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
+  rif: ["Willy RW et al. Patellofemoral pain: clinical practice guidelines. J Orthop Sports Phys Ther 2019;49(9):CPG1-CPG95"]
 }
 ]);

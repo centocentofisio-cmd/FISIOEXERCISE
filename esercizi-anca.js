@@ -30,7 +30,7 @@
   progressioni: ["Manubrio nella mano del lato libero", "Pausa isometrica di 5 s in alto", "anca-hip-airplane"],
   regressioni: ["abduzione-decubito", "isometria-muro"],
   metriche: ["Forza isometrica di abduzione con dinamometro manuale (HHD), affidabile (Thorborg 2010): confronta con il controlaterale e normalizza sul peso corporeo", "Prospetticamente, abduzione < 35,4% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005", "Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005;35(8):487-494", "Reiman MP et al. A literature review of studies evaluating gluteus maximus and gluteus medius activation during rehabilitation exercises. Physiother Theory Pract 2012", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "anca-abduzione-isometrica-supina",
@@ -68,7 +68,7 @@
   progressioni: ["Elastico all'avampiede (più attivazione glutea)", "Elastico più rigido", "anca-difesa-spostamento"],
   regressioni: ["monster-walk", "clamshell"],
   metriche: ["Forza di abduzione con HHD (Thorborg 2010), simmetria ≥ 90% rispetto al controlaterale"],
-  rif: ["Berry JW et al. Resisted side stepping: the effect of posture on hip abductor muscle activation. J Orthop Sports Phys Ther 2015", "Cambridge ED et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
+  rif: ["Berry JW et al. Resisted side stepping: the effect of posture on hip abductor muscle activation. J Orthop Sports Phys Ther 2015;45(9):675-682", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
 },
 {
   id: "anca-extrarotazione-seduto",
@@ -87,7 +87,7 @@
   progressioni: ["Elastico più rigido o cavo", "anca-rotazione-mono-carico"],
   regressioni: ["clamshell", "Isometrico contro la mano"],
   metriche: ["Forza di extrarotazione con HHD da seduto (Thorborg 2010)", "Extrarotazione < 20,3% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Thorborg K et al. Clinical assessment of hip strength using a hand-held dynamometer is reliable. Scand J Med Sci Sports 2010", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "anca-intrarotazione-seduto",
@@ -320,7 +320,7 @@
   errori: ["Flessione eccessiva del ginocchio", "Rotazione del bacino", "Spinta con le braccia"],
   progressioni: ["Rialzo instabile o più alto", "Mantenimento isometrico in alto", "nordic"],
   regressioni: ["ponte-gluteo-mono", "Versione bipodalica"],
-  metriche: ["Single Leg Hamstring Bridge test: n° di ripetizioni fino a cedimento tecnico; negli sportivi i valori < 20 e le asimmetrie sono stati associati a maggior rischio di lesione degli ischiocrurali (Freckleton 2014)"],
+  metriche: ["Single Leg Hamstring Bridge test: n° di ripetizioni fino a cedimento tecnico; nel calcio australiano i giocatori che si sono poi infortunati avevano in pre-stagione circa 20 ripetizioni contro circa 26 dei non infortunati (solo arto destro), mentre l'asimmetria tra arti non era associata alla lesione (Freckleton 2014). Non esiste un cut-off validato: < 20 è indicato solo come punteggio scarso"],
   rif: ["Freckleton G et al. The predictive validity of a single leg bridge test for hamstring injuries in Australian Rules Football Players. Br J Sports Med 2014"]
 },
 {
@@ -361,7 +361,7 @@
   progressioni: ["Box più basso", "Manubri o kettlebell (contrappeso in avanti facilita all'inizio)", "anca-skater-squat"],
   regressioni: ["step-down-laterale", "step-up", "Squat monopodalico con appoggio delle mani (TRX o sbarra)"],
   metriche: ["Valutazione qualitativa dello squat monopodalico (tronco, bacino, anca, ginocchio): una scarsa esecuzione si associa a minore forza e attivazione più tardiva del gluteo medio (Crossley 2011)", "Ripetizioni all'altezza standard, confrontate con il controlaterale (LSI ≥ 90%)"],
-  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011"]
+  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011;39(4):866-873"]
 },
 {
   id: "anca-skater-squat",
@@ -591,7 +591,7 @@
   progressioni: ["suitcase-carry (carico su un lato)", "Carico maggiore o distanza maggiore"],
   regressioni: ["Carico ridotto, distanza breve"],
   metriche: ["Carico totale come % del peso corporeo e distanza o tempo"],
-  rif: ["McGill SM et al. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009"]
+  rif: ["McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23(4):1148-1161"]
 },
 
 /* ===================== MOBILITÀ ===================== */
@@ -688,7 +688,7 @@
   progressioni: ["Senza appoggio", "Goblet con kettlebell"],
   regressioni: ["box-squat basso", "90-90"],
   metriche: ["Profondità raggiunta (es. distanza bacino-pavimento o angolo di flessione d'anca)"],
-  rif: ["Griffin DR et al. The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an international consensus statement. Br J Sports Med 2016"]
+  rif: ["Griffin DR et al. The Warwick Agreement on femoroacetabular impingement syndrome (FAI syndrome): an international consensus statement. Br J Sports Med 2016;50(19):1169-1176"]
 },
 
 /* ===================== CONTROLLO MOTORIO / EQUILIBRIO ===================== */
@@ -709,7 +709,7 @@
   progressioni: ["Su superficie instabile", "Con disturbo (lancio di palla)"],
   regressioni: ["Solo direzione anteriore", "Escursione ridotta"],
   metriche: ["Distanze normalizzate sulla lunghezza dell'arto (SIAS-malleolo mediale) × 100", "Asimmetria anteriore ≥ 4 cm associata a rischio 2,5 volte maggiore di infortunio; punteggio composito < 94% nelle ragazze associato a rischio 6,5 volte maggiore (Plisky 2006)"],
-  rif: ["Plisky PJ et al. Star Excursion Balance Test as a predictor of lower extremity injury in high school basketball players. J Orthop Sports Phys Ther 2006", "Gribble PA et al. Using the Star Excursion Balance Test to assess dynamic postural-control deficits and outcomes in lower extremity injury: a literature and systematic review. J Athl Train 2012"]
+  rif: ["Plisky PJ et al. Star Excursion Balance Test as a predictor of lower extremity injury in high school basketball players. J Orthop Sports Phys Ther 2006;36(12):911-919", "Gribble PA et al. Using the Star Excursion Balance Test to assess dynamic postural-control deficits and outcomes in lower extremity injury: a literature and systematic review. J Athl Train 2012;47:339-357"]
 },
 {
   id: "anca-appoggio-mono-perturbazioni",
@@ -749,7 +749,7 @@
   progressioni: ["Con slancio delle braccia", "anca-jump-squat-carico", "anca-drop-jump"],
   regressioni: ["box-jump", "Salto submassimale con atterraggio stabilizzato"],
   metriche: ["Altezza del CMJ da tempo di volo (pedana, app validate): test molto affidabile (Markovic 2004)", "Rapporto CMJ/SJ (indice di utilizzo del contromovimento)", "Nella pallavolo esistono valori di riferimento per ruolo (Sattler 2012)"],
-  rif: ["Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004", "Bosco C et al. A simple method for measurement of mechanical power in jumping. Eur J Appl Physiol 1983", "Sattler T et al. Vertical jumping tests in volleyball: reliability, validity, and playing-position specifics. J Strength Cond Res 2012"]
+  rif: ["Markovic G et al. Reliability and factorial validity of squat and countermovement jump tests. J Strength Cond Res 2004", "Bosco C et al. A simple method for measurement of mechanical power in jumping. Eur J Appl Physiol Occup Physiol 1983;50(2):273-282", "Sattler T et al. Vertical jumping tests in volleyball: reliability, validity, and playing-position specifics. J Strength Cond Res 2012"]
 },
 {
   id: "anca-jump-squat-carico",
@@ -787,7 +787,7 @@
   progressioni: ["Box più alto solo se RSI non peggiora", "Drop jump monopodalico (fase finale)"],
   regressioni: ["anca-cmj", "atterraggio-mono", "Drop landing senza rimbalzo"],
   metriche: ["Reactive Strength Index (RSI) = altezza del salto (m) / tempo di contatto (s)", "Ciclo stiramento-accorciamento rapido: tempo di contatto < 250 ms (Flanagan 2008)", "Scegli l'altezza del box che massimizza l'RSI"],
-  rif: ["Flanagan EP, Comyns TM. The use of contact time and the reactive strength index to optimize fast stretch-shortening cycle training. Strength Cond J 2008", "Chmielewski TL et al. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop Sports Phys Ther 2006"]
+  rif: ["Flanagan EP, Comyns TM. The use of contact time and the reactive strength index to optimize fast stretch-shortening cycle training. Strength Cond J 2008;30:32-38", "Chmielewski TL et al. Plyometric exercise in the rehabilitation of athletes: physiological responses and clinical application. J Orthop Sports Phys Ther 2006"]
 },
 {
   id: "anca-tuck-jump",
@@ -806,7 +806,7 @@
   progressioni: ["Ripetizioni in 10 s come test", "Serie più lunghe mantenendo la tecnica"],
   regressioni: ["anca-cmj", "Salti a ginocchia basse ripetuti"],
   metriche: ["Tuck Jump Assessment: 10 criteri; 6 o più errori indicano la necessità di ulteriore lavoro tecnico (Myer 2008)"],
-  rif: ["Myer GD et al. Tuck jump assessment for reducing anterior cruciate ligament injury risk. Athl Ther Today 2008"]
+  rif: ["Myer GD, Ford KR, Hewett TE. Tuck jump assessment for reducing anterior cruciate ligament injury risk. Athl Ther Today 2008;13(5):39-44"]
 },
 {
   id: "anca-hop-mono-avanti",
@@ -825,7 +825,7 @@
   progressioni: ["Triple hop", "Hop incrociato (crossover hop)", "anca-side-hop"],
   regressioni: ["atterraggio-mono", "lateral-bound", "Hop bipodalico"],
   metriche: ["Limb Symmetry Index (LSI) = arto coinvolto / sano × 100: < 85% considerato anormale (Noyes 1991); criterio di ritorno allo sport comune ≥ 90% (Grindem 2016)", "Test affidabili e sensibili al cambiamento (Reid 2007)"],
-  rif: ["Noyes FR et al. Abnormal lower limb symmetry determined by function hop tests after anterior cruciate ligament rupture. Am J Sports Med 1991", "Reid A et al. Hop testing provides a reliable and valid outcome measure during rehabilitation after anterior cruciate ligament reconstruction. Phys Ther 2007", "Grindem H et al. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study. Br J Sports Med 2016"]
+  rif: ["Noyes FR, Barber SD, Mangine RE. Abnormal lower limb symmetry determined by function hop tests after anterior cruciate ligament rupture. Am J Sports Med 1991;19(5):513-518", "Reid A et al. Hop testing provides a reliable and valid outcome measure during rehabilitation after anterior cruciate ligament reconstruction. Phys Ther 2007", "Grindem H et al. Simple decision rules can reduce reinjury risk by 84% after ACL reconstruction: the Delaware-Oslo ACL cohort study. Br J Sports Med 2016;50(13):804-808"]
 },
 {
   id: "anca-side-hop",
@@ -884,7 +884,7 @@
   progressioni: ["Da 2 a 3 passi", "Al segnale del tecnico (reattivo)", "Doppio muro consecutivo"],
   regressioni: ["anca-band-walk-laterale", "anca-side-hop", "Spostamento senza salto"],
   metriche: ["Numero di salti per seduta e settimana (carico di salti) con progressione graduale", "Tempo per spostamento + salto su distanza fissa (confronto destra/sinistra)"],
-  rif: ["Bahr R, Bahr IA. Incidence of acute volleyball injuries: a prospective cohort study of injury mechanisms and risk factors. Scand J Med Sci Sports 1997", "Sheppard JM et al. An analysis of playing positions in elite men's volleyball: considerations for competition demands and physiologic characteristics. J Strength Cond Res 2009"]
+  rif: ["Bahr R, Bahr IA. Incidence of acute volleyball injuries: a prospective cohort study of injury mechanisms and risk factors. Scand J Med Sci Sports 1997;7(3):166-171", "Sheppard JM et al. An analysis of playing positions in elite men's volleyball: considerations for competition demands and physiologic characteristics. J Strength Cond Res 2009"]
 },
 {
   id: "anca-attacco-mono",
@@ -922,7 +922,7 @@
   progressioni: ["Rialzo più alto", "Con palla lanciata da colpire", "Atterraggio su un piede e ripartenza in difesa"],
   regressioni: ["atterraggio-mono", "Atterraggio bipodalico frontale"],
   metriche: ["Valutazione video dell'atterraggio (flessione di ginocchio e anca, valgismo) e Tuck Jump Assessment (Myer 2008)"],
-  rif: ["Tillman MD et al. Jumping and landing techniques in elite women's volleyball. J Sports Sci Med 2004", "Lobietti R et al. Landing techniques in volleyball. J Sports Sci 2010", "Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes. Am J Sports Med 2005"]
+  rif: ["Tillman MD et al. Jumping and landing techniques in elite women's volleyball. J Sports Sci Med 2004", "Lobietti R et al. Landing techniques in volleyball. J Sports Sci 2010", "Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes: a prospective study. Am J Sports Med 2005;33(4):492-501"]
 },
 {
   id: "anca-difesa-spostamento",

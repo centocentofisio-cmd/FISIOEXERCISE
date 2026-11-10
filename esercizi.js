@@ -68,7 +68,7 @@ window.ESERCIZI = [
   progressioni: ["Aumento del carico (%1RM o RPE)", "Pausa isometrica di 3 s in alto", "hip-thrust-mono"],
   regressioni: ["ponte-gluteo", "Hip thrust a corpo libero o con manubrio"],
   metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
-  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis EMG activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015", "Andersen V et al. Electromyographic comparison of barbell deadlift, hex bar deadlift, and hip thrust exercises: a cross-over study. J Strength Cond Res 2018", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
+  rif: ["Contreras B et al. A comparison of gluteus maximus, biceps femoris, and vastus lateralis electromyographic activity in the back squat and barbell hip thrust exercises. J Appl Biomech 2015;31(6):452-458", "Andersen V et al. Electromyographic comparison of barbell deadlift, hex bar deadlift, and hip thrust exercises: a cross-over study. J Strength Cond Res 2018;32(3):587-593", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "hip-thrust-mono",
@@ -106,7 +106,7 @@ window.ESERCIZI = [
   progressioni: ["Elastico sopra le ginocchia", "Clamshell con ponte laterale (side plank clam)", "abduzione-decubito"],
   regressioni: ["Isometria in apertura parziale", "Ampiezza ridotta senza elastico"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in extrarotazione e abduzione"],
-  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? JOSPT 2013", "Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009"]
+  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther 2013;43(2):54-64", "Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "abduzione-decubito",
@@ -125,7 +125,7 @@ window.ESERCIZI = [
   progressioni: ["Cavigliera o elastico alla caviglia", "Isometria finale di 5-10 s", "side-plank"],
   regressioni: ["clamshell", "Abduzione da supino scivolando sul pavimento"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione", "Abduzione < 35,4% del peso corporeo associata a maggior rischio di lesione del LCA (Khayambashi 2016)"],
-  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009", "Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016"]
+  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009", "Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Khayambashi K et al. Hip muscle strength predicts noncontact anterior cruciate ligament injury in male and female athletes: a prospective study. Am J Sports Med 2016;44(2):355-361"]
 },
 {
   id: "abduzione-piedi-elastico",
@@ -162,8 +162,8 @@ window.ESERCIZI = [
   errori: ["Bacino che cade o va indietro", "Spalla che collassa verso l'orecchio", "Apnea"],
   progressioni: ["Side plank con abduzione dell'arto superiore", "copenhagen", "Tenute più lunghe (es. 3×30-45 s)"],
   regressioni: ["Side plank con ginocchia flesse", "Side plank al muro in piedi"],
-  metriche: ["Tempo di tenuta (s) per lato; asimmetrie > 5% da monitorare"],
-  rif: ["Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. IJSPT 2011"]
+  metriche: ["Tempo di tenuta (s) per lato: in giovani sani circa 95 s nei maschi e 75 s nelle femmine (McGill 1999)", "Rapporto destra/sinistra atteso tra 0,95 e 1,05 (criterio di McGill)"],
+  rif: ["Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. Int J Sports Phys Ther 2011", "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944"]
 },
 {
   id: "copenhagen",
@@ -182,7 +182,7 @@ window.ESERCIZI = [
   progressioni: ["Leva lunga (appoggio alla caviglia)", "Fase eccentrica lenta", "Aumento del volume secondo protocollo (es. 2-3 serie fino a 12-15 rip)"],
   regressioni: ["Leva corta (appoggio al ginocchio)", "squeeze-adduttori", "adduzione-cavo"],
   metriche: ["Squeeze test a 45° (Delahunt 2011)", "Rapporto adduzione/abduzione < 80% associato a rischio 17 volte maggiore di stiramento degli adduttori (Tyler 2001)", "Nel programma ASP la riduzione dei problemi inguinali è stata circa del 41% (Harøy 2019)"],
-  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players. Br J Sports Med 2019", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
+  rif: ["Ishøi L et al. Large eccentric strength increase using the Copenhagen Adduction exercise in football. Scand J Med Sci Sports 2016", "Harøy J et al. The Adductor Strengthening Programme prevents groin problems among male football players: a cluster-randomised controlled trial. Br J Sports Med 2019;53(3):150-157", "Serner A et al. EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001", "Delahunt E et al. The thigh adductor squeeze test: 45° of hip flexion as the optimal test position for eliciting adductor muscle activity and maximum pressure values. Man Ther 2011"]
 },
 {
   id: "squeeze-adduttori",
@@ -220,7 +220,7 @@ window.ESERCIZI = [
   progressioni: ["Aumento del carico", "Eccentrica lenta 3-4 s", "copenhagen"],
   regressioni: ["squeeze-adduttori", "Elastico leggero"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in adduzione; rapporto ADD/ABD ≥ 80% (Tyler 2001)"],
-  rif: ["Serner A et al. EMG evaluation of hip adduction exercises for soccer players. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001"]
+  rif: ["Serner A et al. EMG evaluation of hip adduction exercises for soccer players: implications for exercise selection in prevention and treatment of groin injuries. Br J Sports Med 2014", "Tyler TF et al. The association of hip strength and flexibility with the incidence of adductor muscle strains in professional ice hockey players. Am J Sports Med 2001"]
 },
 {
   id: "monster-walk",
@@ -239,7 +239,7 @@ window.ESERCIZI = [
   progressioni: ["Elastico ai piedi", "Camminata a X (monster walk diagonale)", "affondo-laterale"],
   regressioni: ["abduzione-piedi-elastico", "Elastico sopra le ginocchia, più leggero"],
   metriche: ["Forza isometrica con dinamometro manuale (HHD), metodo affidabile (Thorborg 2010): confronta con il controlaterale (simmetria ≥ 90%) in abduzione"],
-  rif: ["Selkowitz DM et al. JOSPT 2013", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
+  rif: ["Selkowitz DM et al. Which exercises target the gluteal muscles while minimizing activation of the tensor fascia lata? Electromyographic assessment using fine-wire electrodes. J Orthop Sports Phys Ther 2013;43(2):54-64", "Cambridge EDJ et al. Progressive hip rehabilitation: the effects of resistance band placement on gluteal activation during two common exercises. Clin Biomech 2012"]
 },
 {
   id: "isometria-muro",
@@ -258,7 +258,7 @@ window.ESERCIZI = [
   progressioni: ["Tempi di tenuta più lunghi", "abduzione-piedi-elastico", "step-down-laterale"],
   regressioni: ["Isometria da supino con cintura sopra le ginocchia"],
   metriche: ["VISA-G nella tendinopatia glutea", "Dolore durante l'esercizio ≤ 3-5/10 NRS e rientro entro 24 h"],
-  rif: ["Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005"]
+  rif: ["Grimaldi A et al. Gluteal tendinopathy: a review of mechanisms, assessment and management. Sports Med 2015", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005;35(8):487-494"]
 },
 {
   id: "rdl",
@@ -296,7 +296,7 @@ window.ESERCIZI = [
   progressioni: ["Carico maggiore (kettlebell o manubri)", "Landmine monopodalico", "Su superficie instabile in fase di ritorno allo sport"],
   regressioni: ["Con appoggio della mano a un supporto", "Kickstand RDL (piede posteriore in punta)", "rdl"],
   metriche: ["Carico per lato a RPE prefissato e simmetria ≥ 90%"],
-  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. JOSPT 2009"]
+  rif: ["Distefano LJ et al. Gluteal muscle activation during common therapeutic exercises. J Orthop Sports Phys Ther 2009"]
 },
 {
   id: "stacco-convenzionale",
@@ -372,7 +372,7 @@ window.ESERCIZI = [
   progressioni: ["Tempo eccentrico lento", "Carico progressivo"],
   regressioni: ["good-morning-elastico", "Good morning con bastone"],
   metriche: ["Carico per numero di ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 5 rip a RPE 8 (RIR 2) come indice di progressione"],
-  rif: ["Vigotsky AD et al. Effects of load on good morning kinematics and EMG activity. PeerJ 2015", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
+  rif: ["Vigotsky AD et al. Effects of load on good morning kinematics and EMG activity. PeerJ 2015;3:e708", "Zourdos MC et al. Novel resistance training-specific rating of perceived exertion scale measuring repetitions in reserve. J Strength Cond Res 2016"]
 },
 {
   id: "good-morning-elastico",
@@ -596,7 +596,7 @@ window.ESERCIZI = [
   progressioni: ["anca-squat-mono-box", "Step più alto", "Carico in mano controlaterale", "Step-down anteriore"],
   regressioni: ["Step più basso", "Appoggio a un supporto"],
   metriche: ["Valutazione qualitativa (tronco, bacino, ginocchio) e ripetizioni in 30 s per lato"],
-  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005"]
+  rif: ["Crossley KM et al. Performance on the single-leg squat task indicates hip abductor muscle function. Am J Sports Med 2011;39(4):866-873", "Bolgla LA, Uhl TL. Electromyographic analysis of hip rehabilitation exercises in a group of healthy subjects. J Orthop Sports Phys Ther 2005;35(8):487-494"]
 },
 {
   id: "landmine-affondo",
@@ -633,7 +633,7 @@ window.ESERCIZI = [
   progressioni: ["Volume progressivo secondo protocollo (es. da 2×5 a 3×12)", "Nordic con zavorra al petto"],
   regressioni: ["Nordic con elastico di assistenza", "Ampiezza ridotta (cuneo davanti)", "leg-curl"],
   metriche: ["Forza eccentrica dei flessori del ginocchio (es. NordBord): < 256 N a inizio preseason associata a rischio 2,7 volte maggiore di lesione (Opar 2015)", "Angolo di rottura del controllo nella discesa (video)"],
-  rif: ["Petersen J et al. Preventive effect of eccentric training on acute hamstring injuries in men's soccer. Am J Sports Med 2011", "van der Horst N et al. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players. Am J Sports Med 2015", "van Dyk N et al. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries. Br J Sports Med 2019", "Opar DA et al. Eccentric hamstring strength and hamstring injury risk in Australian footballers. Med Sci Sports Exerc 2015"]
+  rif: ["Petersen J et al. Preventive effect of eccentric training on acute hamstring injuries in men's soccer. Am J Sports Med 2011", "van der Horst N et al. The preventive effect of the Nordic hamstring exercise on hamstring injuries in amateur soccer players. Am J Sports Med 2015", "van Dyk N et al. Including the Nordic hamstring exercise in injury prevention programmes halves the rate of hamstring injuries: a systematic review and meta-analysis of 8459 athletes. Br J Sports Med 2019", "Opar DA et al. Eccentric hamstring strength and hamstring injury risk in Australian footballers. Med Sci Sports Exerc 2015"]
 },
 {
   id: "leg-curl",
@@ -727,7 +727,7 @@ window.ESERCIZI = [
   progressioni: ["Braccio omolaterale sopra la testa con inclinazione laterale", "Piede posteriore su panca (allungamento del retto femorale)"],
   regressioni: ["Allungamento da supino a bordo lettino (Thomas)"],
   metriche: ["Test di Thomas modificato: angolo di estensione d'anca e flessione di ginocchio (Harvey 1998)"],
-  rif: ["Harvey D. Assessment of the flexibility of elite athletes using the modified Thomas test. Br J Sports Med 1998"]
+  rif: ["Harvey D. Assessment of the flexibility of elite athletes using the modified Thomas test. Br J Sports Med 1998;32(1):68-70"]
 },
 {
   id: "90-90",
@@ -765,7 +765,7 @@ window.ESERCIZI = [
   progressioni: ["Carico maggiore", "Carico in posizione rack o overhead", "Distanza o tempo maggiore"],
   regressioni: ["Farmer carry bilaterale", "Carico leggero, distanza breve"],
   metriche: ["Carico come % del peso corporeo e distanza o tempo per lato"],
-  rif: ["McGill SM et al. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009"]
+  rif: ["McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23(4):1148-1161"]
 },
 {
   id: "box-jump",
@@ -840,7 +840,7 @@ window.ESERCIZI = [
   progressioni: ["anca-atterraggio-attacco", "Rialzo più alto", "Atterraggio con direzione (in avanti, laterale, rotazione)", "Atterraggio dopo rincorsa con disturbo (pallone)"],
   regressioni: ["Atterraggio bipodalico", "step-down-laterale"],
   metriche: ["Valutazione video dell'atterraggio (valgismo, flessione di ginocchio) e Tuck Jump Assessment"],
-  rif: ["Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes. Am J Sports Med 2005", "Lobietti R et al. Landing techniques in volleyball. J Sports Sci 2010"]
+  rif: ["Hewett TE et al. Biomechanical measures of neuromuscular control and valgus loading of the knee predict anterior cruciate ligament injury risk in female athletes: a prospective study. Am J Sports Med 2005;33(4):492-501", "Lobietti R et al. Landing techniques in volleyball. J Sports Sci 2010"]
 },
 {
   id: "rincorsa-attacco",

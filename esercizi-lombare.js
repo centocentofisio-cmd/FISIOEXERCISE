@@ -102,7 +102,7 @@ const L = [
   errori: ["Movimento solo del tratto toracico o solo del bacino", "Spinta forzata a fine corsa in estensione", "Gomiti che si flettono"],
   progressioni: ["lomb-bird-dog", "Gatto-cammello segmentale (solo lombare, solo toracico)"],
   regressioni: ["lomb-tilt-pelvico", "Versione da seduto su sedia"],
-  rif: ["McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90:118-26"]
+  rif: ["McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90(1):118-126"]
 },
 {
   id: "lomb-press-up",
@@ -138,7 +138,7 @@ const L = [
   errori: ["Eseguire il tensionamento (gamba tesa + mento al petto) invece dello scorrimento", "Velocità eccessiva", "Proseguire se i sintomi aumentano e persistono dopo l'esercizio"],
   progressioni: ["Scorrimento da supino con anca flessa a 90°", "Tensionamento progressivo (tensioner) se ben tollerato"],
   regressioni: ["Solo estensione del ginocchio in ampiezza ridotta"],
-  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13:213-21", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. JOSPT 2017;47:593-615"]
+  rif: ["Coppieters MW, Butler DS. Do 'sliders' slide and 'tensioners' tension? An analysis of neurodynamic techniques and considerations regarding their application. Man Ther 2008;13(3):213-221", "Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
 },
 {
   id: "lomb-slider-femorale",
@@ -156,7 +156,7 @@ const L = [
   errori: ["Iperestensione lombare al posto dell'estensione d'anca", "Evocare sintomi intensi o persistenti"],
   progressioni: ["Aggiungere flessione del ginocchio durante l'estensione d'anca"],
   regressioni: ["Solo estensione d'anca in ampiezza ridotta"],
-  rif: ["Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. JOSPT 2017;47:593-615"]
+  rif: ["Basson A et al. The effectiveness of neural mobilization for neuromusculoskeletal conditions: a systematic review and meta-analysis. J Orthop Sports Phys Ther 2017;47(9):593-615"]
 },
 
 /* ===================== CONTROLLO MOTORIO E ENDURANCE ===================== */
@@ -194,7 +194,7 @@ const L = [
   errori: ["Iperestensione lombare sollevando troppo la gamba", "Rotazione del bacino verso il lato della gamba sollevata", "Ricerca della velocità invece del controllo"],
   progressioni: ["Elastico o cavo alla caviglia o al polso", "Bird dog su ginocchia sollevate (bear)", "Tracciare quadrati con mano e piede (McGill)"],
   regressioni: ["Solo arto inferiore", "Solo arto superiore", "lomb-cat-camel"],
-  rif: ["Callaghan JP, Gunning JL, McGill SM. The relationship between lumbar spine load and muscle activity during extensor exercises. Phys Ther 1998;78:8-18", "Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. JOSPT 2007;37:754-62"]
+  rif: ["Callaghan JP, Gunning JL, McGill SM. The relationship between lumbar spine load and muscle activity during extensor exercises. Phys Ther 1998;78:8-18", "Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. J Orthop Sports Phys Ther 2007;37(12):754-762"]
 },
 {
   id: "lomb-dead-bug",
@@ -230,7 +230,7 @@ const L = [
   errori: ["Flessione del collo con mento al petto", "Appiattimento della zona lombare", "Sollevarsi troppo trasformandolo in un crunch"],
   progressioni: ["Gomiti sollevati da terra durante la tenuta", "Respirazione profonda durante la tenuta", "lomb-flessori-isometria"],
   regressioni: ["Solo attivazione addominale con testa appoggiata"],
-  rif: ["Axler CT, McGill SM. Low back loads over a variety of abdominal exercises: searching for the safest abdominal challenge. Med Sci Sports Exerc 1997;29:804-11", "McGill SM, Karpowicz A. Exercises for spine stabilization. Arch Phys Med Rehabil 2009;90:118-26"]
+  rif: ["Axler CT, McGill SM. Low back loads over a variety of abdominal exercises: searching for the safest abdominal challenge. Med Sci Sports Exerc 1997;29(6):804-811", "McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90(1):118-126"]
 },
 {
   id: "lomb-ponte-marcia",
@@ -266,7 +266,7 @@ const L = [
   errori: ["Bacino che cade con arco lombare", "Bacino troppo alto", "Spalle che collassano tra le scapole"],
   progressioni: ["Plank RKC (contrazione massimale di 10 s)", "Plank con sollevamento alternato di un piede o di un braccio", "lomb-plank-drag", "Plank con avambracci su panca instabile"],
   regressioni: ["Plank sulle ginocchia", "Plank con mani su panca o muro (inclinato)"],
-  rif: ["Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. JOSPT 2007;37:754-62", "Strand SL et al. Norms for an isometric muscle endurance test. J Hum Kinet 2014;40:93-102"]
+  rif: ["Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. J Orthop Sports Phys Ther 2007;37(12):754-762", "Strand SL et al. Norms for an isometric muscle endurance test. J Hum Kinet 2014;40:93-102"]
 },
 {
   id: "lomb-bear-plank",
@@ -320,7 +320,7 @@ const L = [
   errori: ["Arrotondare la colonna", "Usare le braccia", "Trattenere il respiro (Valsalva prolungata)"],
   progressioni: ["Aumentare la durata o il numero di serie"],
   regressioni: ["lomb-curl-up-mcgill"],
-  rif: ["McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80:941-4"]
+  rif: ["McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944"]
 },
 
 /* ===================== ESTENSORI ===================== */
@@ -376,7 +376,7 @@ const L = [
   errori: ["Salire oltre l'orizzontale in iperestensione", "Testa che cade", "Proseguire il test oltre la perdita della posizione orizzontale"],
   progressioni: ["Manubrio o disco al petto", "Versione dinamica con fase eccentrica lenta", "Versione monopodalica"],
   regressioni: ["Tronco appoggiato su sgabello e tenute brevi di 10 s", "lomb-superman"],
-  rif: ["Biering-Sørensen F. Physical measurements as risk indicators for low-back trouble over a one-year period. Spine 1984;9:106-19", "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80:941-4"]
+  rif: ["Biering-Sørensen F. Physical measurements as risk indicators for low-back trouble over a one-year period. Spine 1984;9(2):106-119", "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944"]
 },
 {
   id: "lomb-reverse-hyper",
@@ -432,7 +432,7 @@ const L = [
   errori: ["Rotazione con flessione lombare (inchino)", "Movimento solo di braccia con ginocchia bloccate nella versione sportiva", "Velocità eccessiva in fase eccentrica"],
   progressioni: ["Esecuzione esplosiva in concentrica", "Mezzo inginocchiato per isolare il tronco"],
   regressioni: ["lomb-pallof-press", "Chop in mezzo inginocchiato a braccia vicine"],
-  rif: ["McGill SM, Karpowicz A. Exercises for spine stabilization. Arch Phys Med Rehabil 2009;90:118-26"]
+  rif: ["McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90(1):118-126"]
 },
 {
   id: "lomb-lift-cavo",
@@ -488,7 +488,7 @@ const L = [
   errori: ["Inclinazione o rotazione del tronco a ogni passo", "Spalle elevate", "Passo troppo lungo e veloce"],
   progressioni: ["Aumento del carico o della distanza", "suitcase-carry", "lomb-waiter-carry"],
   regressioni: ["Carico leggero e distanza breve", "Trasporto di un solo peso al petto (goblet carry)"],
-  rif: ["McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23:1148-61"]
+  rif: ["McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23(4):1148-1161"]
 },
 {
   id: "lomb-waiter-carry",
@@ -580,7 +580,7 @@ const L = [
   errori: ["Bilanciere lontano dal corpo", "Iperestensione lombare a fine movimento", "Uso di carichi eccessivi per la mancanza di ampiezza"],
   progressioni: ["Abbassare progressivamente l'altezza del rialzo", "stacco-convenzionale", "Carico (%1RM o RPE)"],
   regressioni: ["lomb-stacco-kb"],
-  rif: ["Michaelson P, Holmberg D, Aasa B, Aasa U. High load lifting exercise and low load motor control exercises as interventions for patients with mechanical low back pain: a randomized controlled trial with 24-month follow-up. J Rehabil Med 2016;48:456-63", "Berglund L et al. Which patients with low back pain benefit from deadlift training? J Strength Cond Res 2015;29:1803-11"]
+  rif: ["Michaelson P, Holmberg D, Aasa B, Aasa U. High load lifting exercise and low load motor control exercises as interventions for patients with mechanical low back pain: a randomized controlled trial with 24-month follow-up. J Rehabil Med 2016;48:456-63", "Berglund L et al. Which patients with low back pain benefit from deadlift training? J Strength Cond Res 2015;29(7):1803-1811"]
 },
 {
   id: "lomb-jefferson-curl",
@@ -598,7 +598,7 @@ const L = [
   errori: ["Carico eccessivo", "Velocità o rimbalzo in fondo", "Uso in fase irritabile o con sintomi radicolari"],
   progressioni: ["Aumento graduale del carico (pochi kg alla volta)", "Rialzo più alto"],
   regressioni: ["Flessione segmentale a corpo libero (roll-down)", "lomb-cat-camel"],
-  rif: ["Saraceni N et al. To flex or not to flex? Is there a relationship between lumbar spine flexion during lifting and low back pain? A systematic review with meta-analysis. JOSPT 2020;50:121-30"]
+  rif: ["Saraceni N et al. To flex or not to flex? Is there a relationship between lumbar spine flexion during lifting and low back pain? A systematic review with meta-analysis. J Orthop Sports Phys Ther 2020;50:121-30"]
 },
 {
   id: "lomb-turkish-get-up",
@@ -636,7 +636,7 @@ const L = [
   errori: ["Carico lontano dal corpo", "Velocità eccessiva o movimento a strappo", "Evitamento del gesto per paura (da affrontare con esposizione graduale)"],
   progressioni: ["Aumento del peso, dell'altezza di partenza più bassa o della distanza di trasporto", "Sollevamento con rotazione per posare a lato", "lomb-lift-cavo"],
   regressioni: ["Sollevamento da un rialzo", "lomb-stacco-kb", "lomb-hinge-bastone"],
-  rif: ["Saraceni N et al. To flex or not to flex? Is there a relationship between lumbar spine flexion during lifting and low back pain? A systematic review with meta-analysis. JOSPT 2020;50:121-30", "Verbeek JH et al. Manual material handling advice and assistive devices for preventing and treating back pain in workers. Cochrane Database Syst Rev 2011;(6):CD005958"]
+  rif: ["Saraceni N et al. To flex or not to flex? Is there a relationship between lumbar spine flexion during lifting and low back pain? A systematic review with meta-analysis. J Orthop Sports Phys Ther 2020;50:121-30", "Verbeek JH et al. Manual material handling advice and assistive devices for preventing and treating back pain in workers. Cochrane Database Syst Rev 2011;(6):CD005958"]
 },
 {
   id: "lomb-cammino",
