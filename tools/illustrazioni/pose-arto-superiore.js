@@ -11,7 +11,7 @@ const ZARM = { j: "elbowa", w: 170, dy: 0 };
 const T = (x, y, t, s) => ({ type: "text", x, y, text: t, size: s || 10 });
 
 // martello / manubrio caricato da un lato: manico dalla mano in direzione a
-function hammer(h, a, len) { const e = add(h, a, len || 34); const p = add(e, a + 90, 7), q = add(e, a - 90, 7); return seg(h, e, 4, "#8C6B3E") + seg(p, q, 9, C.eq); }
+function hammer(h, a, len) { const e = add(h, a, len || 34); const p = add(e, a + 90, 10), q = add(e, a - 90, 10); return H.ol(seg(h, e, 5, "#8C6B3E") + seg(p, q, 11, C.eq)); }
 function flexbar(a, b) { return seg(a, b, 9, "#D9534F"); }
 function vbClose(x, y) { return [x, y, 150, 100]; }
 
@@ -169,8 +169,8 @@ module.exports = [
     { pose: o(FSTAND, { aa: { E: [-2, 22], Wr: [14, 6] }, ab: { E: [2, 28], Wr: [-14, 30] }, hl: ["aa"] }), props: (J) => [{ type: "raw", svg: flexbar([J.shoulder[0], J.shoulder[1] - 2], [J.shoulder[0], J.shoulder[1] + 38]) }, T(150, 196, "mano affetta in flessione di polso")] },
     { pose: o(FSTAND, { aa: { E: [6, 16], Wr: [16, 22] }, ab: { E: [-6, 16], Wr: [-16, 22] }, hl: ["aa"] }), props: (J) => [{ type: "raw", svg: flexbar([J.wrista[0] - 4, J.wrista[1] + 2], [J.wristb[0] + 4, J.wristb[1] + 2]) }, T(150, 196, "braccia avanti: il polso affetto si estende lentamente")] }] },
 
-  { id: "pm-deviazione-radiale", vb: [50, 20, 180, 120], custom: () => devScene(true) },
-  { id: "pm-deviazione-ulnare", vb: [50, 20, 180, 120], custom: () => devScene(false) },
+  { id: "pm-deviazione-radiale", vb: [45, 0, 210, 140], custom: () => devScene(true) },
+  { id: "pm-deviazione-ulnare", vb: [45, 0, 210, 140], custom: () => devScene(false) },
 
   { id: "pm-presa-pallina", vb: [40, 40, 180, 120], custom: () => {
     const a = H.handSide({ w: [120, 90], fore: 90, f: [40, 50, 30], th: [10, 20, 10] });
@@ -240,15 +240,18 @@ function isoEst(pm) {
   const dbc = [184, 110];
   return H.bg(tab) + a.svg + H.db(dbc, true) + H.arrow([200, 120], [200, 100]) + H.label(130, 150, pm ? "tenere il polso in posizione" : "isometria 30-45 s", 8);
 }
+// braccio lungo il fianco visto di lato (dorso della mano verso chi guarda, pollice in avanti a destra)
 function devScene(rad) {
   const out = [];
   for (const up of [false, true]) {
-    const w = [150, 70];
-    const ang = rad ? (up ? 125 : 150) : (up ? 240 : 210); // direzione del manico
-    const fist = `<circle cx="${w[0]}" cy="${w[1] + 18}" r="10" fill="${C.near}"/>`;
-    let s = H.bg() + seg([w[0], w[1] - 80], w, 22, C.near) + seg(w, [w[0], w[1] + 14], 18, C.near) + hammer([w[0], w[1] + 18], ang, 40) + fist;
-    if (up) s += H.arc([w[0], w[1] + 18], 26, rad ? 120 : 60, rad ? 70 : 110);
-    s += H.label(150, 136, rad ? "peso davanti: deviazione radiale" : "peso dietro: deviazione ulnare", 8);
+    const W = [140, 52], E = [140, -60];
+    const d = up ? (rad ? 30 : -30) : 0; // deviazione: la mano ruota in avanti (radiale) o indietro (ulnare)
+    const fc = add(W, d, 26);
+    const hd = rad ? d + 90 : d - 90; // martello: testa davanti al pollice (radiale) o dietro al mignolo (ulnare)
+    const h = H.handFlat({ w: W, d, side: -1, curl: [1, 1, 1, 1], foreLen: 4, thumbTip: add(add(W, d, 30), d + 90, 12) });
+    let s = H.bg() + H.ol(seg(E, W, 20, H.SKIN)) + hammer(add(fc, hd, -6), hd, 64) + h.svg;
+    if (up) s += H.arc(fc, 30, rad ? -30 : 210, rad ? -70 : 250);
+    s += H.label(150, 136, rad ? "martello davanti: la mano sale in avanti" : "martello dietro: la mano sale indietro", 9);
     out.push(s);
   }
   return out;

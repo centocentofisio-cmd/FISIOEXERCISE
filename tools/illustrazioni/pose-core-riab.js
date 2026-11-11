@@ -17,6 +17,18 @@ const PALLOF_OUT = { aa: { E: [8, 12], Wr: [16, 18] }, ab: { E: [-8, 12], Wr: [-
 const cableL = { type: "cable", x: 26, y: "wrista", to: "wrista" };
 const pushOut = { type: "arrow", from: ["wrista", 30, -4], to: ["wrista", 30, 10] };
 const valgo = (side) => (J) => [{ type: "post", x: J.pelvis[0] + 90 * side, y: J.kneea[1] - 20 }, { type: "band", from: [J.pelvis[0] + 90 * side, J.kneea[1]], to: ["kneea", side * 5, 0] }];
+// Pallof visto di lato: le braccia spingono in avanti (ben leggibile); il cavo arriva di lato, quindi la colonna del cavo è disegnata dietro alla figura
+const SP_IN = { aa: { ua: 18, fa: 148 }, ab: { ua: 22, fa: 146 } };
+const SP_OUT = { aa: { ua: 88, fa: 90 }, ab: { ua: 84, fa: 88 } };
+const SPLIT_S_UP = { la: { ik: [22, 80] }, lb: { ik: [-26, 76], pf: 35 } };
+const SPLIT_S_DOWN = { la: { ik: [36, 46] }, lb: { th: -22, sh: -92, pf: 30 } };
+const sideCable = (out) => (J) => {
+  const h = out ? J.wrista : J.wrista;
+  const r = [{ type: "raw", svg: `<circle cx="${f1(h[0])}" cy="${f1(h[1])}" r="3.2" fill="${C.eq}"/>` },
+    { type: "text", x: J.shoulder[0], y: J.headTop[1] - 8, text: "maniglia del cavo, cavo di lato: il tronco non ruota", size: 9 }];
+  if (out) r.push({ type: "arrow", from: ["shoulder", 14, 6], to: ["wrista", -6, 0] });
+  return r;
+};
 const KB_RACK = { type: "kb", at: ["handa", 4, -2] };
 
 // diagrammi visti dall'alto
@@ -106,8 +118,8 @@ module.exports = [
     { pose: { t: 172, la: { ik: [-24, 80], pf: 30 }, lb: { ik: [22, 80] }, aa: { ua: 150, fa: 150 }, ab: { ua: 146, fa: 146 }, hl: ["trunk"] }, props: [{ type: "post", x: "pelvis", dx: -100, y: -40 }, { type: "band", from: ["pelvis", -100, -150], to: "handa" }, T(240, 30, "controllo dell'arco")] }] },
 
   { id: "core-pallof-ricezione", anchor: "anklea", frames: [
-    { pose: o(FSTAND, { la: { K: [-14, 30], A: [-24, 66] }, lb: { K: [14, 30], A: [24, 66] }, aa: { E: [6, 16], Wr: [16, 30] }, ab: { E: [-6, 16], Wr: [-16, 30] } }), props: [{ type: "cable", x: 26, y: "wrista", to: "wrista" }] },
-    { pose: o(FSTAND, { la: { K: [-14, 30], A: [-24, 66] }, lb: { K: [14, 30], A: [24, 66] }, aa: { E: [6, 16], Wr: [16, 30] }, ab: { E: [-6, 16], Wr: [-16, 30] } }), props: [{ type: "cable", x: 26, y: "wrista", to: "wrista" }, { type: "arrow", from: ["shoulder", 50, -10], to: ["shoulder", 30, -10] }, T(250, 34, "perturbazioni")] }] },
+    { pose: o(STAND, { t: 176, la: { ik: [16, 76] }, lb: { ik: [-12, 76] } }, SP_OUT), props: sideCable(false) },
+    { pose: o(STAND, { t: 176, la: { ik: [16, 76] }, lb: { ik: [-12, 76] } }, SP_OUT), props: (J) => sideCable(false)(J).concat([{ type: "arrow", from: ["wrista", 26, -26], to: ["wrista", 8, -10] }, { type: "text", x: J.wrista[0] + 34, y: J.wrista[1] - 30, text: "spinte del terapista", size: 9 }]) }] },
 
   /* ---------- RIABILITATIVI ---------- */
   { id: "riab-split-squat-rnt-valgo", anchor: "anklea", frames: [
@@ -147,20 +159,20 @@ module.exports = [
     { pose: o(FSTAND, { la: { ik: [-62, 58] }, lb: { K: [14, 22], A: [16, 52] }, aa: { E: [2, 22], Wr: [16, 10] }, ab: { E: [-2, 22], Wr: [-16, 10] }, hl: ["lb"] }), props: [{ type: "post", x: 280, y: 100 }, { type: "band", from: [280, 110], to: ["pelvis", 12, 0] }] }] },
 
   { id: "riab-split-squat-pallof", anchor: "anklea", frames: [
-    { pose: o(FSTAND, FSPLIT_DOWN, PALLOF_IN, { hl: ["la"] }), props: [cableL] },
-    { pose: o(FSTAND, FSPLIT_DOWN, PALLOF_OUT, { hl: ["la"] }), props: [cableL, pushOut] }] },
+    { pose: o(STAND, SPLIT_S_DOWN, SP_IN, { hl: ["la"] }), props: sideCable(false) },
+    { pose: o(STAND, SPLIT_S_DOWN, SP_OUT, { hl: ["la"] }), props: sideCable(true) }] },
 
   { id: "riab-affondo-pallof", anchor: "anklea", frames: [
-    { pose: o(FSTAND, { la: { ik: [-4, 82] }, lb: { ik: [4, 82] } }, PALLOF_OUT), props: [cableL] },
-    { pose: o(FSTAND, FSPLIT_DOWN, PALLOF_OUT, { hl: ["la"] }), props: [cableL] }] },
+    { pose: o(STAND, { la: { ik: [4, 82] }, lb: { ik: [-4, 82] } }, SP_OUT), props: sideCable(false) },
+    { pose: o(STAND, SPLIT_S_DOWN, SP_OUT, { hl: ["la", "lb"] }), props: sideCable(false) }] },
 
   { id: "riab-pallof-mono", anchor: "anklea", frames: [
-    { pose: o(FSTAND, { la: { K: [-2, 40], A: [0, 80] }, lb: { K: [6, 30], A: [8, 54] } }, PALLOF_IN, { hl: ["la"] }), props: [cableL] },
-    { pose: o(FSTAND, { la: { K: [-2, 40], A: [0, 80] }, lb: { K: [6, 30], A: [8, 54] } }, PALLOF_OUT, { hl: ["la"] }), props: [cableL, pushOut] }] },
+    { pose: o(STAND, { la: { ik: [2, 82] }, lb: { th: 70, sh: 0 } }, SP_IN, { hl: ["la"] }), props: sideCable(false) },
+    { pose: o(STAND, { la: { ik: [2, 82] }, lb: { th: 70, sh: 0 } }, SP_OUT, { hl: ["la"] }), props: sideCable(true) }] },
 
   { id: "riab-pallof-squat", anchor: "anklea", frames: [
-    { pose: o(FSTAND, { la: { K: [-12, 28], A: [-18, 64] }, lb: { K: [12, 28], A: [18, 64] } }, PALLOF_IN, { hl: ["la", "lb"] }), props: [cableL] },
-    { pose: o(FSTAND, { la: { K: [-12, 28], A: [-18, 64] }, lb: { K: [12, 28], A: [18, 64] } }, PALLOF_OUT, { hl: ["la", "lb"] }), props: [cableL, pushOut] }] },
+    { pose: o(STAND, { t: 168, la: { th: 62, sh: -22 }, lb: { th: 58, sh: -24 } }, SP_IN, { hl: ["la"] }), props: sideCable(false) },
+    { pose: o(STAND, { t: 168, la: { th: 62, sh: -22 }, lb: { th: 58, sh: -24 } }, SP_OUT, { hl: ["la"] }), props: sideCable(true) }] },
 
   { id: "riab-affondo-chop", anchor: "anklea", move: [{ j: "wrista", bend: -10 }], frames: [
     { pose: o(FSTAND, { la: { ik: [-4, 82] }, lb: { ik: [4, 82] }, aa: { E: [-20, -20], Wr: [-28, -44] }, ab: { E: [-8, -20], Wr: [-44, -40] } }), props: [{ type: "cable", x: 26, y: 30, to: "wrista" }] },

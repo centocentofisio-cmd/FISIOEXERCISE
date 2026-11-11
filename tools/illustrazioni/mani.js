@@ -2,7 +2,19 @@
 "use strict";
 const M = require("./motore");
 const { C, add, seg, f1, pt } = M;
-const SKIN = C.near, SKIN2 = "#4F7F77", BACK = C.far;
+const SKIN = "#F2C8A2", SKIN2 = "#E9B78E", BACK = "#D2A07A", OUT = "#1E2826";
+// contorno scuro attorno a ogni pezzo (come le figure intere), così dita e segmenti si distinguono
+function ol(svg) {
+  return svg.replace(/<(line|path|circle|ellipse)\b[^>]*\/>/g, (el) => {
+    if (/opacity=/.test(el)) return el;
+    const sw = el.match(/stroke-width="([\d.]+)"/);
+    if (/fill="none"/.test(el) && (!sw || +sw[1] < 3)) return el;
+    let o = el.replace(/fill="(?!none)[^"]*"/, `fill="${OUT}"`).replace(/stroke="[^"]*"/, `stroke="${OUT}"`);
+    if (sw) o = o.replace(/stroke-width="[\d.]+"/, `stroke-width="${+sw[1] + 2.6}"`);
+    else o = o.replace(/\/>$/, ` stroke="${OUT}" stroke-width="2.6"/>`);
+    return o + el;
+  });
+}
 
 function bg(table) {
   let o = `<rect x="-200" y="-200" width="700" height="600" fill="${C.bg}"/>`;
@@ -40,7 +52,7 @@ function handSide(o) {
   const t1 = add(tb, ta, 15); ta += s * th[1]; const t2 = add(t1, ta, 12); ta += s * th[2]; const t3 = add(t2, ta, 10);
   out += seg(tb, t1, 10, SKIN2) + seg(t1, t2, 9, SKIN2) + seg(t2, t3, 8.5, SKIN2);
   // unghia indice
-  return { svg: out, tip: idx.tip, thumb: t3, knuckle: K, wrist: W, palm: add(add(W, hd, 18), hd + s * 90, 12), dir: hd, palmN: hd + s * 90 };
+  return { svg: ol(out), tip: idx.tip, thumb: t3, knuckle: K, wrist: W, palm: add(add(W, hd, 18), hd + s * 90, 12), dir: hd, palmN: hd + s * 90 };
 }
 
 /* Mano vista dal dorso o dal palmo. d: direzione delle dita; spread: apertura (gradi);
@@ -48,7 +60,7 @@ function handSide(o) {
    (segno = lato del pollice) oppure thumbTip: punto da raggiungere; palmar: true = si vede il palmo. */
 function handFlat(o) {
   const W = o.w, d = o.d != null ? o.d : 180, side = o.side || -1; // side: lato del pollice (-1 sinistra)
-  const col = o.palmar ? "#4F7F77" : SKIN;
+  const col = o.palmar ? "#EDBF98" : SKIN;
   const E = add(W, d, -(o.foreLen || 90));
   let out = seg(E, W, 24, col);
   const K = add(W, d, 36);
@@ -76,7 +88,7 @@ function handFlat(o) {
   const tc = o.palmar ? SKIN : SKIN2;
   out += seg(tbase, tm, 11, tc) + seg(tm, tt, 9.5, tc);
   if (o.palmar) out += `<path d="M${pt(add(add(W, d, 22), perp, 10))} Q${pt(add(add(W, d, 16), perp, 0))} ${pt(add(add(W, d, 26), perp, -12))}" fill="none" stroke="${C.bg}" stroke-width="1.4" opacity="0.6"/>`;
-  return { svg: out, tips, thumb: tt, knuckle: K, wrist: W, center: add(W, d, 20) };
+  return { svg: ol(out), tips, thumb: tt, knuckle: K, wrist: W, center: add(W, d, 20) };
 }
 
 /* Piede visto dal lato mediale (punta a destra). a: caviglia; pf: flessione plantare; arch: 0..1 altezza dell'arco;
@@ -97,14 +109,14 @@ function footSide(o) {
   out += `<path d="M${pt(heelBack)} L${pt(ankB)} L${pt(ankF)} L${pt(ballTop)} L${pt(ball)} Q${pt(mid)} ${pt(heel)} Z" fill="${col}" stroke="${col}" stroke-width="7" stroke-linejoin="round"/>`;
   const h0 = add(ballTop, down, 5), h1 = add(h0, fd + hx, 17);
   out += seg(h0, h1, 9, SKIN2);
-  return { svg: out, heel, ball, mid, toe: h1, ankle: A };
+  return { svg: ol(out), heel, ball, mid, toe: h1, ankle: A };
 }
 /* Pianta del piede vista dal fondo del lettino (per inversione/eversione). c: centro; rot: rotazione (gradi); sx: larghezza apparente */
 function sole(c, rot, sx, col) {
   const g = `<g transform="translate(${f1(c[0])},${f1(c[1])}) rotate(${rot}) scale(${sx || 1},1)">` +
     `<ellipse cx="0" cy="22" rx="13" ry="16" fill="${col || SKIN}"/><ellipse cx="2" cy="-12" rx="18" ry="24" fill="${col || SKIN}"/>` +
     [[-12, -38, 6], [-1, -42, 5], [8, -40, 4.5], [15, -36, 4], [20, -30, 3.5]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${col || SKIN}"/>`).join("") + `</g>`;
-  return g;
+  return ol(g);
 }
 
 function label(x, y, t, size, col) { return `<text x="${x}" y="${y}" font-family="Public Sans,Segoe UI,Arial,sans-serif" font-size="${size || 12}" font-weight="700" fill="${col || C.eqLight}" text-anchor="middle">${t}</text>`; }
@@ -112,4 +124,4 @@ function arrow(a, b, bend) { return M.arrowPath(a, b, bend); }
 function arc(c, r, a0, a1, ry) { return M.propSvg({ type: "arc", at: c, r, a0, a1, ry }, {}, "side"); }
 function db(c, side) { return M.propSvg({ type: "db", at: c, flat: !side }, {}, side ? "side" : "front"); }
 
-module.exports = { footSide, sole, bg, handSide, handFlat, label, arrow, arc, db, SKIN, SKIN2, BACK };
+module.exports = { ol, footSide, sole, bg, handSide, handFlat, label, arrow, arc, db, SKIN, SKIN2, BACK };

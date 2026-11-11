@@ -143,74 +143,130 @@ function layout(p0, opt) {
 function seg(a, b, w, col, extra) { return `<line x1="${f1(a[0])}" y1="${f1(a[1])}" x2="${f1(b[0])}" y2="${f1(b[1])}" stroke="${col}" stroke-width="${w}" stroke-linecap="round"${extra || ""}/>`; }
 function poly(pts, w, col, extra) { return `<polyline points="${pts.map(pt).join(" ")}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"${extra || ""}/>`; }
 
-function legSvg(J, s, col, p) {
-  const front = p.view === "front";
-  let o = poly([J["hip" + s], J["knee" + s], J["ankle" + s]], 0, col);
-  o = seg(J["hip" + s], J["knee" + s], front ? 11 : 12.5, col) + seg(J["knee" + s], J["ankle" + s], front ? 8.5 : 9.5, col);
-  if (!p["noFoot" + s]) o += front ? seg(J["ankle" + s], J["toe" + s], 7, col) : `<path d="M${pt(J["ankle" + s])} L${pt(J["heel" + s])} L${pt(J["toe" + s])} Z" fill="${col}" stroke="${col}" stroke-width="6" stroke-linejoin="round"/>`;
-  return o;
+/* ---- figura "da scheda": pelle, maglietta, pantaloncini, scarpe, contorno scuro ---- */
+const SKIN = { near: "#F2C8A2", far: "#D9A982" }, SHIRT = { near: "#2F6F64", far: "#5E8F86" },
+  SHORTS = { near: "#45525E", far: "#7D8892" }, SHOE = { near: "#2B3130", far: "#5D6463" }, HAIR = "#5A3E2B", OUT = "#1E2826";
+const HL = { near: "#E8743B", far: "#F0A57C" };
+function lerp(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]; }
+// capsula rastremata da a (raggio r1) a b (raggio r2)
+function cap(a, b, r1, r2, fill) { return { t: "cap", a, b, r1, r2, fill }; }
+function circ(c, r, fill) { return { t: "c", c, r, fill }; }
+function path(d, fill) { return { t: "p", d, fill }; }
+function shapeSvg(sh, stroke) {
+  const st = stroke ? ` stroke="${OUT}" stroke-width="2.6" stroke-linejoin="round"` : "";
+  if (sh.t === "c") return `<circle cx="${f1(sh.c[0])}" cy="${f1(sh.c[1])}" r="${f1(sh.r)}" fill="${sh.fill}"${st}/>`;
+  if (sh.t === "p") return `<path d="${sh.d}" fill="${sh.fill}"${st}/>`;
+  const dx = sh.b[0] - sh.a[0], dy = sh.b[1] - sh.a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
+  const p1 = [sh.a[0] + nx * sh.r1, sh.a[1] + ny * sh.r1], p2 = [sh.b[0] + nx * sh.r2, sh.b[1] + ny * sh.r2];
+  const p3 = [sh.b[0] - nx * sh.r2, sh.b[1] - ny * sh.r2], p4 = [sh.a[0] - nx * sh.r1, sh.a[1] - ny * sh.r1];
+  return `<path d="M${pt(p1)} L${pt(p2)} A${f1(sh.r2)} ${f1(sh.r2)} 0 0 0 ${pt(p3)} L${pt(p4)} A${f1(sh.r1)} ${f1(sh.r1)} 0 0 0 ${pt(p1)} Z" fill="${sh.fill}"${st}/>`;
 }
-function armSvg(J, s, col) {
-  return seg(J["shoulder" + s], J["elbow" + s], 9, col) + seg(J["elbow" + s], J["wrist" + s], 7.5, col) + seg(J["wrist" + s], J["fingers" + s], 6.5, col);
-}
-function trunkSvg(J, p, col) {
+// un pezzo del corpo: prima il contorno di tutte le forme, poi i riempimenti (contorno unico)
+function part(shapes) { return shapes.map((x) => shapeSvg(x, true)).join("") + shapes.map((x) => shapeSvg(x, false)).join(""); }
+
+function legSvg(J, s, tone, p, hl) {
   const front = p.view === "front";
+  const H = J["hip" + s], K = J["knee" + s], A = J["ankle" + s];
+  const skin = hl ? HL[tone] : SKIN[tone];
+  const sh = [];
+  const rT = front ? 6.4 : 7.2, rK = front ? 4.6 : 4.9, rA = front ? 3.2 : 3.3;
+  sh.push(cap(H, K, rT, rK, skin));
+  const calf = lerp(K, A, 0.3);
+  sh.push(cap(K, calf, rK, front ? 4.4 : 4.8, skin), cap(calf, A, front ? 4.4 : 4.8, rA, skin));
+  const kneel = front && Math.hypot(A[0] - K[0], A[1] - K[1]) < 12; // tibia di scorcio (ginocchio a terra visto di fronte)
+  if (kneel) { sh.length = 1; sh.push(circ(K, 5.4, skin)); }
+  if (!p["noFoot" + s] && !kneel) {
+    if (front) sh.push(cap(A, J["toe" + s], 3.4, 3.6, SHOE[tone]));
+    else {
+      const he = J["heel" + s], to = J["toe" + s];
+      sh.push(path(`M${pt(lerp(A, he, 0.15))} L${pt(he)} L${pt(to)} L${pt(lerp(A, to, 0.35))} Z`, SHOE[tone]));
+      sh.push(cap(he, to, 2.6, 2.4, SHOE[tone]), circ(A, 3.4, SHOE[tone]));
+    }
+  }
+  // pantaloncini sulla parte alta della coscia
+  sh.push(circ(H, front ? 7.2 : 7.8, SHORTS[tone]), cap(H, lerp(H, K, 0.42), rT + 0.9, rT + 0.4, SHORTS[tone]));
+  return part(sh);
+}
+function armSvg(J, s, tone, hl) {
+  const S = J["shoulder" + s], E = J["elbow" + s], Wr = J["wrist" + s], F = J["fingers" + s];
+  const skin = hl ? HL[tone] : SKIN[tone];
+  const sh = [cap(S, E, 4.4, 3.4, skin), cap(E, Wr, 3.4, 2.5, skin), cap(Wr, F, 2.9, 2.3, skin), circ(J["hand" + s], 3.1, skin)];
+  sh.push(circ(S, 5.4, SHIRT[tone]), cap(S, lerp(S, E, 0.45), 5.2, 4.6, SHIRT[tone]));
+  return part(sh);
+}
+function trunkSvg(J, p, tone) {
+  const front = p.view === "front";
+  const col = SHIRT[tone];
+  const neck = part([cap(J.shoulder, J.neck, 3.6, 3.4, SKIN.near)]);
   if (front) {
     const perp = p.t - 90;
     const a = add(J.pelvis, perp, -12), b = add(J.pelvis, perp, 12);
     const c = add(J.shoulder, perp, 17), d = add(J.shoulder, perp, -17);
-    const cm = add(J.mid, perp, 13), dm = add(J.mid, perp, -13);
-    return `<path d="M${pt(a)} L${pt(b)} Q${pt(cm)} ${pt(c)} L${pt(d)} Q${pt(dm)} ${pt(a)} Z" fill="${col}" stroke="${col}" stroke-width="7" stroke-linejoin="round"/>` + seg(J.shoulder, J.neck, 8, col);
+    const cm = add(J.mid, perp, 12), dm = add(J.mid, perp, -12);
+    const body = `M${pt(a)} L${pt(b)} Q${pt(cm)} ${pt(c)} Q${pt(J.shoulder)} ${pt(d)} Q${pt(dm)} ${pt(a)} Z`;
+    const sp = add(J.pelvis, p.t, -2);
+    const shorts = path(`M${pt(add(sp, perp, -12.5))} L${pt(add(sp, perp, 12.5))} L${pt(add(add(sp, perp, 12.5), p.t, 9))} L${pt(add(add(sp, perp, -12.5), p.t, 9))} Z`, SHORTS.near);
+    return neck + part([path(body, col), shorts]);
   }
-  // vista laterale: profilo del tronco lungo la colonna (curva quadratica), petto leggermente più ampio
   const P0 = J.pelvis, P1 = J.mid, P2 = J.shoulder;
-  const N = 10, frontPts = [], backPts = [];
+  const N = 12, frontPts = [], backPts = [];
   for (let i = 0; i <= N; i++) {
-    const s = i / N;
-    const x = (1 - s) * (1 - s) * P0[0] + 2 * (1 - s) * s * (2 * P1[0] - (P0[0] + P2[0]) / 2) + s * s * P2[0];
-    const y = (1 - s) * (1 - s) * P0[1] + 2 * (1 - s) * s * (2 * P1[1] - (P0[1] + P2[1]) / 2) + s * s * P2[1];
-    const ang = s < 0.5 ? J.lower : J.upper;
-    const fw = 8 + 3.5 * Math.exp(-Math.pow((s - 0.72) / 0.18, 2)) + (s < 0.25 ? 1.5 : 0), bw = 8.5 + (s < 0.2 ? 2.5 : 0);
+    const t = i / N;
+    const x = (1 - t) * (1 - t) * P0[0] + 2 * (1 - t) * t * (2 * P1[0] - (P0[0] + P2[0]) / 2) + t * t * P2[0];
+    const y = (1 - t) * (1 - t) * P0[1] + 2 * (1 - t) * t * (2 * P1[1] - (P0[1] + P2[1]) / 2) + t * t * P2[1];
+    const ang = t < 0.5 ? J.lower : J.upper;
+    const fw = 8 + 3.2 * Math.exp(-Math.pow((t - 0.72) / 0.2, 2)) - 1.2 * Math.exp(-Math.pow((t - 0.35) / 0.12, 2)), bw = 8.6 + 1.8 * Math.exp(-Math.pow((t - 0.8) / 0.15, 2)) - (t > 0.95 ? 1 : 0);
     frontPts.push(add([x, y], ang - 90, fw)); backPts.push(add([x, y], ang + 90, bw));
   }
   const d = "M" + frontPts.map(pt).join(" L") + " L" + backPts.reverse().map(pt).join(" L") + " Z";
-  return `<path d="${d}" fill="${col}" stroke="${col}" stroke-width="5" stroke-linejoin="round"/>` + seg(J.shoulder, J.neck, 8, col);
+  // bacino (pantaloncini): ovale lungo il tronco basso
+  const sp = [cap(add(P0, J.lower, -2), add(P0, J.lower, 9), 10, 9.4, SHORTS.near)];
+  return neck + part([path(d, col)].concat(sp));
 }
-function headSvg(J, p, col) {
-  const front = p.view === "front";
-  let o = `<circle cx="${f1(J.head[0])}" cy="${f1(J.head[1])}" r="${L.head}" fill="${col}"/>`;
+function headSvg(J, p, hl) {
+  const front = p.view === "front", h = J.head, ha = J.headA;
+  const skin = SKIN.near; // il capo non si colora: il movimento è indicato dalle frecce
+  let o = "";
   if (front) {
-    // rotazione del capo (hr: -1..1) sposta il viso
-    const off = (p.hr || 0) * 5;
-    const e1 = add(add(J.head, J.headA - 90, -4 + off), J.headA, 1), e2 = add(add(J.head, J.headA - 90, 4 + off), J.headA, 1);
-    o += `<circle cx="${f1(e1[0])}" cy="${f1(e1[1])}" r="1.4" fill="${C.bg}"/><circle cx="${f1(e2[0])}" cy="${f1(e2[1])}" r="1.4" fill="${C.bg}"/>`;
+    const off = (p.hr || 0) * 4.5;
+    o += part([circ(h, 9.6, skin)]);
+    o += `<path d="M${pt(add(add(h, ha - 90, -9.4), ha, 1))} A9.6 9.6 0 0 1 ${pt(add(add(h, ha - 90, 9.4), ha, 1))} Q${pt(add(h, ha, 4))} ${pt(add(add(h, ha - 90, -9.4), ha, 1))} Z" fill="${HAIR}"/>`;
+    const e1 = add(add(h, ha - 90, -3.4 + off), ha, -1), e2 = add(add(h, ha - 90, 3.4 + off), ha, -1);
+    o += `<circle cx="${f1(e1[0])}" cy="${f1(e1[1])}" r="1.1" fill="${OUT}"/><circle cx="${f1(e2[0])}" cy="${f1(e2[1])}" r="1.1" fill="${OUT}"/>`;
+    const m = add(add(h, ha - 90, off * 0.8), ha, -5);
+    o += `<path d="M${pt(add(m, ha - 90, -2.2))} Q${pt(add(m, ha, -1.2))} ${pt(add(m, ha - 90, 2.2))}" fill="none" stroke="${OUT}" stroke-width="0.9" stroke-linecap="round"/>`;
     return o;
   }
-  const fa = J.headA - 90; // direzione del viso
-  const nose = add(add(J.head, fa, L.head + 2.5), J.headA, -1.5);
-  const n1 = add(J.head, fa + 25, L.head - 1), n2 = add(J.head, fa - 20, L.head - 1);
-  o += `<path d="M${pt(n1)} L${pt(nose)} L${pt(n2)} Z" fill="${col}"/>`;
-  const eye = add(add(J.head, fa, 5), J.headA, 2.5);
-  o += `<circle cx="${f1(eye[0])}" cy="${f1(eye[1])}" r="1.3" fill="${C.bg}"/>`;
+  const fa = ha - 90; // direzione del viso
+  const nose = add(add(h, fa, 11.2), ha, -1);
+  const chin = add(add(h, fa, 6.5), ha, -8.4);
+  const sh = [circ(h, 9.6, skin), path(`M${pt(add(add(h, fa, 8.6), ha, 3))} L${pt(nose)} L${pt(add(add(h, fa, 9), ha, -3))} Z`, skin), cap(add(h, ha, -3), chin, 5, 3, skin)];
+  o += part(sh);
+  // capelli sulla parte posteriore/alta del capo
+  const b1 = add(add(h, fa, 4), ha, 9.6), b2 = add(add(h, fa, -6), ha, -6.5);
+  o += `<path d="M${pt(b1)} A9.9 9.9 0 0 0 ${pt(b2)} Q${pt(add(add(h, fa, -1), ha, 2))} ${pt(b1)} Z" fill="${HAIR}" stroke="${OUT}" stroke-width="1.2"/>`;
+  const eye = add(add(h, fa, 5.6), ha, 1.6);
+  o += `<circle cx="${f1(eye[0])}" cy="${f1(eye[1])}" r="1.15" fill="${OUT}"/>`;
+  const ear = add(add(h, fa, -1), ha, 0);
+  o += `<ellipse cx="${f1(ear[0])}" cy="${f1(ear[1])}" rx="1.8" ry="2.6" transform="rotate(${f1(-ha)} ${f1(ear[0])} ${f1(ear[1])})" fill="${SKIN.far}" stroke="${OUT}" stroke-width="0.8"/>`;
   return o;
 }
 
 function figureSvg(L0, opt) {
   const { p, J } = L0; opt = opt || {};
   const hl = new Set((p.hl || []).filter((k) => k !== "trunk"));
-  const col = (part, far) => opt.ghost ? C.ghost : hl.has(part) ? (far ? C.hlFar : C.hl) : (far ? C.far : C.near);
   let o = "";
   if (p.view === "front") {
-    o += legSvg(J, "a", col("la"), p) + legSvg(J, "b", col("lb"), p);
-    o += trunkSvg(J, p, col("trunk")) + headSvg(J, p, col("head"));
-    const armOrder = p.armsBehind ? "" : "front";
-    o = (p.armsBehind ? armSvg(J, "a", col("aa")) + armSvg(J, "b", col("ab")) : "") + o + (armOrder ? armSvg(J, "a", col("aa")) + armSvg(J, "b", col("ab")) : "");
+    const legs = legSvg(J, "a", "near", p, hl.has("la")) + legSvg(J, "b", "near", p, hl.has("lb"));
+    const arms = armSvg(J, "a", "near", hl.has("aa")) + armSvg(J, "b", "near", hl.has("ab"));
+    const body = trunkSvg(J, p, "near") + headSvg(J, p, hl.has("head"));
+    o = p.armsBehind ? arms + legs + body : legs + body + arms;
   } else {
-    o += armSvg(J, "b", col("ab", true)) + legSvg(J, "b", col("lb", true), p);
-    o += trunkSvg(J, p, col("trunk")) + headSvg(J, p, col("head"));
-    o += legSvg(J, "a", col("la"), p) + armSvg(J, "a", col("aa"));
+    o += armSvg(J, "b", "far", hl.has("ab")) + legSvg(J, "b", "far", p, hl.has("lb"));
+    o += trunkSvg(J, p, "near") + headSvg(J, p, hl.has("head"));
+    o += legSvg(J, "a", "near", p, hl.has("la")) + armSvg(J, "a", "near", hl.has("aa"));
   }
-  if (opt.ghost) return `<g opacity="0.16">${o}</g>`;
+  if (opt.ghost) return `<g opacity="0.14" filter="grayscale(1)">${o}</g>`;
   return o;
 }
 
@@ -337,8 +393,10 @@ function frameSvg(fr) {
   return o;
 }
 
-function svgDoc(inner, title, vb) {
+function svgDoc(inner, title, vb, num) {
   const v = vb || [0, 0, W, H];
+  if (num) { const k = v[2] / W, x = v[0] + 13 * k, y = v[1] + 13 * k;
+    inner += `<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(9 * k)}" fill="${OUT}"/><text x="${f1(x)}" y="${f1(y + 4 * k)}" font-family="Public Sans,Segoe UI,Arial,sans-serif" font-size="${f1(11.5 * k)}" font-weight="800" fill="#fff" text-anchor="middle">${num}</text>`; }
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${v.join(" ")}" width="${W}" height="${H}" role="img" aria-label="${title.replace(/"/g, "&quot;")}"><title>${title.replace(/&/g, "&amp;").replace(/</g, "&lt;")}</title>${inner}</svg>`;
 }
 

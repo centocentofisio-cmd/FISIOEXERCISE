@@ -4,6 +4,13 @@ const { VB, R, o, STAND, FSTAND, SUP, HOOK, PRONE, QUAD, dowel } = require("./li
 
 const benchSh = { type: "bench", x: "shoulder", dx: -48, w: 58, top: "shoulder", dy: 9 };
 
+const SIDE_CABLE = (out) => (J) => {
+  const r = [{ type: "raw", svg: `<circle cx="${J.wrista[0].toFixed(1)}" cy="${J.wrista[1].toFixed(1)}" r="3.2" fill="#34413F"/>` },
+    { type: "text", x: J.shoulder[0], y: J.headTop[1] - 8, text: "maniglia del cavo, cavo di lato: il tronco non ruota", size: 9 }];
+  if (out) r.push({ type: "arrow", from: ["shoulder", 14, 6], to: ["wrista", -6, 0] });
+  return r;
+};
+
 module.exports = [
   { id: "hip-thrust-mono", anchor: "shoulder", move: [{ j: "pelvis", bend: -6 }], frames: [
     { pose: { t: 236, h: 28, la: { ik: [46, 6], ft: 90 }, lb: { th: 150, sh: 62 }, aa: { ua: -70, fa: -75 }, groundOn: ["heela"], hl: ["la"] }, props: [benchSh] },
@@ -138,11 +145,9 @@ module.exports = [
     { pose: o(FSTAND, { la: { th: 0, sh: 0 }, lb: { K: [12, 28], A: [18, 50] }, aa: { E: [-14, 16], Wr: [-2, 30] }, ab: { E: [14, 16], Wr: [2, 30] }, hl: ["lb"] }), props: [{ type: "box", x: "ankleb", dx: -14, w: 60, top: "heelb", dy: 2 }] },
     { pose: o(FSTAND, { la: { th: -4, sh: 4 }, lb: { th: 3, sh: 0 }, aa: { E: [-14, 16], Wr: [-2, 30] }, ab: { E: [14, 16], Wr: [2, 30] }, hl: ["lb"] }), props: [{ type: "box", x: "ankleb", dx: -14, w: 60, top: "heelb", dy: 2 }] }] },
 
-  { id: "anca-pallof-mezzo-ginocchio", anchor: "pelvis", frames: [
-    { pose: { view: "front", t: 180, la: { K: [-4, 43], A: [-4, 46], ft: 0, ftL: 0.3 }, lb: { K: [8, 6], A: [10, 46] }, aa: { E: [-4, 24], Wr: [14, 14] }, ab: { E: [4, 24], Wr: [-14, 14] }, groundOn: ["kneea"] },
-      props: [{ type: "cable", x: 26, y: "wrista", to: "wrista" }] },
-    { pose: { view: "front", t: 180, la: { K: [-4, 43], A: [-4, 46], ft: 0, ftL: 0.3 }, lb: { K: [8, 6], A: [10, 46] }, aa: { E: [8, 12], Wr: [16, 18], uaL: 0.5 }, ab: { E: [-8, 12], Wr: [-16, 18] } },
-      props: [{ type: "cable", x: 26, y: "wrista", to: "wrista" }, { type: "arrow", from: ["wrista", 30, -4], to: ["wrista", 30, 10] }] }] },
+  { id: "anca-pallof-mezzo-ginocchio", anchor: "kneeb", frames: [
+    { pose: { t: 180, la: { th: 88, sh: 2 }, lb: { th: 0, sh: -90, ft: -100 }, aa: { ua: 18, fa: 148 }, ab: { ua: 22, fa: 146 }, groundOn: ["kneeb"], hl: ["la", "lb"] }, props: SIDE_CABLE(false) },
+    { pose: { t: 180, la: { th: 88, sh: 2 }, lb: { th: 0, sh: -90, ft: -100 }, aa: { ua: 88, fa: 90 }, ab: { ua: 84, fa: 88 }, groundOn: ["kneeb"], hl: ["la", "lb"] }, props: SIDE_CABLE(true) }] },
 
   { id: "anca-rock-back-adduttori", noFloor: true, frames: [
     { pose: { view: "front", t: 90, root: [130, 92], h: 0, la: { K: [-4, -3], A: [-46, -6], ft: 180 }, lb: { th: 0, sh: 0, ft: 90 }, aa: { E: [8, -4], Wr: [18, -5] }, ab: { E: [8, 4], Wr: [18, 5] }, hl: ["lb"] },

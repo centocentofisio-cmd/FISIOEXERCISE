@@ -19,12 +19,36 @@ const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const m of html.matchAll(/src="(esercizi[^"]*\.js)"/g)) eval(fs.readFileSync(path.join(ROOT, m[1]), "utf8"));
 const NOMI = {}; window.ESERCIZI.forEach((e) => (NOMI[e.id] = e.nome));
 
+// inquadratura automatica: ritaglia attorno a figura e attrezzi (proporzione 3:2) per ingrandire il disegno
+function autoFit(lays, allProps) {
+  const pts = [];
+  for (const l of lays) for (const k of Object.keys(l.J)) if (Array.isArray(l.J[k]) && typeof l.J[k][0] === "number") pts.push(l.J[k]);
+  const R = (J, r) => { try { if (typeof r === "string") return J[r]; if (Array.isArray(r) && typeof r[0] === "string") return [J[r[0]][0] + (r[1] || 0), J[r[0]][1] + (r[2] || 0)]; if (Array.isArray(r) && typeof r[0] === "number") return r; } catch (e) {} return null; };
+  for (const [J, props] of allProps) for (const pr of props) {
+    if (pr.type === "text" && typeof pr.x === "number") { const hw = String(pr.text).length * (pr.size || 12) * 0.3; pts.push([pr.x - hw, pr.y - 10], [pr.x + hw, pr.y + 2]); continue; }
+    if (["text", "raw", "poly", "line", "net"].includes(pr.type)) continue;
+    for (const k of ["at", "from", "to"]) { const q = pr[k] != null ? R(J, pr[k]) : null; if (q) pts.push(q); }
+    const nx = typeof pr.x === "number" ? pr.x : null;
+    if (nx != null) { pts.push([nx, typeof pr.y === "number" ? pr.y : M.FLOOR]); if (typeof pr.w === "number") pts.push([nx + pr.w, M.FLOOR]); }
+  }
+  let x0 = Math.min(...pts.map((p) => p[0])), x1 = Math.max(...pts.map((p) => p[0]));
+  let y0 = Math.min(...pts.map((p) => p[1])), y1 = Math.max(...pts.map((p) => p[1]));
+  x0 -= 16; x1 += 16; y0 -= 24; y1 = Math.max(y1 + 10, M.FLOOR + 8);
+  let w = x1 - x0, h = y1 - y0;
+  if (w < 150) { x0 -= (150 - w) / 2; w = 150; }
+  if (w / h < 1.5) { const nw = h * 1.5; x0 -= (nw - w) / 2; w = nw; } else { const nh = w / 1.5; y0 -= nh - h; h = nh; }
+  // pavimento in basso: il bordo inferiore resta sotto il pavimento
+  const yb = y0 + h; if (yb > M.FLOOR + 14) { y0 -= 0; }
+  return [Math.round(x0), Math.round(y0), Math.round(w), Math.round(h)];
+}
+
 function render(def) {
   if (def.custom) return def.custom(M, mani); // illustrazioni ravvicinate (mano, piede)
   const fr = def.frames;
   const lay0 = M.layout(fr[0].pose);
   const out = [];
   const lays = [lay0];
+  const allProps = [];
   for (let i = 1; i < fr.length; i++) {
     const p = fr[i].pose;
     const an = p.anchor || def.anchor;
@@ -47,6 +71,7 @@ function render(def) {
   fr.forEach((f, i) => {
     const lay = lays[i];
     const props = (typeof f.props === "function" ? f.props(lay.J) : f.props || []).slice();
+    allProps.push([lay.J, props]);
     if (i > 0) {
       const mv = (f.move || def.move || []);
       for (const m of mv) {
@@ -59,9 +84,10 @@ function render(def) {
         props.push({ type: "arrow", from: A, to: B, bend: m.bend || 0 });
       }
     }
-    const ghost = i > 0 && (f.ghost != null ? f.ghost : def.ghost !== false) ? lays[0] : null;
+    const ghost = i > 0 && (f.ghost != null ? f.ghost : def.ghost === true) ? lays[0] : null;
     out.push(M.frameSvg({ lay, props, ghost, noFloor: f.noFloor || def.noFloor }));
   });
+  if (!def.vb && !def.zoom) def.vb = autoFit(lays, allProps, def);
   if (def.zoom) { // inquadratura ravvicinata centrata su un'articolazione del primo fotogramma
     const z = def.zoom, c = lays[0].J[z.j || "head"], w = z.w || 150;
     def.vb = [Math.round(c[0] - w / 2 + (z.dx || 0)), Math.round(c[1] - w / 3 + (z.dy || 0)), w, Math.round(w * 2 / 3)];
@@ -85,7 +111,7 @@ if (require.main === module) {
     for (const f of fs.readdirSync(dir)) fs.unlinkSync(path.join(dir, f));
     frames.forEach((inner, i) => {
       const cap = frames.length === 1 ? "" : i === 0 ? " – posizione iniziale" : " – posizione finale";
-      fs.writeFileSync(path.join(dir, i + ".svg"), M.svgDoc(inner, NOMI[def.id] + cap, def.vb) + "\n");
+      fs.writeFileSync(path.join(dir, i + ".svg"), M.svgDoc(inner, NOMI[def.id] + cap, def.vb, frames.length > 1 ? i + 1 : 0) + "\n");
     });
     ids.push([def.id, frames.length]);
   }
