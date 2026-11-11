@@ -5,7 +5,7 @@ const CACHE = "fisioexercise-v5";
 const CORE = [
   "./", "index.html", "app.js", "manifest.webmanifest",
   "esercizi.js", "esercizi-anca.js", "esercizi-cervicale.js", "esercizi-toracico.js", "esercizi-lombare.js",
-  "esercizi-spalla.js", "esercizi-gomito.js", "esercizi-polso-mano.js", "esercizi-ginocchio.js", "esercizi-piede-caviglia.js", "esercizi-core.js", "esercizi-riabilitativi.js",
+  "esercizi-spalla.js", "esercizi-gomito.js", "esercizi-polso-mano.js", "esercizi-ginocchio.js", "esercizi-piede-caviglia.js", "esercizi-core.js", "esercizi-riabilitativi.js", "illustrazioni.js",
   "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png",
 ];
 

@@ -145,7 +145,15 @@ function immagini(e) {
   const f = FOTO[e.id];
   if (f && (f[0] || f[1])) return f.filter(Boolean);
   if (e.img) return ["img/" + e.img + "/0.jpg", "img/" + e.img + "/1.jpg"];
-  return null;
+  return illustrazioni(e);
+}
+// Illustrazioni originali FISIOEXERCISE (SVG) per gli esercizi senza foto libere.
+function illustrazioni(e) {
+  const n = window.ILLUSTRAZIONI && window.ILLUSTRAZIONI[e.id];
+  if (!n) return null;
+  const out = [];
+  for (let i = 0; i < n; i++) out.push("ill/" + e.id + "/" + i + ".svg");
+  return out;
 }
 function placeholder(e) {
   const p = (e.pattern || [])[0] || "Esercizio";
@@ -494,7 +502,7 @@ function viewImpostazioni() {
       Una volta installata si apre come un'app e funziona anche senza internet (le foto vengono salvate al primo avvio).</p>
       <p class="note" style="margin:0"><b>Pacchetto da scaricare:</b> github.com/centocentofisio-cmd/FISIOEXERCISE/archive/refs/heads/main.zip. Scompatta e apri <code>index.html</code> nel browser. Le schede salvate restano separate da quelle della versione online: spostale con Esporta/Importa backup.</p>
     </div>
-    <div class="panel"><h3>Fonti</h3><p class="note" style="margin:0">Foto: <b>free-exercise-db</b> (github.com/yuhonas/free-exercise-db), licenza Unlicense, pubblico dominio. Gli esercizi senza foto mostrano un segnaposto: puoi caricare le tue foto dal dettaglio di ogni esercizio. Testi scritti per ${esc(settings.studio)}.</p></div>`;
+    <div class="panel"><h3>Fonti</h3><p class="note" style="margin:0">Foto: <b>free-exercise-db</b> (github.com/yuhonas/free-exercise-db), licenza Unlicense, pubblico dominio. Illustrazioni: disegni originali FISIOEXERCISE (posizione iniziale e finale), creati per questa app. Gli esercizi senza immagini mostrano un segnaposto: puoi caricare le tue foto dal dettaglio di ogni esercizio. Testi scritti per ${esc(settings.studio)}.</p></div>`;
 }
 
 /* ---------- stampa ---------- */
@@ -696,7 +704,7 @@ window.addEventListener("appinstalled", () => { installEvt = null; const b = $("
 if ("serviceWorker" in navigator && !inFrame && location.protocol.startsWith("http")) {
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("sw.js").then(() => navigator.serviceWorker.ready).then((reg) => {
-      const urls = []; window.ESERCIZI.forEach((e) => { if (e.img) urls.push("img/" + e.img + "/0.jpg", "img/" + e.img + "/1.jpg"); });
+      const urls = []; window.ESERCIZI.forEach((e) => { if (e.img) urls.push("img/" + e.img + "/0.jpg", "img/" + e.img + "/1.jpg"); else { const ill = illustrazioni(e); if (ill) urls.push(...ill); } });
       if (reg.active) reg.active.postMessage({ tipo: "precache", urls });
     }).catch(() => {});
   });
