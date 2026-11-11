@@ -20,7 +20,7 @@
     side bridge dx/sx tra 0,95 e 1,05; side bridge/estensori < 0,75.
   - Plank prono: valori normativi in Strand 2014.
   - Lancio laterale della palla medica (side medicine-ball throw): distanza in metri, per lato,
-    correlata alla potenza rotazionale del tronco (Ikeda 2007).
+    correlata, nei maschi, al momento isometrico massimo di rotazione del tronco e all'1RM di squat (Ikeda 2007).
   - Pressure biofeedback (Stabilizer) per il trasverso: da prono, riduzione di 4-10 mmHg partendo
     da 70 mmHg (Richardson & Jull 1995).
 
@@ -30,16 +30,16 @@
 */
 (function () {
 const R = {
-  MCG09: "McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90:118-26",
-  MCG99: "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80:941-4",
-  STRONG: "McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23:1148-61",
+  MCG09: "McGill SM, Karpowicz A. Exercises for spine stabilization: motion/motor patterns, stability progressions, and clinical technique. Arch Phys Med Rehabil 2009;90(1):118-126",
+  MCG99: "McGill SM, Childs A, Liebenson C. Endurance times for low back stabilization exercises: clinical targets for testing and training from a normal database. Arch Phys Med Rehabil 1999;80(8):941-944",
+  STRONG: "McGill SM, McDermott A, Fenwick CM. Comparison of different strongman events: trunk muscle activation and lumbar spine motion, load, and stiffness. J Strength Cond Res 2009;23(4):1148-1161",
   CARRY: "McGill SM, Marshall L, Andersen J. Low back loads while walking and carrying: comparing the load carried in one hand or in both hands. Ergonomics 2013;56:293-302",
-  ESC06: "Escamilla RF et al. An electromyographic analysis of commercial and common abdominal exercises: implications for rehabilitation and training. J Orthop Sports Phys Ther 2006;36:45-57",
-  ESC10: "Escamilla RF et al. Core muscle activation during Swiss ball and traditional abdominal exercises. J Orthop Sports Phys Ther 2010;40:265-76",
-  EKS07: "Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. J Orthop Sports Phys Ther 2007;37:754-62",
+  ESC06: "Escamilla RF et al. An electromyographic analysis of commercial and common abdominal exercises: implications for rehabilitation and training. J Orthop Sports Phys Ther 2006;36(2):45-57",
+  ESC10: "Escamilla RF et al. Core muscle activation during Swiss ball and traditional abdominal exercises. J Orthop Sports Phys Ther 2010;40(5):265-276",
+  EKS07: "Ekstrom RA, Donatelli RA, Carp KC. Electromyographic analysis of core trunk, hip, and thigh muscles during 9 rehabilitation exercises. J Orthop Sports Phys Ther 2007;37(12):754-762",
   SCH14: "Schoenfeld BJ et al. An electromyographic comparison of a modified version of the plank with a long lever and posterior tilt versus the traditional plank exercise. Sports Biomech 2014;13:296-306",
   STR14: "Strand SL et al. Norms for an isometric muscle endurance test. J Hum Kinet 2014;40:93-102",
-  BOR11: "Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. Int J Sports Phys Ther 2011;6:206-23",
+  BOR11: "Boren K et al. Electromyographic analysis of gluteus medius and gluteus maximus during rehabilitation exercises. Int J Sports Phys Ther 2011;6(3):206-223",
   OKU10: "Okubo Y et al. Electromyographic analysis of transversus abdominis and lumbar multifidus using wire electrodes during lumbar stabilization exercises. J Orthop Sports Phys Ther 2010;40:743-50",
   GRE07: "Grenier SG, McGill SM. Quantification of lumbar stability by using 2 different abdominal activation strategies. Arch Phys Med Rehabil 2007;88:54-62",
   HOD96: "Hodges PW, Richardson CA. Inefficient muscular stabilization of the lumbar spine associated with low back pain: a motor control evaluation of transversus abdominis. Spine 1996;21:2640-50",
@@ -47,14 +47,14 @@ const R = {
   KOL12: "Kolar P et al. Postural function of the diaphragm in persons with and without chronic low back pain. J Orthop Sports Phys Ther 2012;42:352-62",
   HG00: "Hodges PW, Gandevia SC. Changes in intra-abdominal pressure during postural and respiratory activation of the human diaphragm. J Appl Physiol 2000;89:967-76",
   SAR16: "Saragiotto BT et al. Motor control exercise for chronic non-specific low-back pain. Cochrane Database Syst Rev 2016;(1):CD012004",
-  KIB06: "Kibler WB, Press J, Sciascia A. The role of core stability in athletic function. Sports Med 2006;36:189-98",
+  KIB06: "Kibler WB, Press J, Sciascia A. The role of core stability in athletic function. Sports Med 2006;36(3):189-198",
   REED12: "Reed CA et al. The effects of isolated and integrated 'core stability' training on athletic performance measures: a systematic review. Sports Med 2012;42:697-706",
   HIBBS08: "Hibbs AE et al. Optimizing performance by improving core stability and core strength. Sports Med 2008;38:995-1008",
-  IKE07: "Ikeda Y et al. Relationship between side medicine-ball throw performance and physical ability for male and female athletes. Eur J Appl Physiol 2007;99:47-55",
+  IKE07: "Ikeda Y et al. Relationship between side medicine-ball throw performance and physical ability for male and female athletes. Eur J Appl Physiol 2007;99(1):47-55",
   ZAZ07: "Zazulak BT et al. Deficits in neuromuscular control of the trunk predict knee injury risk: a prospective biomechanical-epidemiologic study. Am J Sports Med 2007;35:1123-30",
   SEM13: "Seminati E, Minetti AE. Overuse in volleyball training/practice: a review on shoulder and spine-related injuries. Eur J Sport Sci 2013;13:732-43",
   WAG14: "Wagner H et al. Upper-body kinematics in team-handball throw, tennis serve, and volleyball spike. Scand J Med Sci Sports 2014;24:345-54",
-  REE06: "Reeser JC et al. Strategies for the prevention of volleyball related injuries. Br J Sports Med 2006;40:594-600",
+  REE06: "Reeser JC et al. Strategies for the prevention of volleyball related injuries. Br J Sports Med 2006;40(7):594-600",
   OWEN20: "Owen PJ et al. Which specific modes of exercise training are most effective for treating low back pain? Network meta-analysis. Br J Sports Med 2020;54:1279-87",
 };
 const RPE = "Carico per ripetizioni a RPE/RIR prefissato (Zourdos 2016): es. 8 rip a RPE 7-8 (RIR 2-3)";
@@ -576,12 +576,12 @@ const C = [
   regime: ["Pliometrico", "Concentrico"], obiettivo: ["Potenza", "RFD"],
   fase: ["Avanzata", "Ritorno allo sport"], specificita: "Generale", gesto: "",
   img: null,
-  descrizione: "Di fianco a un muro (1-2 m), palla medica (2-4 kg) tenuta all'altezza dell'anca dal lato lontano. Si carica ruotando il bacino all'indietro, poi si spinge con la gamba posteriore e si lancia la palla contro il muro ruotando prima le anche e poi il tronco. Ogni lancio è massimale; serie brevi (3-6 lanci) con recupero completo. Il side medicine-ball throw misurato in distanza è correlato alla potenza rotazionale del tronco (Ikeda 2007).",
+  descrizione: "Di fianco a un muro (1-2 m), palla medica (2-4 kg) tenuta all'altezza dell'anca dal lato lontano. Si carica ruotando il bacino all'indietro, poi si spinge con la gamba posteriore e si lancia la palla contro il muro ruotando prima le anche e poi il tronco. Ogni lancio è massimale; serie brevi (3-6 lanci) con recupero completo. Nei maschi la distanza del side medicine-ball throw è correlata al momento isometrico massimo di rotazione del tronco e all'1RM di squat; nelle femmine lo studio non ha trovato correlazioni (Ikeda 2007).",
   cue: ["Parte il bacino, il tronco segue", "Spingi dal piede posteriore", "Braccia quasi tese: sono solo una leva", "Lancia il più forte possibile, poi recupera"],
   errori: ["Lancio di sole braccia senza rotazione dell'anca", "Schiena flessa durante il caricamento", "Troppe ripetizioni con perdita di velocità"],
   progressioni: ["Lancio con passo (step-behind)", "core-mb-lancio-mono-appoggio", "Palla più pesante solo se la velocità resta alta"],
   regressioni: ["core-mb-lancio-mezzo-ginocchio", "lomb-landmine-rotazione"],
-  metriche: ["Side medicine-ball throw: distanza (m) per lato con palla standard (es. 2-3 kg), migliore di 3 prove (Ikeda 2007); asimmetria tra lati"],
+  metriche: ["Side medicine-ball throw (Ikeda 2007): distanza (m) per lato, sempre con la stessa palla e la stessa posizione, migliore di più prove; asimmetria tra lati"],
   rif: [R.IKE07, R.KIB06]
 },
 {
