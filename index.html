@@ -19,7 +19,7 @@
 /* Layout: barra superiore con schede; esercizi = colonna filtri + griglia; scheda = blocchi esercizio impilati con tabella di progressione */
 :root{
   --bg:#EEF2F1; --surface:#FFFFFF; --ink:#15211F; --muted:#566763; --line:#D4DDDA;
-  --accent:#0D5C53; --accent-ink:#FFFFFF; --accent-soft:#DCEDE9; --warn:#A8452A; --warn-soft:#F7E6DF;
+  --accent:#0D5C53; --accent-ink:#FFFFFF; --accent-soft:#DCEDE9; --warn:#A8452A; --warn-soft:#F7E6DF; --brand-warm:#C2573A;
   --chip:#E6ECEA; --shadow:0 1px 2px rgba(10,40,35,.06),0 4px 14px rgba(10,40,35,.06);
   --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
   --f-body:"Public Sans","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -29,12 +29,12 @@
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0F1514; --surface:#171F1E; --ink:#E4ECEA; --muted:#93A4A0; --line:#2B3735;
-  --accent:#5FC3B3; --accent-ink:#0B1F1C; --accent-soft:#1B3330; --warn:#E58C6C; --warn-soft:#3A221B;
+  --accent:#5FC3B3; --accent-ink:#0B1F1C; --accent-soft:#1B3330; --warn:#E58C6C; --warn-soft:#3A221B; --brand-warm:#E58C6C;
   --chip:#222C2A; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark;
   --o-forza-bg:#4A2219; --o-forza-fg:#F4B7A8; --o-potenza-bg:#47330F; --o-potenza-fg:#F3CF8C; --o-iper-bg:#2F2648; --o-iper-fg:#CFC0F2; --o-cap-bg:#1B3330; --o-cap-fg:#8FD9CB; --o-plio-bg:#1C2D45; --o-plio-fg:#A9C8F0; --o-prop-bg:#22303F; --o-prop-fg:#B9CBE0; --o-mob-bg:#26302E; --o-mob-fg:#C4D0CD; } }
 :root[data-theme="dark"]{
   --bg:#0F1514; --surface:#171F1E; --ink:#E4ECEA; --muted:#93A4A0; --line:#2B3735;
-  --accent:#5FC3B3; --accent-ink:#0B1F1C; --accent-soft:#1B3330; --warn:#E58C6C; --warn-soft:#3A221B;
+  --accent:#5FC3B3; --accent-ink:#0B1F1C; --accent-soft:#1B3330; --warn:#E58C6C; --warn-soft:#3A221B; --brand-warm:#E58C6C;
   --chip:#222C2A; --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark;
   --o-forza-bg:#4A2219; --o-forza-fg:#F4B7A8; --o-potenza-bg:#47330F; --o-potenza-fg:#F3CF8C; --o-iper-bg:#2F2648; --o-iper-fg:#CFC0F2; --o-cap-bg:#1B3330; --o-cap-fg:#8FD9CB; --o-plio-bg:#1C2D45; --o-plio-fg:#A9C8F0; --o-prop-bg:#22303F; --o-prop-fg:#B9CBE0; --o-mob-bg:#26302E; --o-mob-fg:#C4D0CD; }
 
@@ -54,7 +54,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-block:10px}
 .brand{display:flex;align-items:baseline;gap:8px;margin-right:auto}
-.brand b{font-family:var(--f-display);font-size:20px;letter-spacing:-.01em;color:var(--accent)}
+.brand b{font-family:var(--f-display);font-size:22px;letter-spacing:-.01em;color:var(--accent)}
+/* Logo: FISIOEXERCISE con la X normale della scritta dentro un mirino aperto arancio (la scritta passa nelle aperture laterali) e punto al centro */
+.wm{white-space:nowrap}
+.wm .wm-a{color:var(--ink)}
+.wm .wm-b{color:var(--accent)}
+.wm svg{display:inline-block;height:1.24em;width:.598em;vertical-align:-.29em;overflow:visible}
+.wm .wm-x{fill:var(--accent);font-family:var(--f-display);font-weight:700}
+.wm .wm-ring{fill:none;stroke:var(--brand-warm);stroke-linecap:round}
+.wm .wm-dot{fill:var(--brand-warm)}
 .brand span{color:var(--muted);font-size:13px}
 .tabs{display:flex;gap:4px;flex-wrap:wrap}
 .tab{border:0;background:transparent;padding:8px 12px;border-radius:8px;color:var(--muted);font-weight:700}
@@ -246,7 +254,7 @@ body.preview .preview-bar{display:flex}
 </div>
 <div id="app-ui">
   <header class="top"><div class="wrap">
-    <div class="brand"><b>FISIOEXERCISE</b><span id="brand-name">NC Fisioterapia</span></div>
+    <div class="brand"><b class="wm" role="img" aria-label="FISIOEXERCISE"><span class="wm-a">FISIO</span><span class="wm-b">E<svg viewBox="-29.9 -95 59.8 124" aria-hidden="true" focusable="false"><text class="wm-x" x="0" y="0" text-anchor="middle" font-size="100">X</text><path class="wm-ring" stroke-width="5.5" d="M43.9 7.9A60 60 0 0 1 10.4 26.1M-10.4 26.1A60 60 0 0 1 -43.9 7.9M-43.9 -73.9A60 60 0 0 1 -10.4 -92.1M10.4 -92.1A60 60 0 0 1 43.9 -73.9"/><circle class="wm-dot" cx="0" cy="-33" r="6.5"/></svg>ERCISE</span></b><span id="brand-name">NC Fisioterapia</span></div>
     <button class="btn sm primary" id="installa" data-act="installa" hidden>Installa app</button>
     <nav class="tabs" role="tablist">
       <button class="tab" role="tab" data-tab="esercizi" aria-selected="true">Esercizi</button>

@@ -1,7 +1,7 @@
 /* FISIOEXERCISE – service worker: rende l'app installabile e utilizzabile offline.
    Codice e dati: prima la rete (così gli aggiornamenti arrivano subito), poi la copia salvata.
    Immagini: prima la copia salvata, poi la rete. */
-const CACHE = "fisioexercise-v4";
+const CACHE = "fisioexercise-v5";
 const CORE = [
   "./", "index.html", "app.js", "manifest.webmanifest",
   "esercizi.js", "esercizi-anca.js", "esercizi-cervicale.js", "esercizi-toracico.js", "esercizi-lombare.js",
